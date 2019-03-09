@@ -2,5 +2,5 @@ publishDir = "docs"
 
 baseURL = "http://www.techree.net/"
 languageCode = "en-us"
-title = "テクリー"
+title = "Techree"
 theme = "ananke"
