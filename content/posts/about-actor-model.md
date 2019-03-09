@@ -1,7 +1,7 @@
 ---
 title: "About Actor Model"
 date: 2019-03-09T08:55:36+09:00
-draft: true
+draft: false
 ---
 
 ## Actorモデルはどういう特徴があるのか
