@@ -1,5 +1,5 @@
 title = "Techree"
-baseURL = "http://www.techree.net/"
+baseURL = "https://www.techree.net/"
 languageCode = "en-us"
 theme = "ananke"
 publishDir = "docs"
