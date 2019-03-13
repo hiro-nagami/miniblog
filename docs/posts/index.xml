@@ -6,10 +6,25 @@
     <description>Recent content in Posts on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Mar 2019 08:55:36 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 13 Mar 2019 16:49:14 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SketchのAutoLayout機能</title>
+      <link>https://www.techree.net/posts/about-auto-layout/</link>
+      <pubDate>Wed, 13 Mar 2019 16:49:14 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/about-auto-layout/</guid>
+      <description>SketchでAutoLayoutを使えるようにするプラグインAnima ToolKitを使ってみました。
+AutoLayoutとは何か？ 制約を設定する事でビューを自動的に計算してリサイズしたり、位置を調整したりする機能。優先度を設定することによって、どのパーツを優先的にリサイズしたり、非表示にしたりするか決める事ができます。
+AutoLayoutはStoryboardでビューに設定するのが分かりやすいが、コード上でも設定する事が可能です。
+どういう動きをするのか AutoLayoutを使うことによって以下のような動きをさせることができます
+ オブジェクトのサイズを他のものに合わせてリサイズする オブジェクトの位置を他のオブジェクトと合わせる オブジェクトを整列させることができる  Sketch Pluginを使ってAutoLayoutのサンプルを作って見た。これは、レスポンシブでもイメージしやすいhttps://t.co/cmgHrqt5gG pic.twitter.com/iWHwKktE2Q
+&amp;mdash; nagamy (@nagami_hiro) January 18, 2019 
+まとめ AutoLayout機能はXcodeでも使うことができる機能です。この機能を理解することで、複数の画面サイズに合わせてウェブやアプリのデザインを効率よく最適な形にしていくことができるようになるでしょう。</description>
+    </item>
     
     <item>
       <title>About Actor Model</title>
