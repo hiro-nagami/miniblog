@@ -11,6 +11,8 @@ SketchでAutoLayoutを使えるようにするプラグイン[Anima ToolKit](htt
 
 AutoLayoutはStoryboardでビューに設定するのが分かりやすいが、コード上でも設定する事が可能です。
 
+<!--more-->
+
 ## どういう動きをするのか
 AutoLayoutを使うことによって以下のような動きをさせることができます
 
