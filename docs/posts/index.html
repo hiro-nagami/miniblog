@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-03-13T16:49:14&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-03-20T09:12:05&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -128,6 +128,24 @@ if (!doNotTrack) {
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/java-executor-service/" class="link black dim">
+        JavaのExecutorの概要と動き
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ExecutorSeriviceとは Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(submit())することができる。java.util.concurrentに含まれます。
+どういう役割なのか 複数のスレッドを管理しやすくしてくれる。起動するスレッド数を制限したり、スレットセーフにタスクを処理することをサポートしてくれるインターフェースです。
+使い方  タスクを実行するためのスレッドの作成する。作ることができるスレッドの種類は以下のようなものがある  SingleThreadExecutor FixedFixedThreadPool CachedThreadPool ScheduledThreadPool   タスクの状態 タスクには4つの状態があります。 - [created] ThreadのQueueに追加(submit)される前の状態 - [submitted] ThreadのQueueに追加(submit)された状態 - [started] タスクが実装されている状態 - [completed] タスクが完了した状態
+まとめ ExecutorSeriviceは、タスクをキューイングできるThreadPoolを生成することができ、マルチタスクを簡単かつセーフティに扱うことをできるようにするものでした。マルチタスクを実現したい時に使うことをお勧めです。
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
