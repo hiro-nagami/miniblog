@@ -1,7 +1,9 @@
 ---
-title: "About Actor Model"
+title: "アクターモデルの概念はどういうものか"
 date: 2019-03-09T08:55:36+09:00
 draft: false
+description: 分散処理システム構築などで使われているアクターモデルについて簡単に解説しています。
+keywords: "akka, multithread, thread, actor"
 ---
 
 ## Actorモデルとは？
