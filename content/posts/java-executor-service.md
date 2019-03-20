@@ -5,7 +5,9 @@ draft: false
 ---
 
 ## ExecutorSeriviceとは
-Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(`submit()`)することができる。`java.util.concurrent`に含まれます。
+Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(`submit()`)することができます。ExecutorServiceは`java.util.concurrent`に含まれます。
+
+<!--more-->
 
 ## どういう役割なのか
 複数のスレッドを管理しやすくしてくれる。起動するスレッド数を制限したり、スレットセーフにタスクを処理することをサポートしてくれるインターフェースです。
@@ -19,6 +21,7 @@ Java上でマルチスレッド実現しやすくするためのインターフ�
 
 ## タスクの状態
 タスクには4つの状態があります。
+
 - [created] ThreadのQueueに追加(submit)される前の状態
 - [submitted] ThreadのQueueに追加(submit)された状態
 - [started] タスクが実装されている状態

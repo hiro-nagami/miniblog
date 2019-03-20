@@ -29,10 +29,9 @@
     
 
     <meta property="og:title" content="JavaのExecutorの概要と動き" />
-<meta property="og:description" content="ExecutorSeriviceとは Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(submit())することができる。java.util.concurrentに含まれます。
-どういう役割なのか 複数のスレッドを管理しやすくしてくれる。起動するスレッド数を制限したり、スレットセーフにタスクを処理することをサポートしてくれるインターフェースです。
-使い方  タスクを実行するためのスレッドの作成する。作ることができるスレッドの種類は以下のようなものがある  SingleThreadExecutor FixedFixedThreadPool CachedThreadPool ScheduledThreadPool   タスクの状態 タスクには4つの状態があります。 - [created] ThreadのQueueに追加(submit)される前の状態 - [submitted] ThreadのQueueに追加(submit)された状態 - [started] タスクが実装されている状態 - [completed] タスクが完了した状態
-まとめ ExecutorSeriviceは、タスクをキューイングできるThreadPoolを生成することができ、マルチタスクを簡単かつセーフティに扱うことをできるようにするものでした。マルチタスクを実現したい時に使うことをお勧めです。" />
+<meta property="og:description" content="ExecutorSeriviceとは
+
+Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(submit())することができます。ExecutorServiceはjava.util.concurrentに含まれます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.techree.net/posts/java-executor-service/" />
 
@@ -41,15 +40,14 @@
 <meta property="article:modified_time" content="2019-03-20T09:12:05&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="JavaのExecutorの概要と動き">
-<meta itemprop="description" content="ExecutorSeriviceとは Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(submit())することができる。java.util.concurrentに含まれます。
-どういう役割なのか 複数のスレッドを管理しやすくしてくれる。起動するスレッド数を制限したり、スレットセーフにタスクを処理することをサポートしてくれるインターフェースです。
-使い方  タスクを実行するためのスレッドの作成する。作ることができるスレッドの種類は以下のようなものがある  SingleThreadExecutor FixedFixedThreadPool CachedThreadPool ScheduledThreadPool   タスクの状態 タスクには4つの状態があります。 - [created] ThreadのQueueに追加(submit)される前の状態 - [submitted] ThreadのQueueに追加(submit)された状態 - [started] タスクが実装されている状態 - [completed] タスクが完了した状態
-まとめ ExecutorSeriviceは、タスクをキューイングできるThreadPoolを生成することができ、マルチタスクを簡単かつセーフティに扱うことをできるようにするものでした。マルチタスクを実現したい時に使うことをお勧めです。">
+<meta itemprop="description" content="ExecutorSeriviceとは
+
+Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(submit())することができます。ExecutorServiceはjava.util.concurrentに含まれます。">
 
 
 <meta itemprop="datePublished" content="2019-03-20T09:12:05&#43;09:00" />
 <meta itemprop="dateModified" content="2019-03-20T09:12:05&#43;09:00" />
-<meta itemprop="wordCount" content="26">
+<meta itemprop="wordCount" content="22">
 
 
 
@@ -58,10 +56,9 @@
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
 <meta name="twitter:title" content="JavaのExecutorの概要と動き"/>
-<meta name="twitter:description" content="ExecutorSeriviceとは Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(submit())することができる。java.util.concurrentに含まれます。
-どういう役割なのか 複数のスレッドを管理しやすくしてくれる。起動するスレッド数を制限したり、スレットセーフにタスクを処理することをサポートしてくれるインターフェースです。
-使い方  タスクを実行するためのスレッドの作成する。作ることができるスレッドの種類は以下のようなものがある  SingleThreadExecutor FixedFixedThreadPool CachedThreadPool ScheduledThreadPool   タスクの状態 タスクには4つの状態があります。 - [created] ThreadのQueueに追加(submit)される前の状態 - [submitted] ThreadのQueueに追加(submit)された状態 - [started] タスクが実装されている状態 - [completed] タスクが完了した状態
-まとめ ExecutorSeriviceは、タスクをキューイングできるThreadPoolを生成することができ、マルチタスクを簡単かつセーフティに扱うことをできるようにするものでした。マルチタスクを実現したい時に使うことをお勧めです。"/>
+<meta name="twitter:description" content="ExecutorSeriviceとは
+
+Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(submit())することができます。ExecutorServiceはjava.util.concurrentに含まれます。"/>
 
       
 <script type="application/javascript">
@@ -151,11 +148,9 @@ if (!doNotTrack) {
       
     </header>
 
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id="executorseriviceとは">ExecutorSeriviceとは</h2>
 
-<h2 id="executorseriviceとは">ExecutorSeriviceとは</h2>
-
-<p>Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(<code>submit()</code>)することができる。<code>java.util.concurrent</code>に含まれます。</p>
+<p>Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(<code>submit()</code>)することができます。ExecutorServiceは<code>java.util.concurrent</code>に含まれます。</p>
 
 <h2 id="どういう役割なのか">どういう役割なのか</h2>
 
@@ -176,16 +171,18 @@ if (!doNotTrack) {
 
 <h2 id="タスクの状態">タスクの状態</h2>
 
-<p>タスクには4つの状態があります。
-- [created] ThreadのQueueに追加(submit)される前の状態
-- [submitted] ThreadのQueueに追加(submit)された状態
-- [started] タスクが実装されている状態
-- [completed] タスクが完了した状態</p>
+<p>タスクには4つの状態があります。</p>
+
+<ul>
+<li>[created] ThreadのQueueに追加(submit)される前の状態</li>
+<li>[submitted] ThreadのQueueに追加(submit)された状態</li>
+<li>[started] タスクが実装されている状態</li>
+<li>[completed] タスクが完了した状態</li>
+</ul>
 
 <h2 id="まとめ">まとめ</h2>
 
-<p>ExecutorSeriviceは、タスクをキューイングできる<code>ThreadPool</code>を生成することができ、マルチタスクを簡単かつセーフティに扱うことをできるようにするものでした。マルチタスクを実現したい時に使うことをお勧めです。</p>
-<ul class="pa0">
+<p>ExecutorSeriviceは、タスクをキューイングできる<code>ThreadPool</code>を生成することができ、マルチタスクを簡単かつセーフティに扱うことをできるようにするものでした。マルチタスクを実現したい時に使うことをお勧めです。</p><ul class="pa0">
   
 </ul>
 <div class="mt6">
