@@ -1,54 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Techree</title>
-    <link>https://www.techree.net/posts/</link>
-    <description>Recent content in Posts on Techree</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 20 Mar 2019 09:12:05 +0900</lastBuildDate>
-    
-	<atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>JavaのExecutorの概要と動き</title>
-      <link>https://www.techree.net/posts/java-executor-service/</link>
-      <pubDate>Wed, 20 Mar 2019 09:12:05 +0900</pubDate>
-      
-      <guid>https://www.techree.net/posts/java-executor-service/</guid>
-      <description>&lt;h2 id=&#34;executorseriviceとは&#34;&gt;ExecutorSeriviceとは&lt;/h2&gt;
-
-&lt;p&gt;Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(&lt;code&gt;submit()&lt;/code&gt;)することができます。ExecutorServiceは&lt;code&gt;java.util.concurrent&lt;/code&gt;に含まれます。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>SketchのAutoLayout機能</title>
-      <link>https://www.techree.net/posts/about-auto-layout/</link>
-      <pubDate>Wed, 13 Mar 2019 16:49:14 +0900</pubDate>
-      
-      <guid>https://www.techree.net/posts/about-auto-layout/</guid>
-      <description>&lt;p&gt;SketchでAutoLayoutを使えるようにするプラグイン&lt;a href=&#34;https://www.animaapp.com/&#34;&gt;Anima ToolKit&lt;/a&gt;を使ってみました。&lt;/p&gt;
-
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Techree</title><link>https://www.techree.net/posts/</link><description>Recent content in Posts on Techree</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 15 Jun 2019 19:33:52 +0900</lastBuildDate><atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>nodeバージョンの違いでFirebase Cloud Functionsのdeployが失敗した話</title><link>https://www.techree.net/posts/cloud-functions-npm-error/</link><pubDate>Sat, 15 Jun 2019 19:33:52 +0900</pubDate><guid>https://www.techree.net/posts/cloud-functions-npm-error/</guid><description>nodeのバージョンが違ったことでdeployが失敗 cloud functionsをデプロイしようとすると以下の内容の不具合が発生した。
+❯ npm run deploy &amp;gt; functions@ deploy ~/functions &amp;gt; firebase deploy --only functions === Deploying to &#39;spofun-dev&#39;... i deploying functions Running command: npm --prefix $RESOURCE_DIR run lint &amp;gt; functions@ lint ~/functions &amp;gt; tslint -p tslint.json no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead. no-unused-variable is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead. Running command: npm --prefix $RESOURCE_DIR run build &amp;gt; functions@ build ~/functions &amp;gt; tsc ✔ functions: Finished running predeploy script.</description></item><item><title>JavaのExecutorの概要と動き</title><link>https://www.techree.net/posts/java-executor-service/</link><pubDate>Wed, 20 Mar 2019 09:12:05 +0900</pubDate><guid>https://www.techree.net/posts/java-executor-service/</guid><description>&lt;h2 id=&#34;executorseriviceとは&#34;&gt;ExecutorSeriviceとは&lt;/h2&gt;
+&lt;p&gt;Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(&lt;code&gt;submit()&lt;/code&gt;)することができます。ExecutorServiceは&lt;code&gt;java.util.concurrent&lt;/code&gt;に含まれます。&lt;/p&gt;</description></item><item><title>SketchのAutoLayout機能</title><link>https://www.techree.net/posts/about-auto-layout/</link><pubDate>Wed, 13 Mar 2019 16:49:14 +0900</pubDate><guid>https://www.techree.net/posts/about-auto-layout/</guid><description>&lt;p&gt;SketchでAutoLayoutを使えるようにするプラグイン&lt;a href=&#34;https://www.animaapp.com/&#34;&gt;Anima ToolKit&lt;/a&gt;を使ってみました。&lt;/p&gt;
 &lt;h2 id=&#34;autolayoutとは何か&#34;&gt;AutoLayoutとは何か？&lt;/h2&gt;
-
 &lt;p&gt;制約を設定する事でビューを自動的に計算してリサイズしたり、位置を調整したりする機能。優先度を設定することによって、どのパーツを優先的にリサイズしたり、非表示にしたりするか決める事ができます。&lt;/p&gt;
-
-&lt;p&gt;AutoLayoutはStoryboardでビューに設定するのが分かりやすいが、コード上でも設定する事が可能です。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>アクターモデルの概念はどういうものか</title>
-      <link>https://www.techree.net/posts/about-actor-model/</link>
-      <pubDate>Sat, 09 Mar 2019 08:55:36 +0900</pubDate>
-      
-      <guid>https://www.techree.net/posts/about-actor-model/</guid>
-      <description>&lt;h2 id=&#34;actorモデルとは&#34;&gt;Actorモデルとは？&lt;/h2&gt;
-
+&lt;p&gt;AutoLayoutはStoryboardでビューに設定するのが分かりやすいが、コード上でも設定する事が可能です。&lt;/p&gt;</description></item><item><title>アクターモデルの概念はどういうものか</title><link>https://www.techree.net/posts/about-actor-model/</link><pubDate>Sat, 09 Mar 2019 08:55:36 +0900</pubDate><guid>https://www.techree.net/posts/about-actor-model/</guid><description>&lt;h2 id=&#34;actorモデルとは&#34;&gt;Actorモデルとは？&lt;/h2&gt;
 &lt;p&gt;インフラ環境などでよく使われる並列処理を実現する方法の１つです。&lt;/p&gt;
-
-&lt;p&gt;1973年にカール・ヒューイット氏によって発表されました。オブジェクト指向が「全てのものはオブジェクト指向である」というのに対し、アクターモデルは「全てのものはアクターである」という哲学に基づいて設計されています。&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;1973年にカール・ヒューイット氏によって発表されました。オブジェクト指向が「全てのものはオブジェクト指向である」というのに対し、アクターモデルは「全てのものはアクターである」という哲学に基づいて設計されています。&lt;/p&gt;</description></item></channel></rss>
