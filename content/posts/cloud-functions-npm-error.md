@@ -8,7 +8,19 @@ keywords: "cloud function, npm, nodejs, エラー, error"
 
 ## nodeのバージョンが違ったことでdeployが失敗
 
-cloud functionsをデプロイしようとすると以下の内容の不具合が発生した。
+今作っているプロダクトで、Firebase Cloud Functionsを使うことになったので試してみようと以下のプログラムをデプロイしてみた。
+
+```js
+import * as functions from 'firebase-functions';
+
+export const hello = functions.
+    https.onRequest((request, response) => {
+    response.send("Hello, firebase cloud functions");
+});
+```
+
+すると、以下の内容の不具合が発生した。
+
 ```sh
 ❯ npm run deploy
 
@@ -58,7 +70,8 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/h-nagmai/.npm/_logs/2019-06-12T06_19_44_689Z-debug.log
 ```
 
-原因はNodeのバージョンに比べて、firebase-toolsのバージョンが古いため。
+エラーの内容がざっくり過ぎて、何が問題なのかわからず結構ハマった。原因がわかるきっかけになったのは以下のコマンドを実行したとき。Nodeのバージョンに比べて、firebase-toolsのバージョンが古かったため。
+
 ```sh
 ❯ npm run shell
 
@@ -78,7 +91,7 @@ the module (for instance, using `npm rebuild` or `npm install`).
 
 ## 対処法
 
-firebase-toolsのバージョンを最新にして対処できた。
+firebase-toolsのバージョンを、入っているnodejsのバージョンで動くものにアップデートをして対処できた。
 
 ```sh
 npm install firebase-tools@latest
