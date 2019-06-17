@@ -67,7 +67,7 @@ npm ERR! Failed at the functions@ deploy script.
 npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
 
 npm ERR! A complete log of this run can be found in:
-npm ERR!     /Users/h-nagmai/.npm/_logs/2019-06-12T06_19_44_689Z-debug.log
+npm ERR!     ~/.npm/_logs/2019-06-12T06_19_44_689Z-debug.log
 ```
 
 エラーの内容がざっくり過ぎて、何が問題なのかわからず結構ハマった。原因がわかるきっかけになったのは以下のコマンドを実行したとき。Nodeのバージョンに比べて、firebase-toolsのバージョンが古かったため。
