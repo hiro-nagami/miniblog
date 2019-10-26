@@ -1,20 +1,117 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Techree</title><link>https://www.techree.net/posts/</link><description>Recent content in Posts on Techree</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 17 Jun 2019 09:16:29 +0900</lastBuildDate><atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い</title><link>https://www.techree.net/posts/on-request-on-call/</link><pubDate>Mon, 17 Jun 2019 09:16:29 +0900</pubDate><guid>https://www.techree.net/posts/on-request-on-call/</guid><description> Firebase Cloud FunctionでAPI実装するために使われるトリガーにonCall()とonRequest()との２つがあった。
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Techree</title>
+    <link>https://www.techree.net/posts/</link>
+    <description>Recent content in Posts on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Oct 2019 17:41:43 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning Blockchain 02</title>
+      <link>https://www.techree.net/posts/learning-blockchain-02/</link>
+      <pubDate>Sat, 26 Oct 2019 17:41:43 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/learning-blockchain-02/</guid>
+      <description>CryptoZombieをやっためも CryptoZombieとは 開発環境 開発環境には以下のものを使う。
+ Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
+contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
+メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.</description>
+    </item>
+    
+    <item>
+      <title>Learning Blockchain 01</title>
+      <link>https://www.techree.net/posts/learning-blockchain-01/</link>
+      <pubDate>Sat, 26 Oct 2019 17:20:05 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/learning-blockchain-01/</guid>
+      <description> Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
+スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
+参考サイト  https://bitflyer.com/ja-jp/ethereum  </description>
+    </item>
+    
+    <item>
+      <title>Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い</title>
+      <link>https://www.techree.net/posts/on-request-on-call/</link>
+      <pubDate>Mon, 17 Jun 2019 09:16:29 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/on-request-on-call/</guid>
+      <description> Firebase Cloud FunctionでAPI実装するために使われるトリガーにonCall()とonRequest()との２つがあった。
 これらは「内部で行なっていること」と「Callbackで受け取れる値」に違いがある。
 onCall()関数 onCall()は、Content-Type: application/jsonヘッダーをPOSTリクエストのみを受け付けるようになっている。また、Authentication Bearerヘッダーを付与しているとJWTを使ったユーザーの検証を自動で行なってくれるため、呼び出された時点で認証情報が利用できるようになる。
 JWTの使用についてはこちら。
 JWTについて簡単に調べたのでメモ書き
-export const hello_on_call = functions.https.onCall((data, context) =&amp;gt; { if (!context.auth) { throw new functions.https.HttpsError(&#39;Invalid account.&#39;); } return &amp;quot;Hello, world&amp;quot; }); https.onCall のプロトコルの仕様
+export const hello_on_call = functions.https.onCall((data, context) =&amp;gt; { if (!context.auth) { throw new functions.https.HttpsError(&#39;Invalid account.&#39;); } return &amp;quot;Hello, world&amp;quot; });  https.onCall のプロトコルの仕様
 onRequest()関数 onRequest()は、POST以外のどのHTTPメソッドでもハンドリングできるようになっている。なので、呼び出されたタイミングでHTTPメソッドを判断して処理を分ける必要がある。 基本的に、内部でユーザーの検証などはないため自前で実装する必要がある。
-export const hello = functions. https.onRequest((request, response) =&amp;gt; { cors(req, res, () =&amp;gt; { const tokenId = req.get(&#39;Authorization&#39;).split(&#39;Bearer &#39;)[1]; return admin.auth().verifyIdToken(tokenId) .then((decoded) =&amp;gt; res.status(200).send(decoded)) .catch((err) =&amp;gt; res.status(401).send(err)); }); });</description></item><item><title>JWTについて簡単に調べたのでメモ書き</title><link>https://www.techree.net/posts/about-jwt-token/</link><pubDate>Sun, 16 Jun 2019 00:22:40 +0900</pubDate><guid>https://www.techree.net/posts/about-jwt-token/</guid><description> JSON Web Tokenの略でURL-SafeなTokenを発行し、電子署名をJWTに組み込むことで改ざんを検出可能にする。
+export const hello = functions. https.onRequest((request, response) =&amp;gt; { cors(req, res, () =&amp;gt; { const tokenId = req.get(&#39;Authorization&#39;).split(&#39;Bearer &#39;)[1]; return admin.auth().verifyIdToken(tokenId) .then((decoded) =&amp;gt; res.status(200).send(decoded)) .catch((err) =&amp;gt; res.status(401).send(err)); }); });  </description>
+    </item>
+    
+    <item>
+      <title>JWTについて簡単に調べたのでメモ書き</title>
+      <link>https://www.techree.net/posts/about-jwt-token/</link>
+      <pubDate>Sun, 16 Jun 2019 00:22:40 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/about-jwt-token/</guid>
+      <description> JSON Web Tokenの略でURL-SafeなTokenを発行し、電子署名をJWTに組み込むことで改ざんを検出可能にする。
 JWTは以下の内容で構成される
-Base64-Header: ヘッダー情報を含むJSONをBase64でエンコードしたもの Base64-Body: ユーザーID, 有効期限をJSONをBase64でエンコードしたもの}.{電子署名} Signature: 電子署名 JWT: {Base64-Header}.{Base64-Body}.{Signature} サーバー側は自身の持つ暗号鍵を使って署名つきのTokenを発行することで、有効期限とユーザーIDの正当性を検証し改ざんがあれば検知できるようになっている。URL-Safeなので文字コードに依存せずウェブ上の通信の本人証明に使うことができる。
+ Base64-Header: ヘッダー情報を含むJSONをBase64でエンコードしたもの Base64-Body: ユーザーID, 有効期限をJSONをBase64でエンコードしたもの}.{電子署名} Signature: 電子署名  JWT: {Base64-Header}.{Base64-Body}.{Signature}  サーバー側は自身の持つ暗号鍵を使って署名つきのTokenを発行することで、有効期限とユーザーIDの正当性を検証し改ざんがあれば検知できるようになっている。URL-Safeなので文字コードに依存せずウェブ上の通信の本人証明に使うことができる。
 JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得することができるJWKを使って、JWTのSignatureを検証することができる。
-参考 JSON Web Token の効用 JWT(JSON Web Token)を使った認証を試みる JWT について調べた内容をまとめました。 JWT(JSON Web Token)の仕組みと使い方まとめ OAuth Revocation と JWK を翻訳しました ID トークンの確認 JSON Web Key (JWK)</description></item><item><title>nodeバージョンの違いでFirebase Cloud Functionsのdeployが失敗した話</title><link>https://www.techree.net/posts/cloud-functions-npm-error/</link><pubDate>Sat, 15 Jun 2019 19:33:52 +0900</pubDate><guid>https://www.techree.net/posts/cloud-functions-npm-error/</guid><description>nodeのバージョンが違ったことでdeployが失敗 今作っているプロダクトで、Firebase Cloud Functionsを使うことになったので試してみようと以下のプログラムをデプロイしてみた。
-import * as functions from &#39;firebase-functions&#39;; export const hello = functions. https.onRequest((request, response) =&amp;gt; { response.send(&amp;quot;Hello, firebase cloud functions&amp;quot;); }); すると、以下の内容の不具合が発生した。
-❯ npm run deploy &amp;gt; functions@ deploy ~/functions &amp;gt; firebase deploy --only functions === Deploying to &#39;spofun-dev&#39;... i deploying functions Running command: npm --prefix $RESOURCE_DIR run lint &amp;gt; functions@ lint ~/functions &amp;gt; tslint -p tslint.json no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead.</description></item><item><title>JavaのExecutorの概要と動き</title><link>https://www.techree.net/posts/java-executor-service/</link><pubDate>Wed, 20 Mar 2019 09:12:05 +0900</pubDate><guid>https://www.techree.net/posts/java-executor-service/</guid><description>&lt;h2 id=&#34;executorseriviceとは&#34;&gt;ExecutorSeriviceとは&lt;/h2&gt;
-&lt;p&gt;Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(&lt;code&gt;submit()&lt;/code&gt;)することができます。ExecutorServiceは&lt;code&gt;java.util.concurrent&lt;/code&gt;に含まれます。&lt;/p&gt;</description></item><item><title>SketchのAutoLayout機能</title><link>https://www.techree.net/posts/about-auto-layout/</link><pubDate>Wed, 13 Mar 2019 16:49:14 +0900</pubDate><guid>https://www.techree.net/posts/about-auto-layout/</guid><description>&lt;p&gt;SketchでAutoLayoutを使えるようにするプラグイン&lt;a href=&#34;https://www.animaapp.com/&#34;&gt;Anima ToolKit&lt;/a&gt;を使ってみました。&lt;/p&gt;
+参考  JSON Web Token の効用 JWT(JSON Web Token)を使った認証を試みる JWT について調べた内容をまとめました。 JWT(JSON Web Token)の仕組みと使い方まとめ OAuth Revocation と JWK を翻訳しました ID トークンの確認 JSON Web Key (JWK)  </description>
+    </item>
+    
+    <item>
+      <title>nodeバージョンの違いでFirebase Cloud Functionsのdeployが失敗した話</title>
+      <link>https://www.techree.net/posts/cloud-functions-npm-error/</link>
+      <pubDate>Sat, 15 Jun 2019 19:33:52 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/cloud-functions-npm-error/</guid>
+      <description>nodeのバージョンが違ったことでdeployが失敗 今作っているプロダクトで、Firebase Cloud Functionsを使うことになったので試してみようと以下のプログラムをデプロイしてみた。
+import * as functions from &#39;firebase-functions&#39;; export const hello = functions. https.onRequest((request, response) =&amp;gt; { response.send(&amp;quot;Hello, firebase cloud functions&amp;quot;); });  すると、以下の内容の不具合が発生した。
+❯ npm run deploy &amp;gt; functions@ deploy ~/functions &amp;gt; firebase deploy --only functions === Deploying to &#39;spofun-dev&#39;... i deploying functions Running command: npm --prefix $RESOURCE_DIR run lint &amp;gt; functions@ lint ~/functions &amp;gt; tslint -p tslint.json no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead.</description>
+    </item>
+    
+    <item>
+      <title>JavaのExecutorの概要と動き</title>
+      <link>https://www.techree.net/posts/java-executor-service/</link>
+      <pubDate>Wed, 20 Mar 2019 09:12:05 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/java-executor-service/</guid>
+      <description>&lt;h2 id=&#34;executorseriviceとは&#34;&gt;ExecutorSeriviceとは&lt;/h2&gt;
+
+&lt;p&gt;Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(&lt;code&gt;submit()&lt;/code&gt;)することができます。ExecutorServiceは&lt;code&gt;java.util.concurrent&lt;/code&gt;に含まれます。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SketchのAutoLayout機能</title>
+      <link>https://www.techree.net/posts/about-auto-layout/</link>
+      <pubDate>Wed, 13 Mar 2019 16:49:14 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/about-auto-layout/</guid>
+      <description>&lt;p&gt;SketchでAutoLayoutを使えるようにするプラグイン&lt;a href=&#34;https://www.animaapp.com/&#34;&gt;Anima ToolKit&lt;/a&gt;を使ってみました。&lt;/p&gt;
+
 &lt;h2 id=&#34;autolayoutとは何か&#34;&gt;AutoLayoutとは何か？&lt;/h2&gt;
+
 &lt;p&gt;制約を設定する事でビューを自動的に計算してリサイズしたり、位置を調整したりする機能。優先度を設定することによって、どのパーツを優先的にリサイズしたり、非表示にしたりするか決める事ができます。&lt;/p&gt;
-&lt;p&gt;AutoLayoutはStoryboardでビューに設定するのが分かりやすいが、コード上でも設定する事が可能です。&lt;/p&gt;</description></item><item><title>アクターモデルの概念はどういうものか</title><link>https://www.techree.net/posts/about-actor-model/</link><pubDate>Sat, 09 Mar 2019 08:55:36 +0900</pubDate><guid>https://www.techree.net/posts/about-actor-model/</guid><description>&lt;h2 id=&#34;actorモデルとは&#34;&gt;Actorモデルとは？&lt;/h2&gt;
+
+&lt;p&gt;AutoLayoutはStoryboardでビューに設定するのが分かりやすいが、コード上でも設定する事が可能です。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>アクターモデルの概念はどういうものか</title>
+      <link>https://www.techree.net/posts/about-actor-model/</link>
+      <pubDate>Sat, 09 Mar 2019 08:55:36 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/about-actor-model/</guid>
+      <description>&lt;h2 id=&#34;actorモデルとは&#34;&gt;Actorモデルとは？&lt;/h2&gt;
+
 &lt;p&gt;インフラ環境などでよく使われる並列処理を実現する方法の１つです。&lt;/p&gt;
-&lt;p&gt;1973年にカール・ヒューイット氏によって発表されました。オブジェクト指向が「全てのものはオブジェクト指向である」というのに対し、アクターモデルは「全てのものはアクターである」という哲学に基づいて設計されています。&lt;/p&gt;</description></item></channel></rss>
+
+&lt;p&gt;1973年にカール・ヒューイット氏によって発表されました。オブジェクト指向が「全てのものはオブジェクト指向である」というのに対し、アクターモデルは「全てのものはアクターである」という哲学に基づいて設計されています。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
