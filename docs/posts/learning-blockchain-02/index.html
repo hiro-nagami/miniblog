@@ -29,7 +29,7 @@
     
 
     <meta property="og:title" content="Learning Blockchain 02" />
-<meta property="og:description" content="CryptoZombieをやっためも CryptoZombieとは 開発環境 開発環境には以下のものを使う。
+<meta property="og:description" content="Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
  Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
 メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members." />
@@ -41,7 +41,7 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
 <meta property="article:modified_time" content="2019-10-26T17:41:43&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Learning Blockchain 02">
-<meta itemprop="description" content="CryptoZombieをやっためも CryptoZombieとは 開発環境 開発環境には以下のものを使う。
+<meta itemprop="description" content="Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
  Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
 メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.">
@@ -49,7 +49,7 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
 
 <meta itemprop="datePublished" content="2019-10-26T17:41:43&#43;09:00" />
 <meta itemprop="dateModified" content="2019-10-26T17:41:43&#43;09:00" />
-<meta itemprop="wordCount" content="220">
+<meta itemprop="wordCount" content="219">
 
 
 
@@ -58,7 +58,7 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
 <meta name="twitter:title" content="Learning Blockchain 02"/>
-<meta name="twitter:description" content="CryptoZombieをやっためも CryptoZombieとは 開発環境 開発環境には以下のものを使う。
+<meta name="twitter:description" content="Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
  Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
 メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members."/>
@@ -158,9 +158,7 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<h2 id="cryptozombieをやっためも">CryptoZombieをやっためも</h2>
-
-<h3 id="cryptozombieとは">CryptoZombieとは</h3>
+<h2 id="solidityで作るブロックチェーン">Solidityで作るブロックチェーン</h2>
 
 <h3 id="開発環境">開発環境</h3>
 

@@ -4,10 +4,7 @@ date: 2019-10-26T17:41:43+09:00
 draft: false
 ---
 
-## CryptoZombieをやっためも
-
-### CryptoZombieとは
-
+## Solidityで作るブロックチェーン
 
 ### 開発環境
 
