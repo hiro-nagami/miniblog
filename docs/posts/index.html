@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-10-29T13:39:45&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-10-29T14:27:12&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,22 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/app-itunes-release/" class="link black dim">
+        App Itunes Release
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      アプリリリースするための手順 アプリをリリースするためには、以下の作業が必要になる。 - App Storeにアプリを登録する - 申請用のバイナリをアップロードする - アプリレビュー申請
+App Storeにアプリを登録する リリースするためにApp Store Connectでアプリを作成する。そのために以下の項目を埋めていく。 - App Information - App Storeに表示されるアプリ名 - アプリのカテゴリ設定 - プライバシーポリシーの設定 - テンプレートなどもあるが、可能なら専門の人に作ってもらうのがベスト - Pricing And Availability - 課金の設定 - リリース前の事前登録の設定 - アプリの詳細設定 - スクリーンショットの追加 - App preview specifications - [Xcode] iOS シミュレータで、スクリーンショットを保存する時は、⌘ + S で OK！ - Images can&rsquo;t contain alpha channels or transparencies - App Storeに表示するアプリ説明 - 検索キーワード - プライバシーポリシー・サポートサイトの登録 - バイナリーのアップロード - App Store用アイコン、アプリバージョン、Ratingの設定 - コピーライト - 著作権表示、コレが正解！「©」や「All Rights Rserved」正しい表記と意味全解説 - 開発者情報の設定 - レビューアカウント情報の設定 - 自動リリースか手動リリースかの設定
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/ios-push-notification-01/" class="link black dim">
         iOS Push Notification 01
       </a>
@@ -165,23 +181,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
  Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
 メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/learning-blockchain-01/" class="link black dim">
-        Learning Blockchain 01
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
-スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
-参考サイト  https://bitflyer.com/ja-jp/ethereum  
     </div>
   </div>
 </div>
@@ -233,12 +232,23 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
     <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
     
     
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/4/">4</a></li>
+    
+    
     <li class="page-item">
     <a href="/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/4/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
