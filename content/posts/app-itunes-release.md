@@ -1,5 +1,5 @@
 ---
-title: "App Itunes Release"
+title: "iOS App Release Introduction"
 date: 2019-10-29T14:27:12+09:00
 draft: false
 tags: [ "ios", "release", "certificate" ]
@@ -7,12 +7,17 @@ tags: [ "ios", "release", "certificate" ]
 
 ## アプリリリースするための手順
 アプリをリリースするためには、以下の作業が必要になる。
+
 - App Storeにアプリを登録する
 - 申請用のバイナリをアップロードする
 - アプリレビュー申請
 
 ### App Storeにアプリを登録する
 リリースするためにApp Store Connectでアプリを作成する。そのために以下の項目を埋めていく。
+
+- アプリを作成する
+![Create App](/images/create-app-on-itunes.png)
+![Add Information](/images/add-information-for-creating-app.png)
 - App Information
     - App Storeに表示されるアプリ名
     - アプリのカテゴリ設定
@@ -23,6 +28,7 @@ tags: [ "ios", "release", "certificate" ]
     - リリース前の事前登録の設定
 - アプリの詳細設定
     - スクリーンショットの追加
+    ![Add Information](/images/failed-upload-screenshot.png)
         - [App preview specifications](https://help.apple.com/app-store-connect/#/dev4e413fcb8)
         - [[Xcode] iOS シミュレータで、スクリーンショットを保存する時は、⌘ + S で OK！](https://rakuishi.com/archives/4634/)
         - [Images can't contain alpha channels or transparencies](https://stackoverflow.com/questions/25681869/images-cant-contain-alpha-channels-or-transparencies)
@@ -39,6 +45,7 @@ tags: [ "ios", "release", "certificate" ]
 
 ### 申請用のバイナリをアップロードする
 アプリを申請するために必要なバイナリのアップロード手順は次の通り。
+
 - AppStore用 CertificateとProvisioningの作成
 - Bundle IDの設定
 - リリースバージョンの設定
@@ -49,6 +56,7 @@ tags: [ "ios", "release", "certificate" ]
 
 ### アプリレビュー申請
 上記の2つが終わったら、App Storeへ出すためのアプリレビューに申請する。この申請が通れば、アプリをリリースすることができる。
+
 - アプリ詳細ページで`Submit and Review`ボタンを押す
 - 事前設定項目を埋める
     - [輸出コンプライアンス](https://www.webbanana.org/goroku/2019/06/12/374.php)
