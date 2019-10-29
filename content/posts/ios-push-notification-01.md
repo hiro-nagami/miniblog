@@ -2,6 +2,7 @@
 title: "iOS Push Notification 01"
 date: 2019-10-29T13:39:45+09:00
 draft: false
+tags: [ "ios", "notification" ]
 ---
 
 ## iOSのプッシュ通知について

@@ -83,7 +83,7 @@ JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得する�
       <guid>https://www.techree.net/posts/cloud-functions-npm-error/</guid>
       <description>nodeのバージョンが違ったことでdeployが失敗 今作っているプロダクトで、Firebase Cloud Functionsを使うことになったので試してみようと以下のプログラムをデプロイしてみた。
 import * as functions from &#39;firebase-functions&#39;; export const hello = functions. https.onRequest((request, response) =&amp;gt; { response.send(&amp;quot;Hello, firebase cloud functions&amp;quot;); });  すると、以下の内容の不具合が発生した。
-❯ npm run deploy &amp;gt; functions@ deploy ~/functions &amp;gt; firebase deploy --only functions === Deploying to &#39;spofun-dev&#39;... i deploying functions Running command: npm --prefix $RESOURCE_DIR run lint &amp;gt; functions@ lint ~/functions &amp;gt; tslint -p tslint.json no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead.</description>
+❯ npm run deploy &amp;gt; functions@ deploy ~/functions &amp;gt; firebase deploy --only functions === Deploying to &#39;sample-app&#39;... i deploying functions Running command: npm --prefix $RESOURCE_DIR run lint &amp;gt; functions@ lint ~/functions &amp;gt; tslint -p tslint.json no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead.</description>
     </item>
     
     <item>

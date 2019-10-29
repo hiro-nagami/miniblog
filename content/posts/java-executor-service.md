@@ -4,6 +4,7 @@ date: 2019-03-20T09:12:05+09:00
 draft: false
 description: Java上でマルチスレッド実現しやすくするためのインターフェースExecutorServiceの概要を簡単に解説して行きます。
 keywords: "android, java, thread, ExecutorService"
+tags: [ "android", "java" ]
 ---
 
 ## ExecutorSeriviceとは

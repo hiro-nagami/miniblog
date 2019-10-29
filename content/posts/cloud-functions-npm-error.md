@@ -4,6 +4,7 @@ date: 2019-06-15T19:33:52+09:00
 draft: false
 description: 'cloud functionsをデプロイしようとすると HTTP Error: 400, The request has errors という内容の不具合が発生しときに対処した話。'
 keywords: "cloud function, npm, nodejs, エラー, error"
+tags: [ "node", "firebase" ]
 ---
 
 ## nodeのバージョンが違ったことでdeployが失敗
@@ -28,7 +29,7 @@ export const hello = functions.
 > firebase deploy --only functions
 
 
-=== Deploying to 'spofun-dev'...
+=== Deploying to 'sample-app'...
 
 i  deploying functions
 Running command: npm --prefix $RESOURCE_DIR run lint

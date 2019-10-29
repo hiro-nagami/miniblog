@@ -2,6 +2,7 @@
 title: "Learning Blockchain 01"
 date: 2019-10-26T17:20:05+09:00
 draft: false
+tags: [ "ethereum", "blockchain", "solidity" ]
 ---
 
 ## Ethereumについて

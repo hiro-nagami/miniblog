@@ -4,6 +4,7 @@ date: 2019-03-13T16:49:14+09:00
 draft: false
 description: Sketchを使ったAutoLayoutについて解説しています。
 keywords: "sketch, autolayout, anima, xcode, design"
+tags: [ "design", "sketch", "atomic-design" ]
 ---
 
 SketchでAutoLayoutを使えるようにするプラグイン[Anima ToolKit](https://www.animaapp.com/)を使ってみました。

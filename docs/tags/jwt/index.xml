@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jwt on Techree</title>
+    <link>https://www.techree.net/tags/jwt/</link>
+    <description>Recent content in Jwt on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 16 Jun 2019 00:22:40 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/jwt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JWTについて簡単に調べたのでメモ書き</title>
+      <link>https://www.techree.net/posts/about-jwt-token/</link>
+      <pubDate>Sun, 16 Jun 2019 00:22:40 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/about-jwt-token/</guid>
+      <description> JSON Web Tokenの略でURL-SafeなTokenを発行し、電子署名をJWTに組み込むことで改ざんを検出可能にする。
+JWTは以下の内容で構成される
+ Base64-Header: ヘッダー情報を含むJSONをBase64でエンコードしたもの Base64-Body: ユーザーID, 有効期限をJSONをBase64でエンコードしたもの}.{電子署名} Signature: 電子署名  JWT: {Base64-Header}.{Base64-Body}.{Signature}  サーバー側は自身の持つ暗号鍵を使って署名つきのTokenを発行することで、有効期限とユーザーIDの正当性を検証し改ざんがあれば検知できるようになっている。URL-Safeなので文字コードに依存せずウェブ上の通信の本人証明に使うことができる。
+JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得することができるJWKを使って、JWTのSignatureを検証することができる。
+参考  JSON Web Token の効用 JWT(JSON Web Token)を使った認証を試みる JWT について調べた内容をまとめました。 JWT(JSON Web Token)の仕組みと使い方まとめ OAuth Revocation と JWK を翻訳しました ID トークンの確認 JSON Web Key (JWK)  </description>
+    </item>
+    
+  </channel>
+</rss>

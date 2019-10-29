@@ -4,6 +4,7 @@ date: 2019-06-17T09:16:29+09:00
 draft: false
 description: Firebase Cloud FunctionでAPI実装するために使われるトリガーに`onCall()`と`onRequest()`との２つがあったのでそれtについてのメモ。
 keywords: "nodejs, firebase, cloud functions"
+tags: [ "node", "firebase" ]
 ---
 
 Firebase Cloud FunctionでAPI実装するために使われるトリガーに`onCall()`と`onRequest()`との２つがあった。
