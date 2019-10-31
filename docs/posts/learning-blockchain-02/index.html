@@ -30,7 +30,7 @@
 
     <meta property="og:title" content="Learning Blockchain 02" />
 <meta property="og:description" content="Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
- Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
+ Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
 メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members." />
 <meta property="og:type" content="article" />
@@ -42,14 +42,14 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
 
 <meta itemprop="name" content="Learning Blockchain 02">
 <meta itemprop="description" content="Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
- Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
+ Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
 メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.">
 
 
 <meta itemprop="datePublished" content="2019-10-26T17:41:43&#43;09:00" />
 <meta itemprop="dateModified" content="2019-10-26T17:41:43&#43;09:00" />
-<meta itemprop="wordCount" content="219">
+<meta itemprop="wordCount" content="220">
 
 
 
@@ -59,7 +59,7 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
 
 <meta name="twitter:title" content="Learning Blockchain 02"/>
 <meta name="twitter:description" content="Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
- Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
+ Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
 メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members."/>
 
@@ -170,6 +170,7 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
 <ul>
 <li>ブロックチェーン分散プラットフォームを構築するための技術</li>
 <li>特徴としてスマートコントラクトを採用している</li>
+<li><a href="https://www.techree.net/posts/learning-blockchain-01/">参考</a></li>
 </ul></li>
 <li><a href="https://solidity-jp.readthedocs.io/ja/latest/">Solidity</a>
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Techree </title>
+    <title>Techree  | iOS App Debugging Crashreport</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,36 +27,67 @@
     
 
     
-      <link href="https://www.techree.net/tags/solidity/index.xml" rel="alternate" type="application/rss+xml" title="Techree" />
-      <link href="https://www.techree.net/tags/solidity/index.xml" rel="feed" type="application/rss+xml" title="Techree" />
-    
 
-    <meta property="og:title" content="Solidity" />
-<meta property="og:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.techree.net/tags/solidity/" />
+    <meta property="og:title" content="iOS App Debugging Crashreport" />
+<meta property="og:description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り 1. クラッシュファイルを手に入れる 2. dSYMを手に入れる 3. symbolicateする
+txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbolsから取得可能。
+ Archives Archiveのパッケージ内に存在するのでそれを利用する。 Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash  これでクラッシュファイルが読めるようになる。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.techree.net/posts/ios-app-debugging-crashreport/" />
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
+<meta property="article:published_time" content="2019-10-31T12:52:50&#43;09:00"/>
+<meta property="article:modified_time" content="2019-10-31T12:52:50&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
-<meta property="og:updated_time" content="2019-10-26T17:41:43&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta itemprop="name" content="iOS App Debugging Crashreport">
+<meta itemprop="description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り 1. クラッシュファイルを手に入れる 2. dSYMを手に入れる 3. symbolicateする
+txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbolsから取得可能。
+ Archives Archiveのパッケージ内に存在するのでそれを利用する。 Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash  これでクラッシュファイルが読めるようになる。">
 
-<meta itemprop="name" content="Solidity">
-<meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
 
+<meta itemprop="datePublished" content="2019-10-31T12:52:50&#43;09:00" />
+<meta itemprop="dateModified" content="2019-10-31T12:52:50&#43;09:00" />
+<meta itemprop="wordCount" content="61">
+
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
-<meta name="twitter:title" content="Solidity"/>
-<meta name="twitter:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです"/>
+<meta name="twitter:title" content="iOS App Debugging Crashreport"/>
+<meta name="twitter:description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り 1. クラッシュファイルを手に入れる 2. dSYMを手に入れる 3. symbolicateする
+txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbolsから取得可能。
+ Archives Archiveのパッケージ内に存在するのでそれを利用する。 Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash  これでクラッシュファイルが読めるようになる。"/>
 
   </head>
 
   <body class="ma0 avenir bg-near-white">
 
     
+   
+  
 
   <header>
-    <div class="pb3-m pb6-l bg-black">
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://www.techree.net/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -118,67 +149,98 @@
   </div>
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Solidity
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
-      <p>Below you will find pages that utilize the taxonomy term “Solidity”</p>
-    </div>
-  </article>
-  <div class="mw8 center">    
-    <section class="flex-ns flex-wrap justify-around mt5">
-      
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/learning-blockchain-02/" class="link black dim">
-        Learning Blockchain 02
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
- Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
-contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
-メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.
-    </div>
-  </div>
-</div>
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
 
-        </div>
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">iOS App Debugging Crashreport</h1>
       
-        <div class="relative w-100  mb4 bg-white">
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/learning-blockchain-01/" class="link black dim">
-        Learning Blockchain 01
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
-スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
-参考サイト  https://bitflyer.com/ja-jp/ethereum  
-    </div>
-  </div>
-</div>
+      <time class="f6 mv4 dib tracked" datetime="2019-10-31T12:52:50&#43;09:00">October 31, 2019</time>      
+      
+      
+    </header>
 
-        </div>
-      
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<p>AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り
+1. クラッシュファイルを手に入れる
+2. dSYMを手に入れる
+3. symbolicateする</p>
+
+<h3 id="txtファイルの場合">txtファイルの場合</h3>
+
+<p><code>symbol.txt</code> を　<code>symbol.crash</code>　のように拡張子を変更する</p>
+
+<h3 id="dsymの取得">dSYMの取得</h3>
+
+<p>App Store ConnectかArchivesから取得する。</p>
+
+<ol>
+<li>App Store Connect</li>
+</ol>
+
+<p><code>Activity -&gt; Build Number -&gt; Included Symbols</code>から取得可能。</p>
+
+<ol>
+<li>Archives
+Archiveのパッケージ内に存在するのでそれを利用する。
+<code>Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package</code></li>
+</ol>
+
+<h2 id="symbolicateする">symbolicateする</h2>
+
+<p>以下にある<code>symbolicatecrash</code>というコマンドを使う。</p>
+
+<pre><code class="language-sh">/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash
+</code></pre>
+
+<p>適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。</p>
+
+<pre><code class="language-sh">$ cd tmp
+$ ls
+symbol.crash
+app.dSYM
+framework.dSYM
+</code></pre>
+
+<p><code>DEVELOPER_DIR</code>をexportする</p>
+
+<pre><code class="language-sh">$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;
+</code></pre>
+
+<p>クラッシュファイルに対して<code>symbolicatecrash</code>コマンドを実行する。</p>
+
+<pre><code class="language-sh">./symbolicatecrash symbol.crash
+</code></pre>
+
+<p>これでクラッシュファイルが読めるようになる。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        
+      </div>
     </section>
-  </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

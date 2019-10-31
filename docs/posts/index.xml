@@ -6,10 +6,27 @@
     <description>Recent content in Posts on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Oct 2019 14:27:12 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 12:52:50 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>iOS App Debugging Crashreport</title>
+      <link>https://www.techree.net/posts/ios-app-debugging-crashreport/</link>
+      <pubDate>Thu, 31 Oct 2019 12:52:50 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/ios-app-debugging-crashreport/</guid>
+      <description>AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り 1. クラッシュファイルを手に入れる 2. dSYMを手に入れる 3. symbolicateする
+txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&amp;gt; Build Number -&amp;gt; Included Symbolsから取得可能。
+ Archives Archiveのパッケージ内に存在するのでそれを利用する。 Window -&amp;gt; Organizer -&amp;gt; Select Archive -&amp;gt; Show in finder -&amp;gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&amp;quot;/Applications/Xcode.app/Contents/Developer&amp;quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash  これでクラッシュファイルが読めるようになる。</description>
+    </item>
     
     <item>
       <title>iOS App Release Introduction</title>
@@ -41,7 +58,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
       
       <guid>https://www.techree.net/posts/learning-blockchain-02/</guid>
       <description>Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
- Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
+ Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
 メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.</description>
     </item>

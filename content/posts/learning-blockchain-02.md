@@ -14,6 +14,7 @@ tags: [ "ethereum", "blockchain", "solidity" ]
 - Ethereum
     - ブロックチェーン分散プラットフォームを構築するための技術
     - 特徴としてスマートコントラクトを採用している
+    - [参考](https://www.techree.net/posts/learning-blockchain-01/)
 - [Solidity](https://solidity-jp.readthedocs.io/ja/latest/)
     - スマートコントラクトを扱うオブジェクト指向型の言語
     - https://book.ethereum-jp.net/solidity/

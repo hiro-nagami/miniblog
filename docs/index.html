@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-10-29T14:27:12&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-10-31T12:52:50&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Techree">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -164,6 +164,38 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/ios-app-debugging-crashreport/" class="color-inherit dim link">
+            iOS App Debugging Crashreport
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り 1. クラッシュファイルを手に入れる 2. dSYMを手に入れる 3. symbolicateする
+txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbolsから取得可能。
+ Archives Archiveのパッケージ内に存在するのでそれを利用する。 Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash  これでクラッシュファイルが読めるようになる。
+        </div>
+          <a href="/posts/ios-app-debugging-crashreport/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/app-itunes-release/" class="color-inherit dim link">
             iOS App Release Introduction
             </a>
@@ -182,39 +214,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/ios-push-notification-01/" class="color-inherit dim link">
-            iOS Push Notification 01
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
-AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
-実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer.
-        </div>
-          <a href="/posts/ios-push-notification-01/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3"></h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/ios-push-notification-01/" class="link black dim">
+              iOS Push Notification 01
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/learning-blockchain-02/" class="link black dim">
@@ -231,12 +242,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/on-request-on-call/" class="link black dim">
               Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/about-jwt-token/" class="link black dim">
-              JWTについて簡単に調べたのでメモ書き
             </a>
           </h2>
         

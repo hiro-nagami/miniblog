@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.techree.net/posts/ios-app-debugging-crashreport/</loc>
+    <lastmod>2019-10-31T12:52:50+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/posts/app-itunes-release/</loc>
     <lastmod>2019-10-29T14:27:12+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -171,7 +178,7 @@
   
   <url>
     <loc>https://www.techree.net/posts/</loc>
-    <lastmod>2019-10-29T14:27:12+09:00</lastmod>
+    <lastmod>2019-10-31T12:52:50+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -206,7 +213,7 @@
   
   <url>
     <loc>https://www.techree.net/</loc>
-    <lastmod>2019-10-29T14:27:12+09:00</lastmod>
+    <lastmod>2019-10-31T12:52:50+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
