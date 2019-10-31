@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Symbolicate on Techree</title>
+    <link>https://www.techree.net/tags/symbolicate/</link>
+    <description>Recent content in Symbolicate on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Oct 2019 12:52:50 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/symbolicate/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS App Debugging Crashreport</title>
+      <link>https://www.techree.net/posts/ios-app-debugging-crashreport/</link>
+      <pubDate>Thu, 31 Oct 2019 12:52:50 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/ios-app-debugging-crashreport/</guid>
+      <description>AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
+ クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&amp;gt; Build Number -&amp;gt; Included Symbols  から取得可能。
+ Archives  Archiveのパッケージ内に存在するのでそれを利用する。
+Window -&amp;gt; Organizer -&amp;gt; Select Archive -&amp;gt; Show in finder -&amp;gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&amp;quot;/Applications/Xcode.app/Contents/Developer&amp;quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash &amp;gt; symbolicated.</description>
+    </item>
+    
+  </channel>
+</rss>

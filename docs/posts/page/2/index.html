@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-10-26T17:41:43&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-10-29T13:39:45&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,24 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/ios-push-notification-01/" class="link black dim">
+        iOS Push Notification 01
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
+AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
+実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
+func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/learning-blockchain-02/" class="link black dim">
         Learning Blockchain 02
       </a>
@@ -164,28 +182,6 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
        Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
 スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
 参考サイト  https://bitflyer.com/ja-jp/ethereum  
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/on-request-on-call/" class="link black dim">
-        Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       Firebase Cloud FunctionでAPI実装するために使われるトリガーにonCall()とonRequest()との２つがあった。
-これらは「内部で行なっていること」と「Callbackで受け取れる値」に違いがある。
-onCall()関数 onCall()は、Content-Type: application/jsonヘッダーをPOSTリクエストのみを受け付けるようになっている。また、Authentication Bearerヘッダーを付与しているとJWTを使ったユーザーの検証を自動で行なってくれるため、呼び出された時点で認証情報が利用できるようになる。
-JWTの使用についてはこちら。
-JWTについて簡単に調べたのでメモ書き
-export const hello_on_call = functions.https.onCall((data, context) =&gt; { if (!context.auth) { throw new functions.https.HttpsError('Invalid account.'); } return &quot;Hello, world&quot; });  https.onCall のプロトコルの仕様
-onRequest()関数 onRequest()は、POST以外のどのHTTPメソッドでもハンドリングできるようになっている。なので、呼び出されたタイミングでHTTPメソッドを判断して処理を分ける必要がある。 基本的に、内部でユーザーの検証などはないため自前で実装する必要がある。
-export const hello = functions. https.onRequest((request, response) =&gt; { cors(req, res, () =&gt; { const tokenId = req.get('Authorization').split('Bearer ')[1]; return admin.auth().verifyIdToken(tokenId) .then((decoded) =&gt; res.status(200).send(decoded)) .catch((err) =&gt; res.status(401).send(err)); }); });  
     </div>
   </div>
 </div>

@@ -29,15 +29,16 @@
     
 
     <meta property="og:title" content="iOS App Debugging Crashreport" />
-<meta property="og:description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り 1. クラッシュファイルを手に入れる 2. dSYMを手に入れる 3. symbolicateする
-txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する
+<meta property="og:description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
+ クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
 dSYMの取得 App Store ConnectかArchivesから取得する。
- App Store Connect  Activity -&gt; Build Number -&gt; Included Symbolsから取得可能。
- Archives Archiveのパッケージ内に存在するのでそれを利用する。 Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbols  から取得可能。
+ Archives  Archiveのパッケージ内に存在するのでそれを利用する。
+Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
 /Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
 $ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
 $ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
-./symbolicatecrash symbol.crash  これでクラッシュファイルが読めるようになる。" />
+./symbolicatecrash symbol.crash &gt; symbolicated." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.techree.net/posts/ios-app-debugging-crashreport/" />
 
@@ -46,15 +47,16 @@ $ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  �
 <meta property="article:modified_time" content="2019-10-31T12:52:50&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="iOS App Debugging Crashreport">
-<meta itemprop="description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り 1. クラッシュファイルを手に入れる 2. dSYMを手に入れる 3. symbolicateする
-txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する
+<meta itemprop="description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
+ クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
 dSYMの取得 App Store ConnectかArchivesから取得する。
- App Store Connect  Activity -&gt; Build Number -&gt; Included Symbolsから取得可能。
- Archives Archiveのパッケージ内に存在するのでそれを利用する。 Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbols  から取得可能。
+ Archives  Archiveのパッケージ内に存在するのでそれを利用する。
+Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
 /Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
 $ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
 $ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
-./symbolicatecrash symbol.crash  これでクラッシュファイルが読めるようになる。">
+./symbolicatecrash symbol.crash &gt; symbolicated.">
 
 
 <meta itemprop="datePublished" content="2019-10-31T12:52:50&#43;09:00" />
@@ -63,20 +65,21 @@ $ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  �
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="ios,crash,symbolicate," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
 <meta name="twitter:title" content="iOS App Debugging Crashreport"/>
-<meta name="twitter:description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り 1. クラッシュファイルを手に入れる 2. dSYMを手に入れる 3. symbolicateする
-txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する
+<meta name="twitter:description" content="AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
+ クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
 dSYMの取得 App Store ConnectかArchivesから取得する。
- App Store Connect  Activity -&gt; Build Number -&gt; Included Symbolsから取得可能。
- Archives Archiveのパッケージ内に存在するのでそれを利用する。 Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbols  から取得可能。
+ Archives  Archiveのパッケージ内に存在するのでそれを利用する。
+Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
 /Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
 $ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
 $ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
-./symbolicatecrash symbol.crash  これでクラッシュファイルが読めるようになる。"/>
+./symbolicatecrash symbol.crash &gt; symbolicated."/>
 
   </head>
 
@@ -173,14 +176,17 @@ $ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  �
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<p>AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り
-1. クラッシュファイルを手に入れる
-2. dSYMを手に入れる
-3. symbolicateする</p>
+<p>AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。</p>
+
+<ol>
+<li>クラッシュファイルを手に入れる</li>
+<li>dSYMを手に入れる</li>
+<li>symbolicateする</li>
+</ol>
 
 <h3 id="txtファイルの場合">txtファイルの場合</h3>
 
-<p><code>symbol.txt</code> を　<code>symbol.crash</code>　のように拡張子を変更する</p>
+<p><code>symbol.txt</code> を　<code>symbol.crash</code>　のように拡張子を変更する。</p>
 
 <h3 id="dsymの取得">dSYMの取得</h3>
 
@@ -190,13 +196,19 @@ $ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  �
 <li>App Store Connect</li>
 </ol>
 
-<p><code>Activity -&gt; Build Number -&gt; Included Symbols</code>から取得可能。</p>
+<pre><code>Activity -&gt; Build Number -&gt; Included Symbols
+</code></pre>
+
+<p>から取得可能。</p>
 
 <ol>
-<li>Archives
-Archiveのパッケージ内に存在するのでそれを利用する。
-<code>Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package</code></li>
+<li>Archives</li>
 </ol>
+
+<p>Archiveのパッケージ内に存在するのでそれを利用する。</p>
+
+<pre><code>Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package
+</code></pre>
 
 <h2 id="symbolicateする">symbolicateする</h2>
 
@@ -221,11 +233,23 @@ framework.dSYM
 
 <p>クラッシュファイルに対して<code>symbolicatecrash</code>コマンドを実行する。</p>
 
-<pre><code class="language-sh">./symbolicatecrash symbol.crash
+<pre><code class="language-sh">./symbolicatecrash symbol.crash &gt; symbolicated.crash
 </code></pre>
 
 <p>これでクラッシュファイルが読めるようになる。</p>
 <ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/ios" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ios</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/crash" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">crash</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/symbolicate" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">symbolicate</a>
+   </li>
   
 </ul>
 <div class="mt6">
@@ -237,6 +261,21 @@ framework.dSYM
 
 
 
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3"></p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/app-itunes-release/">iOS App Release Introduction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/ios-push-notification-01/">iOS Push Notification 01</a>
+        </li>
+	    
+    </ul>
+</div>
 
 </aside>
 

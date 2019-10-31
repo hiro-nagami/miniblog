@@ -284,6 +284,60 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
         
       
         <h2 class="f1">
+          <a href="/tags/crash" class="link blue hover-black">
+            Tag: crash
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/ios-app-debugging-crashreport/" class="link black dim">
+        iOS App Debugging Crashreport
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
+ クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbols  から取得可能。
+ Archives  Archiveのパッケージ内に存在するのでそれを利用する。
+Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash &gt; symbolicated.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/crashlytics" class="link blue hover-black">
+            Tag: crashlytics
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/firebase-crashlytics-symbolicate/" class="link black dim">
+        Firebase Crashlytics Symbolicate
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
+https://www.techree.net/posts/ios-app-debugging-crashreport/
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/design" class="link blue hover-black">
             Tag: design
           </a>
@@ -363,6 +417,22 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/firebase-crashlytics-symbolicate/" class="link black dim">
+        Firebase Crashlytics Symbolicate
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
+https://www.techree.net/posts/ios-app-debugging-crashreport/
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/on-request-on-call/" class="link black dim">
         Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い
       </a>
@@ -404,6 +474,46 @@ import * as functions from 'firebase-functions'; export const hello = functions.
             Tag: ios
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/firebase-crashlytics-symbolicate/" class="link black dim">
+        Firebase Crashlytics Symbolicate
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
+https://www.techree.net/posts/ios-app-debugging-crashreport/
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/ios-app-debugging-crashreport/" class="link black dim">
+        iOS App Debugging Crashreport
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
+ クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbols  から取得可能。
+ Archives  Archiveのパッケージ内に存在するのでそれを利用する。
+Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash &gt; symbolicated.
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -650,6 +760,37 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
        Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
 スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
 参考サイト  https://bitflyer.com/ja-jp/ethereum  
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/symbolicate" class="link blue hover-black">
+            Tag: symbolicate
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/ios-app-debugging-crashreport/" class="link black dim">
+        iOS App Debugging Crashreport
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
+ クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbols  から取得可能。
+ Archives  Archiveのパッケージ内に存在するのでそれを利用する。
+Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
+./symbolicatecrash symbol.crash &gt; symbolicated.
     </div>
   </div>
 </div>

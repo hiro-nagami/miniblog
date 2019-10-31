@@ -6,10 +6,20 @@
     <description>Recent content in Firebase on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 17 Jun 2019 09:16:29 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2019 13:13:02 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/tags/firebase/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Firebase Crashlytics Symbolicate</title>
+      <link>https://www.techree.net/posts/firebase-crashlytics-symbolicate/</link>
+      <pubDate>Thu, 31 Oct 2019 13:13:02 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/firebase-crashlytics-symbolicate/</guid>
+      <description>FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
+https://www.techree.net/posts/ios-app-debugging-crashreport/</description>
+    </item>
     
     <item>
       <title>Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い</title>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crashlytics on Techree</title>
+    <link>https://www.techree.net/tags/crashlytics/</link>
+    <description>Recent content in Crashlytics on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Oct 2019 13:13:02 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/crashlytics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Firebase Crashlytics Symbolicate</title>
+      <link>https://www.techree.net/posts/firebase-crashlytics-symbolicate/</link>
+      <pubDate>Thu, 31 Oct 2019 13:13:02 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/firebase-crashlytics-symbolicate/</guid>
+      <description>FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
+https://www.techree.net/posts/ios-app-debugging-crashreport/</description>
+    </item>
+    
+  </channel>
+</rss>
