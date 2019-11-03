@@ -174,8 +174,8 @@ dSYMの取得 App Store ConnectかArchivesから取得する。
 Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
 /Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
 $ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
-$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  クラッシュファイルに対してsymbolicatecrashコマンドを実行する。
-./symbolicatecrash symbol.crash &gt; symbolicated.
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  symbolicateにaliasを設定しておくと便利。
+alias symbolicate = &quot;/Applications/Xcode.
     </div>
   </div>
 </div>

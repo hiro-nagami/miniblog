@@ -57,10 +57,17 @@ framework.dSYM
 $ export DEVELOPER_DIR="/Applications/Xcode.app/Contents/Developer"
 ```
 
+symbolicateにaliasを設定しておくと便利。
+
+```sh
+alias symbolicate = "/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash
+"
+```
+
 クラッシュファイルに対して`symbolicatecrash`コマンドを実行する。
 
 ```sh
-./symbolicatecrash symbol.crash > symbolicated.crash
+symbolicatecrash symbol.crash > symbolicated.crash
 ```
 
 これでクラッシュファイルが読めるようになる。
