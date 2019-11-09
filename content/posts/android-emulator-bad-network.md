@@ -6,6 +6,7 @@ tags: [ "android", "emulator", "network" ]
 ---
 
 ## Androidエミュレータでネットワークがつながらない
+
 どうもDNSにアクセスができなくなってしまうらしい。
 
 Android SDKディレクトリにあるemulatorコマンドを使うことでリセットできる。

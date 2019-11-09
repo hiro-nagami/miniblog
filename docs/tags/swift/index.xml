@@ -6,10 +6,23 @@
     <description>Recent content in Swift on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Nov 2019 17:27:44 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2019 16:38:00 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/tags/swift/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Download Oldversion Xcode</title>
+      <link>https://www.techree.net/posts/download-oldversion-xcode/</link>
+      <pubDate>Sat, 09 Nov 2019 16:38:00 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/download-oldversion-xcode/</guid>
+      <description>Xcodeアップデートしたらコンパイラがアップデートしていて動かない Xcodeをアップデートしたら、Swiftのバージョン(5.1.2)に上がっていたためCarthageでビルドしたフレームワークが動かなくなってしまった。
+対処法は２つ
+ Carthageでビルドし直す。対応したバージョンがリリースされていればそれを使うし、なければローカルで再ビルドされる 元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落として動かす  とりあえず、元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落としてきて対処。
+古いバージョンを使い続けるのは、技術的な負債になるのでなるべく早くアップデートに対応したい。
+https://developer.apple.com/download/more/</description>
+    </item>
     
     <item>
       <title>Learning Swiftui 01</title>

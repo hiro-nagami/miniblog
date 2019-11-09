@@ -27,26 +27,26 @@
     
 
     
-      <link href="https://www.techree.net/posts/index.xml" rel="alternate" type="application/rss+xml" title="Techree" />
-      <link href="https://www.techree.net/posts/index.xml" rel="feed" type="application/rss+xml" title="Techree" />
+      <link href="https://www.techree.net/tags/xcode/index.xml" rel="alternate" type="application/rss+xml" title="Techree" />
+      <link href="https://www.techree.net/tags/xcode/index.xml" rel="feed" type="application/rss+xml" title="Techree" />
     
 
-    <meta property="og:title" content="Posts" />
+    <meta property="og:title" content="Xcode" />
 <meta property="og:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.techree.net/posts/" />
+<meta property="og:url" content="https://www.techree.net/tags/xcode/" />
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-10-29T14:27:12&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-11-09T16:44:09&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
-<meta itemprop="name" content="Posts">
+<meta itemprop="name" content="Xcode">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
-<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:title" content="Xcode"/>
 <meta name="twitter:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです"/>
 
   </head>
@@ -120,7 +120,7 @@
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Posts
+          Xcode
         </h1>
         
       </div>
@@ -130,152 +130,57 @@
 
     <main class="pb7" role="main">
       
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “Xcode”</p>
+    </div>
+  </article>
+  <div class="mw8 center">    
     <section class="flex-ns flex-wrap justify-around mt5">
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/app-itunes-release/" class="link black dim">
-        iOS App Release Introduction
+      <a href="/posts/cannot-open-xcworkspace-with-catalina/" class="link black dim">
+        Cannot Open Xcworkspace With Catalina
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      アプリリリースするための手順 アプリをリリースするためには、以下の作業が必要になる。
- App Storeにアプリを登録する 申請用のバイナリをアップロードする アプリレビュー申請  App Storeにアプリを登録する リリースするためにApp Store Connectでアプリを作成する。そのために以下の項目を埋めていく。
- アプリを作成する  App Information  App Storeに表示されるアプリ名 アプリのカテゴリ設定 プライバシーポリシーの設定  テンプレートなどもあるが、可能なら専門の人に作ってもらうのがベスト   Pricing And Availability  課金の設定 リリース前の事前登録の設定  アプリの詳細設定  スクリーンショットの追加  App preview specifications [Xcode] iOS シミュレータで、スクリーンショットを保存する時は、⌘ + S で OK！ Images can&rsquo;t contain alpha channels or transparencies  App Storeに表示するアプリ説明 検索キーワード プライバシーポリシー・サポートサイトの登録 バイナリーのアップロード App Store用アイコン、アプリバージョン、Ratingの設定 コピーライト  著作権表示、コレが正解！「©」や「All Rights Rserved」正しい表記と意味全解説  開発者情報の設定 レビューアカウント情報の設定 自動リリースか手動リリースかの設定   申請用のバイナリをアップロードする アプリを申請するために必要なバイナリのアップロード手順は次の通り。
+      CatalinaでXcode Projectが開かない リリースされてからある程度時間もたったので、CatalinaにアップデートしたところXcode Projectが開かなくなってしまった。Xcodeは起動できるが、特定のプロジェクトを開こうとするとすぐにXcodeが終了してしまう。
+まずは他のプロジェクトを動かす 前に作ったサンプルプロジェクトがあったので、起動してみたらプロジェクトが開けた。先ほどのプロジェクトは、xcworkspaceで今回のはxcodeprojという違いがあったので、元のプロジェクトのxcodeprojを開いてみたら開けた。
+CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、とりあえずpod installを試してみた。しかし、再度開いても結果は同じだった。
+そのため、今度はxcworkspaceを削除してからpod installを試してみたところ無事開けた。
     </div>
   </div>
 </div>
-</div>
+
+        </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/ios-push-notification-01/" class="link black dim">
-        iOS Push Notification 01
+      <a href="/posts/download-oldversion-xcode/" class="link black dim">
+        Download Oldversion Xcode
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
-AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
-実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer.
+      Xcodeアップデートしたらコンパイラがアップデートしていて動かない Xcodeをアップデートしたら、Swiftのバージョン(5.1.2)に上がっていたためCarthageでビルドしたフレームワークが動かなくなってしまった。
+対処法は２つ
+ Carthageでビルドし直す。対応したバージョンがリリースされていればそれを使うし、なければローカルで再ビルドされる 元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落として動かす  とりあえず、元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落としてきて対処。
+古いバージョンを使い続けるのは、技術的な負債になるのでなるべく早くアップデートに対応したい。
+https://developer.apple.com/download/more/
     </div>
   </div>
 </div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/learning-blockchain-02/" class="link black dim">
-        Learning Blockchain 02
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
- Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
-contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
-メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.
-    </div>
-  </div>
-</div>
-</div>
+
+        </div>
       
     </section>
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/posts/page/2/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/posts/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/4/">4</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/6/">6</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/posts/page/4/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/posts/page/6/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-</article>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

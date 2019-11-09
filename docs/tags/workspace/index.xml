@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workspace on Techree</title>
+    <link>https://www.techree.net/tags/workspace/</link>
+    <description>Recent content in Workspace on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Nov 2019 16:44:09 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/workspace/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cannot Open Xcworkspace With Catalina</title>
+      <link>https://www.techree.net/posts/cannot-open-xcworkspace-with-catalina/</link>
+      <pubDate>Sat, 09 Nov 2019 16:44:09 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/cannot-open-xcworkspace-with-catalina/</guid>
+      <description>CatalinaでXcode Projectが開かない リリースされてからある程度時間もたったので、CatalinaにアップデートしたところXcode Projectが開かなくなってしまった。Xcodeは起動できるが、特定のプロジェクトを開こうとするとすぐにXcodeが終了してしまう。
+まずは他のプロジェクトを動かす 前に作ったサンプルプロジェクトがあったので、起動してみたらプロジェクトが開けた。先ほどのプロジェクトは、xcworkspaceで今回のはxcodeprojという違いがあったので、元のプロジェクトのxcodeprojを開いてみたら開けた。
+CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、とりあえずpod installを試してみた。しかし、再度開いても結果は同じだった。
+そのため、今度はxcworkspaceを削除してからpod installを試してみたところ無事開けた。</description>
+    </item>
+    
+  </channel>
+</rss>

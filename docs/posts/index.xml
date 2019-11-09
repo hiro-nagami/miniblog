@@ -6,10 +6,35 @@
     <description>Recent content in Posts on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Nov 2019 15:30:11 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2019 16:44:09 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cannot Open Xcworkspace With Catalina</title>
+      <link>https://www.techree.net/posts/cannot-open-xcworkspace-with-catalina/</link>
+      <pubDate>Sat, 09 Nov 2019 16:44:09 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/cannot-open-xcworkspace-with-catalina/</guid>
+      <description>CatalinaでXcode Projectが開かない リリースされてからある程度時間もたったので、CatalinaにアップデートしたところXcode Projectが開かなくなってしまった。Xcodeは起動できるが、特定のプロジェクトを開こうとするとすぐにXcodeが終了してしまう。
+まずは他のプロジェクトを動かす 前に作ったサンプルプロジェクトがあったので、起動してみたらプロジェクトが開けた。先ほどのプロジェクトは、xcworkspaceで今回のはxcodeprojという違いがあったので、元のプロジェクトのxcodeprojを開いてみたら開けた。
+CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、とりあえずpod installを試してみた。しかし、再度開いても結果は同じだった。
+そのため、今度はxcworkspaceを削除してからpod installを試してみたところ無事開けた。</description>
+    </item>
+    
+    <item>
+      <title>Download Oldversion Xcode</title>
+      <link>https://www.techree.net/posts/download-oldversion-xcode/</link>
+      <pubDate>Sat, 09 Nov 2019 16:38:00 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/download-oldversion-xcode/</guid>
+      <description>Xcodeアップデートしたらコンパイラがアップデートしていて動かない Xcodeをアップデートしたら、Swiftのバージョン(5.1.2)に上がっていたためCarthageでビルドしたフレームワークが動かなくなってしまった。
+対処法は２つ
+ Carthageでビルドし直す。対応したバージョンがリリースされていればそれを使うし、なければローカルで再ビルドされる 元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落として動かす  とりあえず、元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落としてきて対処。
+古いバージョンを使い続けるのは、技術的な負債になるのでなるべく早くアップデートに対応したい。
+https://developer.apple.com/download/more/</description>
+    </item>
     
     <item>
       <title>Android Emulator Bad Network</title>
