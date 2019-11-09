@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on Techree</title>
+    <link>https://www.techree.net/tags/network/</link>
+    <description>Recent content in Network on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 09 Nov 2019 15:30:11 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android Emulator Bad Network</title>
+      <link>https://www.techree.net/posts/android-emulator-bad-network/</link>
+      <pubDate>Sat, 09 Nov 2019 15:30:11 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/android-emulator-bad-network/</guid>
+      <description>Androidエミュレータでネットワークがつながらない どうもDNSにアクセスができなくなってしまうらしい。
+Android SDKディレクトリにあるemulatorコマンドを使うことでリセットできる。
+${SDK PATH}/emulator/emulator -list-avds
+${SDK PATH}/emulator/emulator -avd Pixel2_API_27 -dns-server 8.8.8.8</description>
+    </item>
+    
+  </channel>
+</rss>

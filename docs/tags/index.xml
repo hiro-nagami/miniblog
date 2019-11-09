@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Mar 2019 09:12:05 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2019 15:30:11 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Android</title>
       <link>https://www.techree.net/tags/android/</link>
-      <pubDate>Wed, 20 Mar 2019 09:12:05 +0900</pubDate>
+      <pubDate>Sat, 09 Nov 2019 15:30:11 +0900</pubDate>
       
       <guid>https://www.techree.net/tags/android/</guid>
       <description></description>
@@ -84,6 +84,15 @@
     </item>
     
     <item>
+      <title>Emulator</title>
+      <link>https://www.techree.net/tags/emulator/</link>
+      <pubDate>Sat, 09 Nov 2019 15:30:11 +0900</pubDate>
+      
+      <guid>https://www.techree.net/tags/emulator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Ethereum</title>
       <link>https://www.techree.net/tags/ethereum/</link>
       <pubDate>Sat, 26 Oct 2019 17:41:43 +0900</pubDate>
@@ -125,6 +134,15 @@
       <pubDate>Sun, 16 Jun 2019 00:22:40 +0900</pubDate>
       
       <guid>https://www.techree.net/tags/jwt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>https://www.techree.net/tags/network/</link>
+      <pubDate>Sat, 09 Nov 2019 15:30:11 +0900</pubDate>
+      
+      <guid>https://www.techree.net/tags/network/</guid>
       <description></description>
     </item>
     

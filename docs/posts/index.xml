@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Nov 2019 17:27:44 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Nov 2019 15:30:11 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android Emulator Bad Network</title>
+      <link>https://www.techree.net/posts/android-emulator-bad-network/</link>
+      <pubDate>Sat, 09 Nov 2019 15:30:11 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/android-emulator-bad-network/</guid>
+      <description>Androidエミュレータでネットワークがつながらない どうもDNSにアクセスができなくなってしまうらしい。
+Android SDKディレクトリにあるemulatorコマンドを使うことでリセットできる。
+${SDK PATH}/emulator/emulator -list-avds
+${SDK PATH}/emulator/emulator -avd Pixel2_API_27 -dns-server 8.8.8.8</description>
+    </item>
     
     <item>
       <title>Learning Swiftui 01</title>
