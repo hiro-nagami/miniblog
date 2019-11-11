@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 09 Nov 2019 16:44:09 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2019 16:35:24 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Respectfun Review on Google Blog</title>
+      <link>https://www.techree.net/posts/respectfun-review-on-google-blog/</link>
+      <pubDate>Mon, 11 Nov 2019 16:35:24 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/respectfun-review-on-google-blog/</guid>
+      <description>Code ReviewについてGoogleがブログを書いていたのでメモ。 特に、次の点については面白いと思った。
+ 研究によると、中立的なコメントは79%が有用だと思われるのに対して、厳しい言葉が使われたコメントは57%しか有用だと思われないとのこと。
+ https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html</description>
+    </item>
     
     <item>
       <title>Cannot Open Xcworkspace With Catalina</title>

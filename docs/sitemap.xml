@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.techree.net/posts/respectfun-review-on-google-blog/</loc>
+    <lastmod>2019-11-11T16:35:24+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/posts/cannot-open-xcworkspace-with-catalina/</loc>
     <lastmod>2019-11-09T16:44:09+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -163,6 +170,13 @@
   </url>
   
   <url>
+    <loc>https://www.techree.net/tags/codereview/</loc>
+    <lastmod>2019-11-11T16:35:24+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/tags/crash/</loc>
     <lastmod>2019-10-31T12:52:50+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -200,6 +214,13 @@
   <url>
     <loc>https://www.techree.net/tags/firebase/</loc>
     <lastmod>2019-10-31T13:13:02+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/tags/google/</loc>
+    <lastmod>2019-11-11T16:35:24+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -248,7 +269,7 @@
   
   <url>
     <loc>https://www.techree.net/posts/</loc>
-    <lastmod>2019-11-09T16:44:09+09:00</lastmod>
+    <lastmod>2019-11-11T16:35:24+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -304,7 +325,7 @@
   
   <url>
     <loc>https://www.techree.net/</loc>
-    <lastmod>2019-11-09T16:44:09+09:00</lastmod>
+    <lastmod>2019-11-11T16:35:24+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

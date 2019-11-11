@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on Techree</title>
+    <link>https://www.techree.net/tags/google/</link>
+    <description>Recent content in Google on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Nov 2019 16:35:24 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Respectfun Review on Google Blog</title>
+      <link>https://www.techree.net/posts/respectfun-review-on-google-blog/</link>
+      <pubDate>Mon, 11 Nov 2019 16:35:24 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/respectfun-review-on-google-blog/</guid>
+      <description>Code ReviewについてGoogleがブログを書いていたのでメモ。 特に、次の点については面白いと思った。
+ 研究によると、中立的なコメントは79%が有用だと思われるのに対して、厳しい言葉が使われたコメントは57%しか有用だと思われないとのこと。
+ https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html</description>
+    </item>
+    
+  </channel>
+</rss>
