@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.techree.net/posts/learning-swiftui-02/</loc>
+    <lastmod>2019-11-13T19:05:56+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/posts/respectfun-review-on-google-blog/</loc>
     <lastmod>2019-11-11T16:35:24+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -227,7 +234,7 @@
   
   <url>
     <loc>https://www.techree.net/tags/ios/</loc>
-    <lastmod>2019-11-03T17:27:44+09:00</lastmod>
+    <lastmod>2019-11-13T19:05:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -269,7 +276,7 @@
   
   <url>
     <loc>https://www.techree.net/posts/</loc>
-    <lastmod>2019-11-11T16:35:24+09:00</lastmod>
+    <lastmod>2019-11-13T19:05:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -297,14 +304,14 @@
   
   <url>
     <loc>https://www.techree.net/tags/swift/</loc>
-    <lastmod>2019-11-09T16:38:00+09:00</lastmod>
+    <lastmod>2019-11-13T19:05:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.techree.net/tags/swiftui/</loc>
-    <lastmod>2019-11-03T17:27:44+09:00</lastmod>
+    <lastmod>2019-11-13T19:05:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -325,7 +332,7 @@
   
   <url>
     <loc>https://www.techree.net/</loc>
-    <lastmod>2019-11-11T16:35:24+09:00</lastmod>
+    <lastmod>2019-11-13T19:05:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

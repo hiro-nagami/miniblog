@@ -6,10 +6,20 @@
     <description>Recent content in Ios on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Nov 2019 17:27:44 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 13 Nov 2019 19:05:56 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Swiftui 02</title>
+      <link>https://www.techree.net/posts/learning-swiftui-02/</link>
+      <pubDate>Wed, 13 Nov 2019 19:05:56 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/learning-swiftui-02/</guid>
+      <description>SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
+ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。</description>
+    </item>
     
     <item>
       <title>Learning Swiftui 01</title>
