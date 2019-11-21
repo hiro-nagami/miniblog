@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.techree.net/posts/english/will-be-going-to/</loc>
+    <lastmod>2019-11-21T23:35:14+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/posts/learning-swiftui-02/</loc>
     <lastmod>2019-11-13T19:05:56+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -150,6 +157,13 @@
   </url>
   
   <url>
+    <loc>https://www.techree.net/tags/be-going-to/</loc>
+    <lastmod>2019-11-21T23:35:14+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/tags/blockchain/</loc>
     <lastmod>2019-10-26T17:41:43+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -207,6 +221,13 @@
   <url>
     <loc>https://www.techree.net/tags/emulator/</loc>
     <lastmod>2019-11-09T15:30:11+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/tags/english/</loc>
+    <lastmod>2019-11-21T23:35:14+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -276,7 +297,7 @@
   
   <url>
     <loc>https://www.techree.net/posts/</loc>
-    <lastmod>2019-11-13T19:05:56+09:00</lastmod>
+    <lastmod>2019-11-21T23:35:14+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -332,7 +353,14 @@
   
   <url>
     <loc>https://www.techree.net/</loc>
-    <lastmod>2019-11-13T19:05:56+09:00</lastmod>
+    <lastmod>2019-11-21T23:35:14+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/tags/will/</loc>
+    <lastmod>2019-11-21T23:35:14+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
