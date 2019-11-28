@@ -6,10 +6,24 @@
     <description>Recent content in Posts on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Nov 2019 23:35:14 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2019 02:06:27 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Swiftui 03</title>
+      <link>https://www.techree.net/posts/swift/learning-swiftui-03/</link>
+      <pubDate>Wed, 27 Nov 2019 02:06:27 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/swift/learning-swiftui-03/</guid>
+      <description>データモデルをビューに流し込み表示 リスト化ようのModelとRowを作る 参考にするのは、こちら リストにデータを流し込むためのモデルを作る
+struct Data { let name: String let image: Image }  Rowビューをつくる
+struct Row: View { var data: Data var body: some View { data.image .resizable() .frame(width: 50, height: 50) Text(landmark.name) } }  Rowビューにデータモデルを流し込んで表示する
+struct Row_Previews: PreviewProvider { static var previews: some View { Row(landmark: datalist[0]) } }  プレビューで複数のRowを表示 プレビューを複数表示するにはGroupを使う GroupはContainer Viewというものに含まれる
+https://developer.apple.com/documentation/swiftui/view_layout_and_presentation
+struct Row_Previews: PreviewProvider { static var previews: some View { Group { Row(landmark: datalist[0]) .</description>
+    </item>
     
     <item>
       <title>will / be going to</title>
@@ -23,10 +37,10 @@ willの場合はその場で決まったこと John: Hi, Mike. Let&#39;s go to d
     
     <item>
       <title>Learning Swiftui 02</title>
-      <link>https://www.techree.net/posts/learning-swiftui-02/</link>
+      <link>https://www.techree.net/posts/swift/learning-swiftui-02/</link>
       <pubDate>Wed, 13 Nov 2019 19:05:56 +0900</pubDate>
       
-      <guid>https://www.techree.net/posts/learning-swiftui-02/</guid>
+      <guid>https://www.techree.net/posts/swift/learning-swiftui-02/</guid>
       <description>SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
 ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。</description>
     </item>
@@ -81,10 +95,10 @@ ${SDK PATH}/emulator/emulator -avd Pixel2_API_27 -dns-server 8.8.8.8</descriptio
     
     <item>
       <title>Learning Swiftui 01</title>
-      <link>https://www.techree.net/posts/learning-swiftui-01/</link>
+      <link>https://www.techree.net/posts/swift/learning-swiftui-01/</link>
       <pubDate>Sun, 03 Nov 2019 17:27:44 +0900</pubDate>
       
-      <guid>https://www.techree.net/posts/learning-swiftui-01/</guid>
+      <guid>https://www.techree.net/posts/swift/learning-swiftui-01/</guid>
       <description>SwiftUIについて勉強 SwiftUIの勉強する方法としてApple公式ページにチュートリアルが用意されている。このチュートリアルでは、SwiftUIの使い方や実装手順などが紹介されている。また、サンプルコードなども用意してありダウンロードして自分の環境でテストすることができる。
 チュートリアルのページはここ。
 また、チュートリアルが終わったり分からないことがあればDocumentのページで詳しい仕様を確認することもできる。</description>
@@ -143,10 +157,10 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
     
     <item>
       <title>Learning Blockchain 02</title>
-      <link>https://www.techree.net/posts/learning-blockchain-02/</link>
+      <link>https://www.techree.net/posts/blockchain/learning-blockchain-02/</link>
       <pubDate>Sat, 26 Oct 2019 17:41:43 +0900</pubDate>
       
-      <guid>https://www.techree.net/posts/learning-blockchain-02/</guid>
+      <guid>https://www.techree.net/posts/blockchain/learning-blockchain-02/</guid>
       <description>Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
  Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
 contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
@@ -155,10 +169,10 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
     
     <item>
       <title>Learning Blockchain 01</title>
-      <link>https://www.techree.net/posts/learning-blockchain-01/</link>
+      <link>https://www.techree.net/posts/blockchain/learning-blockchain-01/</link>
       <pubDate>Sat, 26 Oct 2019 17:20:05 +0900</pubDate>
       
-      <guid>https://www.techree.net/posts/learning-blockchain-01/</guid>
+      <guid>https://www.techree.net/posts/blockchain/learning-blockchain-01/</guid>
       <description> Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
 スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
 参考サイト  https://bitflyer.com/ja-jp/ethereum  </description>

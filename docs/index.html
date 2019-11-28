@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-21T23:35:14&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-11-27T02:06:27&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Techree">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -164,6 +164,35 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/swift/learning-swiftui-03/" class="color-inherit dim link">
+            Learning Swiftui 03
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          データモデルをビューに流し込み表示 リスト化ようのModelとRowを作る 参考にするのは、こちら リストにデータを流し込むためのモデルを作る
+struct Data { let name: String let image: Image }  Rowビューをつくる
+struct Row: View { var data: Data var body: some View { data.image .resizable() .frame(width: 50, height: 50) Text(landmark.name) } }  Rowビューにデータモデルを流し込んで表示する
+struct Row_Previews: PreviewProvider { static var previews: some View { Row(landmark: datalist[0]) } }  プレビューで複数のRowを表示 プレビューを複数表示するにはGroupを使う GroupはContainer Viewというものに含まれる
+https://developer.apple.com/documentation/swiftui/view_layout_and_presentation
+struct Row_Previews: PreviewProvider { static var previews: some View { Group { Row(landmark: datalist[0]) .
+        </div>
+          <a href="/posts/swift/learning-swiftui-03/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/english/will-be-going-to/" class="color-inherit dim link">
             will / be going to
             </a>
@@ -181,37 +210,18 @@ willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinne
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/learning-swiftui-02/" class="color-inherit dim link">
-            Learning Swiftui 02
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
-ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。
-        </div>
-          <a href="/posts/learning-swiftui-02/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3"></h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/swift/learning-swiftui-02/" class="link black dim">
+              Learning Swiftui 02
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/respectfun-review-on-google-blog/" class="link black dim">
@@ -228,12 +238,6 @@ willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinne
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/download-oldversion-xcode/" class="link black dim">
               Download Oldversion Xcode
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/android-emulator-bad-network/" class="link black dim">
-              Android Emulator Bad Network
             </a>
           </h2>
         
