@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-10-31T12:52:50&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-10-31T13:13:02&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,22 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/firebase-crashlytics-symbolicate/" class="link black dim">
+        Firebase Crashlytics Symbolicate
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
+https://www.techree.net/posts/ios-app-debugging-crashreport/
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/ios-app-debugging-crashreport/" class="link black dim">
         iOS App Debugging Crashreport
       </a>
@@ -170,24 +186,6 @@ alias symbolicate = &quot;/Applications/Xcode.
       アプリリリースするための手順 アプリをリリースするためには、以下の作業が必要になる。
  App Storeにアプリを登録する 申請用のバイナリをアップロードする アプリレビュー申請  App Storeにアプリを登録する リリースするためにApp Store Connectでアプリを作成する。そのために以下の項目を埋めていく。
  アプリを作成する  App Information  App Storeに表示されるアプリ名 アプリのカテゴリ設定 プライバシーポリシーの設定  テンプレートなどもあるが、可能なら専門の人に作ってもらうのがベスト   Pricing And Availability  課金の設定 リリース前の事前登録の設定  アプリの詳細設定  スクリーンショットの追加  App preview specifications [Xcode] iOS シミュレータで、スクリーンショットを保存する時は、⌘ + S で OK！ Images can&rsquo;t contain alpha channels or transparencies  App Storeに表示するアプリ説明 検索キーワード プライバシーポリシー・サポートサイトの登録 バイナリーのアップロード App Store用アイコン、アプリバージョン、Ratingの設定 コピーライト  著作権表示、コレが正解！「©」や「All Rights Rserved」正しい表記と意味全解説  開発者情報の設定 レビューアカウント情報の設定 自動リリースか手動リリースかの設定   申請用のバイナリをアップロードする アプリを申請するために必要なバイナリのアップロード手順は次の通り。
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/ios-push-notification-01/" class="link black dim">
-        iOS Push Notification 01
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
-AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
-実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer.
     </div>
   </div>
 </div>

@@ -36,6 +36,18 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
     </item>
     
     <item>
+      <title>Learning Swiftui 04</title>
+      <link>https://www.techree.net/posts/swift/learning-swiftui-04/</link>
+      <pubDate>Wed, 13 Nov 2019 19:05:56 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/swift/learning-swiftui-04/</guid>
+      <description>Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
+ Image(systemName: &amp;quot;star.fill&amp;quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
+ Image(systemName: &amp;quot;star.fill&amp;quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
+List { Toggle(isOn: $showFavoritesOnly) { Text(&amp;quot;Favorites only&amp;quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。</description>
+    </item>
+    
+    <item>
       <title>Learning Swiftui 01</title>
       <link>https://www.techree.net/posts/swift/learning-swiftui-01/</link>
       <pubDate>Sun, 03 Nov 2019 17:27:44 +0900</pubDate>

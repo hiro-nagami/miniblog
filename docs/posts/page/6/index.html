@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-06-16T00:22:40&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-06-17T09:16:29&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,28 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/on-request-on-call/" class="link black dim">
+        Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Firebase Cloud FunctionでAPI実装するために使われるトリガーにonCall()とonRequest()との２つがあった。
+これらは「内部で行なっていること」と「Callbackで受け取れる値」に違いがある。
+onCall()関数 onCall()は、Content-Type: application/jsonヘッダーをPOSTリクエストのみを受け付けるようになっている。また、Authentication Bearerヘッダーを付与しているとJWTを使ったユーザーの検証を自動で行なってくれるため、呼び出された時点で認証情報が利用できるようになる。
+JWTの使用についてはこちら。
+JWTについて簡単に調べたのでメモ書き
+export const hello_on_call = functions.https.onCall((data, context) =&gt; { if (!context.auth) { throw new functions.https.HttpsError('Invalid account.'); } return &quot;Hello, world&quot; });  https.onCall のプロトコルの仕様
+onRequest()関数 onRequest()は、POST以外のどのHTTPメソッドでもハンドリングできるようになっている。なので、呼び出されたタイミングでHTTPメソッドを判断して処理を分ける必要がある。 基本的に、内部でユーザーの検証などはないため自前で実装する必要がある。
+export const hello = functions. https.onRequest((request, response) =&gt; { cors(req, res, () =&gt; { const tokenId = req.get('Authorization').split('Bearer ')[1]; return admin.auth().verifyIdToken(tokenId) .then((decoded) =&gt; res.status(200).send(decoded)) .catch((err) =&gt; res.status(401).send(err)); }); });  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/about-jwt-token/" class="link black dim">
         JWTについて簡単に調べたのでメモ書き
       </a>
@@ -165,23 +187,6 @@ JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得する�
       nodeのバージョンが違ったことでdeployが失敗 今作っているプロダクトで、Firebase Cloud Functionsを使うことになったので試してみようと以下のプログラムをデプロイしてみた。
 import * as functions from 'firebase-functions'; export const hello = functions. https.onRequest((request, response) =&gt; { response.send(&quot;Hello, firebase cloud functions&quot;); });  すると、以下の内容の不具合が発生した。
 ❯ npm run deploy &gt; functions@ deploy ~/functions &gt; firebase deploy --only functions === Deploying to 'sample-app'... i deploying functions Running command: npm --prefix $RESOURCE_DIR run lint &gt; functions@ lint ~/functions &gt; tslint -p tslint.json no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead.
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/java-executor-service/" class="link black dim">
-        JavaのExecutorの概要と動き
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <h2 id="executorseriviceとは">ExecutorSeriviceとは</h2>
-
-<p>Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(<code>submit()</code>)することができます。ExecutorServiceは<code>java.util.concurrent</code>に含まれます。</p>
     </div>
   </div>
 </div>
