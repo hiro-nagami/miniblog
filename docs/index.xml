@@ -6,10 +6,20 @@
     <description>Recent content on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Dec 2019 02:11:22 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2019 13:05:57 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Swiftui 06</title>
+      <link>https://www.techree.net/posts/swift/learning-swiftui-06/</link>
+      <pubDate>Sat, 07 Dec 2019 13:05:57 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/swift/learning-swiftui-06/</guid>
+      <description> @EnvironmentObjectについて .environmentObject(env) 修飾子を呼び出したプロパティでは @EnvironmentObject を適用したプロパティに自動的に値を取得するようになる。Viewの階層の中で、Initで引数を渡すことなく参照することができるようになる。 dynamic member lookup の機能によりObservableObjectを見つけてくれる。
+ struct ToggleSampleView: View { @EnvironmentObject var toggleSample: ToggleSampleModel var body: some View { List { Toggle(isOn: $toggleSample.isToggleOn) { Text(&amp;quot;sample&amp;quot;) } if (toggleSample.isToggleOn) { Circle().foregroundColor(.blue) Circle().foregroundColor(.blue) } } } } struct ToggleSampleView_preview: PreviewProvider { static var previews: some View { ToggleSampleView().environmentObject(ToggleSampleModel()) } }  </description>
+    </item>
     
     <item>
       <title>Learning Swiftui 05</title>
@@ -21,7 +31,7 @@
 現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
 Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
 SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
-Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
+ final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
 参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/</description>
     </item>
     
