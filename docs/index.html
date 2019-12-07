@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-27T02:06:27&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-07T02:11:22&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Techree">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -164,6 +164,35 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/swift/learning-swiftui-05/" class="color-inherit dim link">
+            Learning Swiftui 05
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          ゴール SwiftUIで使われいるBindingについて理解する
+現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
+Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
+SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
+Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
+参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
+        </div>
+          <a href="/posts/swift/learning-swiftui-05/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/swift/learning-swiftui-03/" class="color-inherit dim link">
             Learning Swiftui 03
             </a>
@@ -185,37 +214,18 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/english/will-be-going-to/" class="color-inherit dim link">
-            will / be going to
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          未来系の使い分け 英語の未来形は２つ&rdquo;will&rdquo;と&rdquo;be going to&rdquo;があるが、ニュアンスが異なる。この２つの違いは「既に決まっていたかどうか」
-willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinner tonight. Mike: Sure. I will call out to you tonight.  強い意思を伝える時 I will wake up at 6 o'clock tomorrow.  be going toはすでに決まっていたこと Mike: I'm going to drink with john tonight.  https://eikaiwa.dmm.com/blog/39416/
-        </div>
-          <a href="/posts/english/will-be-going-to/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3"></h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/english/will-be-going-to/" class="link black dim">
+              will / be going to
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/swift/learning-swiftui-02/" class="link black dim">
@@ -232,12 +242,6 @@ willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinne
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/respectfun-review-on-google-blog/" class="link black dim">
               Respectfun Review on Google Blog
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/cannot-open-xcworkspace-with-catalina/" class="link black dim">
-              Cannot Open Xcworkspace With Catalina
             </a>
           </h2>
         
