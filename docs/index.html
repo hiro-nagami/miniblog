@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-12-07T02:11:22&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-07T13:05:57&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Techree">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -164,19 +164,15 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/swift/learning-swiftui-05/" class="color-inherit dim link">
-            Learning Swiftui 05
+          <a href="/posts/swift/learning-swiftui-06/" class="color-inherit dim link">
+            Learning Swiftui 06
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
-Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
+           @EnvironmentObjectについて .environmentObject(env) 修飾子を呼び出したプロパティでは @EnvironmentObject を適用したプロパティに自動的に値を取得するようになる。Viewの階層の中で、Initで引数を渡すことなく参照することができるようになる。 dynamic member lookup の機能によりObservableObjectを見つけてくれる。
+ struct ToggleSampleView: View { @EnvironmentObject var toggleSample: ToggleSampleModel var body: some View { List { Toggle(isOn: $toggleSample.isToggleOn) { Text(&quot;sample&quot;) } if (toggleSample.isToggleOn) { Circle().foregroundColor(.blue) Circle().foregroundColor(.blue) } } } } struct ToggleSampleView_preview: PreviewProvider { static var previews: some View { ToggleSampleView().environmentObject(ToggleSampleModel()) } }  
         </div>
-          <a href="/posts/swift/learning-swiftui-05/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+          <a href="/posts/swift/learning-swiftui-06/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
         
       </div>
     </div>
@@ -193,19 +189,19 @@ Property Wrappersについて @ を仕様した宣言をすることで独自の
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/swift/learning-swiftui-03/" class="color-inherit dim link">
-            Learning Swiftui 03
+          <a href="/posts/swift/learning-swiftui-05/" class="color-inherit dim link">
+            Learning Swiftui 05
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          データモデルをビューに流し込み表示 リスト化ようのModelとRowを作る 参考にするのは、こちら リストにデータを流し込むためのモデルを作る
-struct Data { let name: String let image: Image }  Rowビューをつくる
-struct Row: View { var data: Data var body: some View { data.image .resizable() .frame(width: 50, height: 50) Text(landmark.name) } }  Rowビューにデータモデルを流し込んで表示する
-struct Row_Previews: PreviewProvider { static var previews: some View { Row(landmark: datalist[0]) } }  プレビューで複数のRowを表示 プレビューを複数表示するにはGroupを使う GroupはContainer Viewというものに含まれる
-https://developer.apple.com/documentation/swiftui/view_layout_and_presentation
-struct Row_Previews: PreviewProvider { static var previews: some View { Group { Row(landmark: datalist[0]) .
+          ゴール SwiftUIで使われいるBindingについて理解する
+現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
+Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
+SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
+ final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
+参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
         </div>
-          <a href="/posts/swift/learning-swiftui-03/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+          <a href="/posts/swift/learning-swiftui-05/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
         
       </div>
     </div>
@@ -222,6 +218,12 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/swift/learning-swiftui-03/" class="link black dim">
+              Learning Swiftui 03
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/english/will-be-going-to/" class="link black dim">
               will / be going to
             </a>
@@ -236,12 +238,6 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
               Learning Swiftui 04
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/respectfun-review-on-google-blog/" class="link black dim">
-              Respectfun Review on Google Blog
             </a>
           </h2>
         

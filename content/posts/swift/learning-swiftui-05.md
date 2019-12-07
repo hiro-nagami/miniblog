@@ -17,6 +17,15 @@ Viewはstructのため値を変更できないが、@Stateをつけることに�
 ## SwiftUIのObservableについて
 `ObservableObject`  プロトコルに適合していると `@ObservedObject` を宣言したプロパティへ変更通知することができる。監視したいプロパティに `@Published` を宣言すると自動で変更を監視してくれる。
 
+```
+
+final class ToggleSampleModel: ObservableObject {
+    @Published var isToggleOn = false
+}
+
+
+```
+
 ## Property Wrappersについて
 `@` を仕様した宣言をすることで独自のアクセスを提供する。`@State` `@ObservedObject` `@Published` などがあげられる。
 
