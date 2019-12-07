@@ -174,17 +174,15 @@ SwiftUIのObservableについて ObservableObject プロトコルに適合して
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-03/" class="link black dim">
-        Learning Swiftui 03
+      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
+        Learning Swiftui 04
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      データモデルをビューに流し込み表示 リスト化ようのModelとRowを作る 参考にするのは、こちら リストにデータを流し込むためのモデルを作る
-struct Data { let name: String let image: Image }  Rowビューをつくる
-struct Row: View { var data: Data var body: some View { data.image .resizable() .frame(width: 50, height: 50) Text(landmark.name) } }  Rowビューにデータモデルを流し込んで表示する
-struct Row_Previews: PreviewProvider { static var previews: some View { Row(landmark: datalist[0]) } }  プレビューで複数のRowを表示 プレビューを複数表示するにはGroupを使う GroupはContainer Viewというものに含まれる
-https://developer.apple.com/documentation/swiftui/view_layout_and_presentation
-struct Row_Previews: PreviewProvider { static var previews: some View { Group { Row(landmark: datalist[0]) .
+      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
+ Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
+ Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
+List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 ---
 title: "Learning Swiftui 04"
-date: 2019-11-13T19:05:56+09:00
+date: 2019-12-01T19:05:56+09:00
 draft: false
 tags: [ "ios", "swiftui", "swift" ]
 ---
