@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-12-07T13:05:57&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-11T15:26:04&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Techree">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -164,6 +164,31 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/flutter/introduction-flutter/" class="color-inherit dim link">
+            Introduction Flutter
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+           Flutter開発環境の構築 Flutter をインストール 今回はMacOSバージョン。$HOME/flutterに配置。
+ https://flutter.dev/docs/get-started/install/macos  初期設定  PATH=$PATH:$HOME/flutter/bin flutter precache “idevice_id”は、開発元を検証できないため開けません。が出る事があるので以下のコマンドで対処  udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/idevice_id udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/ideviceinfo 参考：https://yaba-blog.com/flutter-idevice_id/  flutter doctorでチェックし、必要なセットアップをする  Android  Android Studioを入れる Android Studio Pluginsにflutter/dart pluginを入れる  iOS VSCode  VSCodeを入れる VSCodeにflutter pluginを入れる  
+        </div>
+          <a href="/posts/flutter/introduction-flutter/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/swift/learning-swiftui-06/" class="color-inherit dim link">
             Learning Swiftui 06
             </a>
@@ -181,41 +206,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/swift/learning-swiftui-05/" class="color-inherit dim link">
-            Learning Swiftui 05
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
- final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
-        </div>
-          <a href="/posts/swift/learning-swiftui-05/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3"></h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/swift/learning-swiftui-05/" class="link black dim">
+              Learning Swiftui 05
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
@@ -232,12 +234,6 @@ SwiftUIのObservableについて ObservableObject プロトコルに適合して
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/english/will-be-going-to/" class="link black dim">
               will / be going to
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/swift/learning-swiftui-02/" class="link black dim">
-              Learning Swiftui 02
             </a>
           </h2>
         

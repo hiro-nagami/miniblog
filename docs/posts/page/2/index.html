@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-27T02:06:27&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-01T19:05:56&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,24 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
+        Learning Swiftui 04
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
+ Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
+ Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
+List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/swift/learning-swiftui-03/" class="link black dim">
         Learning Swiftui 03
       </a>
@@ -165,22 +183,6 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       未来系の使い分け 英語の未来形は２つ&rdquo;will&rdquo;と&rdquo;be going to&rdquo;があるが、ニュアンスが異なる。この２つの違いは「既に決まっていたかどうか」
 willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinner tonight. Mike: Sure. I will call out to you tonight.  強い意思を伝える時 I will wake up at 6 o'clock tomorrow.  be going toはすでに決まっていたこと Mike: I'm going to drink with john tonight.  https://eikaiwa.dmm.com/blog/39416/
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-02/" class="link black dim">
-        Learning Swiftui 02
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
-ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。
     </div>
   </div>
 </div>

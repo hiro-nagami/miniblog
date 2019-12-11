@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.techree.net/posts/flutter/introduction-flutter/</loc>
+    <lastmod>2019-12-11T15:26:04+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/posts/swift/learning-swiftui-06/</loc>
     <lastmod>2019-12-07T13:05:57+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -275,8 +282,22 @@
   </url>
   
   <url>
+    <loc>https://www.techree.net/tags/flutter/</loc>
+    <lastmod>2019-12-11T15:26:04+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/tags/google/</loc>
     <lastmod>2019-11-11T16:35:24+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/tags/introduction/</loc>
+    <lastmod>2019-12-11T15:26:04+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -325,7 +346,7 @@
   
   <url>
     <loc>https://www.techree.net/posts/</loc>
-    <lastmod>2019-12-07T13:05:57+09:00</lastmod>
+    <lastmod>2019-12-11T15:26:04+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -381,7 +402,7 @@
   
   <url>
     <loc>https://www.techree.net/</loc>
-    <lastmod>2019-12-07T13:05:57+09:00</lastmod>
+    <lastmod>2019-12-11T15:26:04+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
