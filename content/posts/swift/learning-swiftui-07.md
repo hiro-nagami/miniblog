@@ -85,7 +85,7 @@ PresenterOutputProtocolにViewを指定したい。environmentObjectを利用し
 
 ## 実装
 
-DetailPresenter
+DetailPresenter変更変更
 
 ```
 
@@ -125,7 +125,7 @@ class DetailPresenterImpl: DetailPresenter {
 }
 ```
 
-DetailView
+DetailView変更
 ```
 
 struct DetailView: DetailPresenterOutput, View {
@@ -166,6 +166,26 @@ struct DetailView_Previews: PreviewProvider {
 
         return view
     }
+}
+
+```
+
+### ユニットテストの追加
+```
+func presenterTest() {
+    let taro = Detail(id: 1, name: "Taro")
+    let hanako = Detail(id: 2, name: "Hanako")
+    let detailList = DetailList(details: [taro, hanako])
+    let presenter = DetailPresenterImpl(detail: hanako, detailList: detailList)
+    let view = DetailView(presenter: presenter)
+    presenter.inject(view: view)
+
+    XCTAssertEqual(view.presenter.detailIndex, 1)
+    XCTAssertEqual(view.presenter.detail.id, hanako.id)
+    XCTAssertEqual(view.presenter.detail.isLiked, false)
+
+    presenter.toggleLike()
+    XCTAssertEqual(view.presenter.detail.isLiked, true)
 }
 
 ```

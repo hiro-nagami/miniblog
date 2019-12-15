@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Techree </title>
+    <title>Techree  | Learning Swiftui 07</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,36 +27,55 @@
     
 
     
-      <link href="https://www.techree.net/index.xml" rel="alternate" type="application/rss+xml" title="Techree" />
-      <link href="https://www.techree.net/index.xml" rel="feed" type="application/rss+xml" title="Techree" />
-    
 
-    <meta property="og:title" content="Techree" />
-<meta property="og:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.techree.net/" />
+    <meta property="og:title" content="Learning Swiftui 07" />
+<meta property="og:description" content="SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.techree.net/posts/swift/learning-swiftui-07/" />
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
+<meta property="article:published_time" content="2019-12-13T08:38:21&#43;09:00"/>
+<meta property="article:modified_time" content="2019-12-13T08:38:21&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
-<meta property="og:updated_time" content="2019-12-13T08:38:21&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta itemprop="name" content="Learning Swiftui 07">
+<meta itemprop="description" content="SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList.">
 
-<meta itemprop="name" content="Techree">
-<meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
 
+<meta itemprop="datePublished" content="2019-12-13T08:38:21&#43;09:00" />
+<meta itemprop="dateModified" content="2019-12-13T08:38:21&#43;09:00" />
+<meta itemprop="wordCount" content="366">
+
+
+
+<meta itemprop="keywords" content="ios,swiftui,swift," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
-<meta name="twitter:title" content="Techree"/>
-<meta name="twitter:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです"/>
+<meta name="twitter:title" content="Learning Swiftui 07"/>
+<meta name="twitter:description" content="SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList."/>
 
   </head>
 
   <body class="ma0 avenir bg-near-white">
 
     
+   
+  
 
   <header>
-    <div class="pb3-m pb6-l bg-black">
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://www.techree.net/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -118,138 +137,297 @@
   </div>
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Techree
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-    
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Learning Swiftui 07</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-13T08:38:21&#43;09:00">December 13, 2019</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="swiftuiにclean-architectureを採用してみる">SwiftUIにClean Architectureを採用してみる</h2>
+
+<h3 id="前提">前提</h3>
+
+<p>すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。</p>
+
+<p>モデル: Detail</p>
+
+<pre><code>struct Detail: Hashable, Codable, Identifiable {
+    var id: Int
+    var name: String
+    var isLiked: Bool = false
+}
+
+</code></pre>
+
+<p>モデル: DetailList</p>
+
+<pre><code>class DetailList: ObservableObject {
+    @Published var isLikedOnly: Bool = false
+    @Published var details: [Detail] =  [
+       Detail(id: 1, name: &quot;Taro&quot;),
+       Detail(id: 2, name: &quot;Hanako&quot;)
+   ]
+}
+</code></pre>
+
+<p>ビュー: DetailView</p>
+
+<pre><code>struct DetailView: View {
+    @EnvironmentObject var detailList: DetailList
+    var detail: Detail
+
+    var detailIndex: Int {
+        detailList.details.firstIndex(where: { $0.id == detail.id })!
+    }
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text(&quot;\(detail.id)&quot;)
+                Text(detail.name)
+                Button(action: {
+                    self.detailList.details[self.detailIndex].isLiked.toggle()
+                }) {
+                    if (self.detailList.details[self.detailIndex].isLiked) {
+                        Rectangle()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .foregroundColor(.yellow)
+                    } else {
+                        Rectangle()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .foregroundColor(.clear)
+                            .border(Color.yellow)
+                    }
+                }
+            }
+            Spacer()
+        }
+    }
+}
+</code></pre>
+
+<h3 id="ゴール">ゴール</h3>
+
+<p>ここにPresenterクラスを差し込みたい。</p>
+
+<h3 id="課題1">課題1</h3>
+
+<p>PresenterクラスとモデルのどちらをEnvironmentObjectとするか。
+-&gt; 各ビューで変数として持ちたいのはモデルの方
+なので、PresenterにモデルをEnvironmentObjectとして持たせてそれをビューが参照する。</p>
+
+<h3 id="課題2">課題2</h3>
+
+<p>PresenterOutputにViewを指定しないとenvironmentObject()修飾子を使って、モデルを受け渡せない
+-&gt; PresenterでViewを指定して、プレゼンターにbodyを定義してみる</p>
+
+<h3 id="課題3">課題3</h3>
+
+<p>PresenterOutputProtocolにViewを指定したい。environmentObjectを利用して引数を渡したいため。
+-&gt; EnvironmentObjectを使うのはViewに対する依存性が強くなるため</p>
+
+<h2 id="実装">実装</h2>
+
+<p>DetailPresenter変更変更</p>
+
+<pre><code>
+protocol DetailPresenter {
+    var detail: Detail { get }
+    var detailList: DetailList { get }
+    var detailIndex: Int { get }
+
+    func toggleLike()
+}
+
+protocol DetailPresenterOutput {
+    var presenter: DetailPresenter { get }
+}
+
+class DetailPresenterImpl: DetailPresenter {
+    @ObservedObject internal var detailList: DetailList
+    internal var detail: Detail
+    private var view: DetailPresenterOutput?
+
+    var detailIndex: Int {
+        self.detailList.details.firstIndex(where: { $0.id == self.detail.id })!
+    }
+
+    init(detail: Detail, detailList: DetailList) {
+        self.detail = detail
+        self.detailList = detailList
+    }
+
+    func inject(view: DetailPresenterOutput) {
+        self.view = view
+    }
+
+    func toggleLike() {
+        self.detail.isLiked.toggle()
+    }
+}
+</code></pre>
+
+<p>DetailView変更</p>
+
+<pre><code>
+struct DetailView: DetailPresenterOutput, View {
+    var presenter: DetailPresenter
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text(&quot;\(self.presenter.detail.id)&quot;)
+                Text(self.presenter.detail.name)
+                Button(action: {
+                    self.presenter.toggleLike()
+                }) {
+                    if (self.presenter.detail.isLiked) {
+                        Rectangle()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .foregroundColor(.yellow)
+                    } else {
+                        Rectangle()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .foregroundColor(.clear)
+                            .border(Color.yellow)
+                    }
+                }
+            }
+            Spacer()
+        }
+    }
+}
+
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        let detailList = DetailList()
+        let detail = detailList.details[0]
+        let presenter = DetailPresenterImpl(detail: detail, detailList: detailList)
+        let view = DetailView(presenter: presenter)
+        presenter.inject(view: view)
+
+        return view
+    }
+}
+
+</code></pre>
+
+<h3 id="ユニットテストの追加">ユニットテストの追加</h3>
+
+<pre><code>func presenterTest() {
+    let taro = Detail(id: 1, name: &quot;Taro&quot;)
+    let hanako = Detail(id: 2, name: &quot;Hanako&quot;)
+    let detailList = DetailList(details: [taro, hanako])
+    let presenter = DetailPresenterImpl(detail: hanako, detailList: detailList)
+    let view = DetailView(presenter: presenter)
+    presenter.inject(view: view)
+
+    XCTAssertEqual(view.presenter.detailIndex, 1)
+    XCTAssertEqual(view.presenter.detail.id, hanako.id)
+    XCTAssertEqual(view.presenter.detail.isLiked, false)
+
+    presenter.toggleLike()
+    XCTAssertEqual(view.presenter.detail.isLiked, true)
+}
+
+</code></pre>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/ios" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ios</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/swiftui" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">swiftui</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/swift" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">swift</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3"></p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-06/">Learning Swiftui 06</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-05/">Learning Swiftui 05</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-04/">Learning Swiftui 04</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-03/">Learning Swiftui 03</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-02/">Learning Swiftui 02</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-01/">Learning Swiftui 01</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/download-oldversion-xcode/">Download Oldversion Xcode</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/firebase-crashlytics-symbolicate/">Firebase Crashlytics Symbolicate</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/ios-app-debugging-crashreport/">iOS App Debugging Crashreport</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/app-itunes-release/">iOS App Release Introduction</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/ios-push-notification-01/">iOS Push Notification 01</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
   </article>
-  
-  
-  
-  
-  
-  
-  
-    
-    
-
-    <div class="pa3 pa4-ns w-100 w-70-ns center">
-      
-       
-          <h1 class="flex-none">
-            
-          </h1>
-        
-
-      
-
-      <section class="w-100 mw8">
-        
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/swift/learning-swiftui-07/" class="color-inherit dim link">
-            Learning Swiftui 07
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
-モデル: Detail
-struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
-class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
-struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList.
-        </div>
-          <a href="/posts/swift/learning-swiftui-07/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/flutter/introduction-flutter/" class="color-inherit dim link">
-            Introduction Flutter
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-           Flutter開発環境の構築 Flutter をインストール 今回はMacOSバージョン。$HOME/flutterに配置。
- https://flutter.dev/docs/get-started/install/macos  初期設定  PATH=$PATH:$HOME/flutter/bin flutter precache “idevice_id”は、開発元を検証できないため開けません。が出る事があるので以下のコマンドで対処  udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/idevice_id udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/ideviceinfo 参考：https://yaba-blog.com/flutter-idevice_id/  flutter doctorでチェックし、必要なセットアップをする  Android  Android Studioを入れる Android Studio Pluginsにflutter/dart pluginを入れる  iOS VSCode  VSCodeを入れる VSCodeにflutter pluginを入れる  
-        </div>
-          <a href="/posts/flutter/introduction-flutter/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-      </section>
-
-      
-      <section class="w-100">
-        <h1 class="f3"></h1>
-        
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/swift/learning-swiftui-06/" class="link black dim">
-              Learning Swiftui 06
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/swift/learning-swiftui-05/" class="link black dim">
-              Learning Swiftui 05
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
-              Learning Swiftui 04
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/swift/learning-swiftui-03/" class="link black dim">
-              Learning Swiftui 03
-            </a>
-          </h2>
-        
-
-        
-        
-          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc"></a>
-        
-        </section>
-      
-
-      </div>
-  
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

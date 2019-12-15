@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-06-17T09:16:29&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-10-26T17:20:05&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,23 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/blockchain/learning-blockchain-01/" class="link black dim">
+        Learning Blockchain 01
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
+スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
+参考サイト  https://bitflyer.com/ja-jp/ethereum  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/on-request-on-call/" class="link black dim">
         Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い
       </a>
@@ -170,23 +187,6 @@ JWTは以下の内容で構成される
  Base64-Header: ヘッダー情報を含むJSONをBase64でエンコードしたもの Base64-Body: ユーザーID, 有効期限をJSONをBase64でエンコードしたもの}.{電子署名} Signature: 電子署名  JWT: {Base64-Header}.{Base64-Body}.{Signature}  サーバー側は自身の持つ暗号鍵を使って署名つきのTokenを発行することで、有効期限とユーザーIDの正当性を検証し改ざんがあれば検知できるようになっている。URL-Safeなので文字コードに依存せずウェブ上の通信の本人証明に使うことができる。
 JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得することができるJWKを使って、JWTのSignatureを検証することができる。
 参考  JSON Web Token の効用 JWT(JSON Web Token)を使った認証を試みる JWT について調べた内容をまとめました。 JWT(JSON Web Token)の仕組みと使い方まとめ OAuth Revocation と JWK を翻訳しました ID トークンの確認 JSON Web Key (JWK)  
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/cloud-functions-npm-error/" class="link black dim">
-        nodeバージョンの違いでFirebase Cloud Functionsのdeployが失敗した話
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      nodeのバージョンが違ったことでdeployが失敗 今作っているプロダクトで、Firebase Cloud Functionsを使うことになったので試してみようと以下のプログラムをデプロイしてみた。
-import * as functions from 'firebase-functions'; export const hello = functions. https.onRequest((request, response) =&gt; { response.send(&quot;Hello, firebase cloud functions&quot;); });  すると、以下の内容の不具合が発生した。
-❯ npm run deploy &gt; functions@ deploy ~/functions &gt; firebase deploy --only functions === Deploying to 'sample-app'... i deploying functions Running command: npm --prefix $RESOURCE_DIR run lint &gt; functions@ lint ~/functions &gt; tslint -p tslint.json no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead.
     </div>
   </div>
 </div>
@@ -291,12 +291,23 @@ import * as functions from 'firebase-functions'; export const hello = functions.
     <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
     
     
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/9/">9</a></li>
+    
+    
     <li class="page-item">
     <a href="/posts/page/8/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

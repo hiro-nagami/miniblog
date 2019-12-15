@@ -6,10 +6,23 @@
     <description>Recent content in Ios on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Dec 2019 13:05:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 13 Dec 2019 08:38:21 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/tags/ios/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learning Swiftui 07</title>
+      <link>https://www.techree.net/posts/swift/learning-swiftui-07/</link>
+      <pubDate>Fri, 13 Dec 2019 08:38:21 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/swift/learning-swiftui-07/</guid>
+      <description>SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &amp;quot;Taro&amp;quot;), Detail(id: 2, name: &amp;quot;Hanako&amp;quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList.</description>
+    </item>
     
     <item>
       <title>Learning Swiftui 06</title>
