@@ -27,26 +27,26 @@
     
 
     
-      <link href="https://www.techree.net/posts/index.xml" rel="alternate" type="application/rss+xml" title="Techree" />
-      <link href="https://www.techree.net/posts/index.xml" rel="feed" type="application/rss+xml" title="Techree" />
+      <link href="https://www.techree.net/tags/protocol/index.xml" rel="alternate" type="application/rss+xml" title="Techree" />
+      <link href="https://www.techree.net/tags/protocol/index.xml" rel="feed" type="application/rss+xml" title="Techree" />
     
 
-    <meta property="og:title" content="Posts" />
+    <meta property="og:title" content="Protocol" />
 <meta property="og:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.techree.net/posts/" />
+<meta property="og:url" content="https://www.techree.net/tags/protocol/" />
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-11T16:35:24&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-17T08:08:13&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
-<meta itemprop="name" content="Posts">
+<meta itemprop="name" content="Protocol">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
-<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:title" content="Protocol"/>
 <meta name="twitter:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです"/>
 
   </head>
@@ -120,7 +120,7 @@
 
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Posts
+          Protocol
         </h1>
         
       </div>
@@ -130,182 +130,33 @@
 
     <main class="pb7" role="main">
       
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img mid-gray">
+      <p>Below you will find pages that utilize the taxonomy term “Protocol”</p>
+    </div>
+  </article>
+  <div class="mw8 center">    
     <section class="flex-ns flex-wrap justify-around mt5">
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/respectfun-review-on-google-blog/" class="link black dim">
-        Respectfun Review on Google Blog
+      <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
+        Learning Swift Protocol
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Code ReviewについてGoogleがブログを書いていたのでメモ。 特に、次の点については面白いと思った。
- 研究によると、中立的なコメントは79%が有用だと思われるのに対して、厳しい言葉が使われたコメントは57%しか有用だと思われないとのこと。
- https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html
+      Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.
     </div>
   </div>
 </div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/cannot-open-xcworkspace-with-catalina/" class="link black dim">
-        Cannot Open Xcworkspace With Catalina
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      CatalinaでXcode Projectが開かない リリースされてからある程度時間もたったので、CatalinaにアップデートしたところXcode Projectが開かなくなってしまった。Xcodeは起動できるが、特定のプロジェクトを開こうとするとすぐにXcodeが終了してしまう。
-まずは他のプロジェクトを動かす 前に作ったサンプルプロジェクトがあったので、起動してみたらプロジェクトが開けた。先ほどのプロジェクトは、xcworkspaceで今回のはxcodeprojという違いがあったので、元のプロジェクトのxcodeprojを開いてみたら開けた。
-CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、とりあえずpod installを試してみた。しかし、再度開いても結果は同じだった。
-そのため、今度はxcworkspaceを削除してからpod installを試してみたところ無事開けた。
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/download-oldversion-xcode/" class="link black dim">
-        Download Oldversion Xcode
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Xcodeアップデートしたらコンパイラがアップデートしていて動かない Xcodeをアップデートしたら、Swiftのバージョン(5.1.2)に上がっていたためCarthageでビルドしたフレームワークが動かなくなってしまった。
-対処法は２つ
- Carthageでビルドし直す。対応したバージョンがリリースされていればそれを使うし、なければローカルで再ビルドされる 元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落として動かす  とりあえず、元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落としてきて対処。
-古いバージョンを使い続けるのは、技術的な負債になるのでなるべく早くアップデートに対応したい。
-https://developer.apple.com/download/more/
-    </div>
-  </div>
-</div>
-</div>
+
+        </div>
       
     </section>
-
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/posts/page/3/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/posts/page/4/">4</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/5/">5</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/9/">9</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/posts/page/5/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/posts/page/9/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-</article>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
