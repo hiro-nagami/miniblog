@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-12-13T08:38:21&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-17T08:08:13&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,21 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
+        Learning Swift Protocol
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/swift/learning-swiftui-07/" class="link black dim">
         Learning Swiftui 07
       </a>
@@ -164,22 +179,6 @@ struct DetailView: View { @EnvironmentObject var detailList: DetailList var deta
     <div class="nested-links f5 lh-copy nested-copy-line-height">
        Flutter開発環境の構築 Flutter をインストール 今回はMacOSバージョン。$HOME/flutterに配置。
  https://flutter.dev/docs/get-started/install/macos  初期設定  PATH=$PATH:$HOME/flutter/bin flutter precache “idevice_id”は、開発元を検証できないため開けません。が出る事があるので以下のコマンドで対処  udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/idevice_id udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/ideviceinfo 参考：https://yaba-blog.com/flutter-idevice_id/  flutter doctorでチェックし、必要なセットアップをする  Android  Android Studioを入れる Android Studio Pluginsにflutter/dart pluginを入れる  iOS VSCode  VSCodeを入れる VSCodeにflutter pluginを入れる  
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-06/" class="link black dim">
-        Learning Swiftui 06
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       @EnvironmentObjectについて .environmentObject(env) 修飾子を呼び出したプロパティでは @EnvironmentObject を適用したプロパティに自動的に値を取得するようになる。Viewの階層の中で、Initで引数を渡すことなく参照することができるようになる。 dynamic member lookup の機能によりObservableObjectを見つけてくれる。
- struct ToggleSampleView: View { @EnvironmentObject var toggleSample: ToggleSampleModel var body: some View { List { Toggle(isOn: $toggleSample.isToggleOn) { Text(&quot;sample&quot;) } if (toggleSample.isToggleOn) { Circle().foregroundColor(.blue) Circle().foregroundColor(.blue) } } } } struct ToggleSampleView_preview: PreviewProvider { static var previews: some View { ToggleSampleView().environmentObject(ToggleSampleModel()) } }  
     </div>
   </div>
 </div>

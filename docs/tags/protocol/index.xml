@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Protocol on Techree</title>
+    <link>https://www.techree.net/tags/protocol/</link>
+    <description>Recent content in Protocol on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Dec 2019 08:08:13 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/protocol/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning Swift Protocol</title>
+      <link>https://www.techree.net/posts/swift/learning-swift-protocol/</link>
+      <pubDate>Tue, 17 Dec 2019 08:08:13 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/swift/learning-swift-protocol/</guid>
+      <description>Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&amp;gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.</description>
+    </item>
+    
+  </channel>
+</rss>
