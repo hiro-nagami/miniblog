@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Techree  | Learning Swiftui 05</title>
+    <title>Techree  | Learning Swiftui 07</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -28,32 +28,30 @@
 
     
 
-    <meta property="og:title" content="Learning Swiftui 05" />
-<meta property="og:description" content="ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
- final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/" />
+    <meta property="og:title" content="Learning Swiftui 07" />
+<meta property="og:description" content="SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.techree.net/posts/swift/learning-swiftui-05/" />
+<meta property="og:url" content="https://www.techree.net/posts/swift/learning-swiftui-07/" />
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
-<meta property="article:published_time" content="2019-12-07T02:11:22&#43;09:00"/>
-<meta property="article:modified_time" content="2019-12-07T02:11:22&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="article:published_time" content="2019-12-13T08:38:21&#43;09:00"/>
+<meta property="article:modified_time" content="2019-12-13T08:38:21&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
-<meta itemprop="name" content="Learning Swiftui 05">
-<meta itemprop="description" content="ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
- final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/">
+<meta itemprop="name" content="Learning Swiftui 07">
+<meta itemprop="description" content="SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList.">
 
 
-<meta itemprop="datePublished" content="2019-12-07T02:11:22&#43;09:00" />
-<meta itemprop="dateModified" content="2019-12-07T02:11:22&#43;09:00" />
-<meta itemprop="wordCount" content="34">
+<meta itemprop="datePublished" content="2019-12-13T08:38:21&#43;09:00" />
+<meta itemprop="dateModified" content="2019-12-13T08:38:21&#43;09:00" />
+<meta itemprop="wordCount" content="366">
 
 
 
@@ -61,13 +59,12 @@ SwiftUIのObservableについて ObservableObject プロトコルに適合して
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
-<meta name="twitter:title" content="Learning Swiftui 05"/>
-<meta name="twitter:description" content="ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
- final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/"/>
+<meta name="twitter:title" content="Learning Swiftui 07"/>
+<meta name="twitter:description" content="SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList."/>
 
   </head>
 
@@ -155,47 +152,203 @@ SwiftUIのObservableについて ObservableObject プロトコルに適合して
           
         POSTS
       </p>
-      <h1 class="f1 athelas mb1">Learning Swiftui 05</h1>
+      <h1 class="f1 athelas mb1">Learning Swiftui 07</h1>
       
-      <time class="f6 mv4 dib tracked" datetime="2019-12-07T02:11:22&#43;09:00">December 7, 2019</time>      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-13T08:38:21&#43;09:00">December 13, 2019</time>      
       
       
     </header>
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<h2 id="ゴール">ゴール</h2>
+<h2 id="swiftuiにclean-architectureを採用してみる">SwiftUIにClean Architectureを採用してみる</h2>
 
-<p>SwiftUIで使われいるBindingについて理解する</p>
+<h3 id="前提">前提</h3>
 
-<h2 id="現状">現状</h2>
+<p>すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。</p>
 
-<p>先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。</p>
+<p>モデル: Detail</p>
 
-<h2 id="stateプロパティについて">Stateプロパティについて</h2>
-
-<p>Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。</p>
-
-<h2 id="swiftuiのobservableについて">SwiftUIのObservableについて</h2>
-
-<p><code>ObservableObject</code>  プロトコルに適合していると <code>@ObservedObject</code> を宣言したプロパティへ変更通知することができる。監視したいプロパティに <code>@Published</code> を宣言すると自動で変更を監視してくれる。</p>
-
-<pre><code>
-final class ToggleSampleModel: ObservableObject {
-    @Published var isToggleOn = false
+<pre><code>struct Detail: Hashable, Codable, Identifiable {
+    var id: Int
+    var name: String
+    var isLiked: Bool = false
 }
-
 
 </code></pre>
 
-<h2 id="property-wrappersについて">Property Wrappersについて</h2>
+<p>モデル: DetailList</p>
 
-<p><code>@</code> を仕様した宣言をすることで独自のアクセスを提供する。<code>@State</code> <code>@ObservedObject</code> <code>@Published</code> などがあげられる。</p>
+<pre><code>class DetailList: ObservableObject {
+    @Published var isLikedOnly: Bool = false
+    @Published var details: [Detail] =  [
+       Detail(id: 1, name: &quot;Taro&quot;),
+       Detail(id: 2, name: &quot;Hanako&quot;)
+   ]
+}
+</code></pre>
 
-<h2 id="参考">参考</h2>
+<p>ビュー: DetailView</p>
 
-<p><a href="https://qiita.com/shiz/items/6eaf87fa79499623306a">https://qiita.com/shiz/items/6eaf87fa79499623306a</a>
-<a href="https://developer.apple.com/videos/play/wwdc2019/226/">https://developer.apple.com/videos/play/wwdc2019/226/</a></p>
+<pre><code>struct DetailView: View {
+    @EnvironmentObject var detailList: DetailList
+    var detail: Detail
+
+    var detailIndex: Int {
+        detailList.details.firstIndex(where: { $0.id == detail.id })!
+    }
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text(&quot;\(detail.id)&quot;)
+                Text(detail.name)
+                Button(action: {
+                    self.detailList.details[self.detailIndex].isLiked.toggle()
+                }) {
+                    if (self.detailList.details[self.detailIndex].isLiked) {
+                        Rectangle()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .foregroundColor(.yellow)
+                    } else {
+                        Rectangle()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .foregroundColor(.clear)
+                            .border(Color.yellow)
+                    }
+                }
+            }
+            Spacer()
+        }
+    }
+}
+</code></pre>
+
+<h3 id="ゴール">ゴール</h3>
+
+<p>ここにPresenterクラスを差し込みたい。</p>
+
+<h3 id="課題1">課題1</h3>
+
+<p>PresenterクラスとモデルのどちらをEnvironmentObjectとするか。
+-&gt; 各ビューで変数として持ちたいのはモデルの方
+なので、PresenterにモデルをEnvironmentObjectとして持たせてそれをビューが参照する。</p>
+
+<h3 id="課題2">課題2</h3>
+
+<p>PresenterOutputにViewを指定しないとenvironmentObject()修飾子を使って、モデルを受け渡せない
+-&gt; PresenterでViewを指定して、プレゼンターにbodyを定義してみる</p>
+
+<h3 id="課題3">課題3</h3>
+
+<p>PresenterOutputProtocolにViewを指定したい。environmentObjectを利用して引数を渡したいため。
+-&gt; EnvironmentObjectを使うのはViewに対する依存性が強くなるため</p>
+
+<h2 id="実装">実装</h2>
+
+<p>DetailPresenter変更変更</p>
+
+<pre><code>
+protocol DetailPresenter {
+    var detail: Detail { get }
+    var detailList: DetailList { get }
+    var detailIndex: Int { get }
+
+    func toggleLike()
+}
+
+protocol DetailPresenterOutput {
+    var presenter: DetailPresenter { get }
+}
+
+class DetailPresenterImpl: DetailPresenter {
+    @ObservedObject internal var detailList: DetailList
+    internal var detail: Detail
+    private var view: DetailPresenterOutput?
+
+    var detailIndex: Int {
+        self.detailList.details.firstIndex(where: { $0.id == self.detail.id })!
+    }
+
+    init(detail: Detail, detailList: DetailList) {
+        self.detail = detail
+        self.detailList = detailList
+    }
+
+    func inject(view: DetailPresenterOutput) {
+        self.view = view
+    }
+
+    func toggleLike() {
+        self.detail.isLiked.toggle()
+    }
+}
+</code></pre>
+
+<p>DetailView変更</p>
+
+<pre><code>
+struct DetailView: DetailPresenterOutput, View {
+    var presenter: DetailPresenter
+
+    var body: some View {
+        VStack {
+            HStack {
+                Text(&quot;\(self.presenter.detail.id)&quot;)
+                Text(self.presenter.detail.name)
+                Button(action: {
+                    self.presenter.toggleLike()
+                }) {
+                    if (self.presenter.detail.isLiked) {
+                        Rectangle()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .foregroundColor(.yellow)
+                    } else {
+                        Rectangle()
+                            .frame(width: 20, height: 20, alignment: .center)
+                            .foregroundColor(.clear)
+                            .border(Color.yellow)
+                    }
+                }
+            }
+            Spacer()
+        }
+    }
+}
+
+struct DetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        let detailList = DetailList()
+        let detail = detailList.details[0]
+        let presenter = DetailPresenterImpl(detail: detail, detailList: detailList)
+        let view = DetailView(presenter: presenter)
+        presenter.inject(view: view)
+
+        return view
+    }
+}
+
+</code></pre>
+
+<h3 id="ユニットテストの追加">ユニットテストの追加</h3>
+
+<pre><code>func presenterTest() {
+    let taro = Detail(id: 1, name: &quot;Taro&quot;)
+    let hanako = Detail(id: 2, name: &quot;Hanako&quot;)
+    let detailList = DetailList(details: [taro, hanako])
+    let presenter = DetailPresenterImpl(detail: hanako, detailList: detailList)
+    let view = DetailView(presenter: presenter)
+    presenter.inject(view: view)
+
+    XCTAssertEqual(view.presenter.detailIndex, 1)
+    XCTAssertEqual(view.presenter.detail.id, hanako.id)
+    XCTAssertEqual(view.presenter.detail.isLiked, false)
+
+    presenter.toggleLike()
+    XCTAssertEqual(view.presenter.detail.isLiked, true)
+}
+
+</code></pre>
 <ul class="pa0">
   
    <li class="list">
@@ -225,6 +378,14 @@ final class ToggleSampleModel: ObservableObject {
     <p class="f5 b mb3"></p>
     <ul class="pa0 list">
 	   
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-06/">Learning Swiftui 06</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-05/">Learning Swiftui 05</a>
+        </li>
+	    
 	     <li  class="mb2">
           <a href="/posts/swift/learning-swiftui-04/">Learning Swiftui 04</a>
         </li>

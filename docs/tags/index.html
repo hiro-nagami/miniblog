@@ -648,6 +648,29 @@ import * as functions from 'firebase-functions'; export const hello = functions.
         
       
         <h2 class="f1">
+          <a href="/tags/flutter" class="link blue hover-black">
+            Tag: flutter
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/flutter/introduction-flutter/" class="link black dim">
+        Introduction Flutter
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Flutter開発環境の構築 Flutter をインストール 今回はMacOSバージョン。$HOME/flutterに配置。
+ https://flutter.dev/docs/get-started/install/macos  初期設定  PATH=$PATH:$HOME/flutter/bin flutter precache “idevice_id”は、開発元を検証できないため開けません。が出る事があるので以下のコマンドで対処  udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/idevice_id udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/ideviceinfo 参考：https://yaba-blog.com/flutter-idevice_id/  flutter doctorでチェックし、必要なセットアップをする  Android  Android Studioを入れる Android Studio Pluginsにflutter/dart pluginを入れる  iOS VSCode  VSCodeを入れる VSCodeにflutter pluginを入れる  
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/google" class="link blue hover-black">
             Tag: google
           </a>
@@ -672,10 +695,83 @@ import * as functions from 'firebase-functions'; export const hello = functions.
         
       
         <h2 class="f1">
+          <a href="/tags/introduction" class="link blue hover-black">
+            Tag: introduction
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/flutter/introduction-flutter/" class="link black dim">
+        Introduction Flutter
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Flutter開発環境の構築 Flutter をインストール 今回はMacOSバージョン。$HOME/flutterに配置。
+ https://flutter.dev/docs/get-started/install/macos  初期設定  PATH=$PATH:$HOME/flutter/bin flutter precache “idevice_id”は、開発元を検証できないため開けません。が出る事があるので以下のコマンドで対処  udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/idevice_id udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/ideviceinfo 参考：https://yaba-blog.com/flutter-idevice_id/  flutter doctorでチェックし、必要なセットアップをする  Android  Android Studioを入れる Android Studio Pluginsにflutter/dart pluginを入れる  iOS VSCode  VSCodeを入れる VSCodeにflutter pluginを入れる  
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/ios" class="link blue hover-black">
             Tag: ios
           </a>
         </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
+        Learning Swift Protocol
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-07/" class="link black dim">
+        Learning Swiftui 07
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-06/" class="link black dim">
+        Learning Swiftui 06
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       @EnvironmentObjectについて .environmentObject(env) 修飾子を呼び出したプロパティでは @EnvironmentObject を適用したプロパティに自動的に値を取得するようになる。Viewの階層の中で、Initで引数を渡すことなく参照することができるようになる。 dynamic member lookup の機能によりObservableObjectを見つけてくれる。
+ struct ToggleSampleView: View { @EnvironmentObject var toggleSample: ToggleSampleModel var body: some View { List { Toggle(isOn: $toggleSample.isToggleOn) { Text(&quot;sample&quot;) } if (toggleSample.isToggleOn) { Circle().foregroundColor(.blue) Circle().foregroundColor(.blue) } } } } struct ToggleSampleView_preview: PreviewProvider { static var previews: some View { ToggleSampleView().environmentObject(ToggleSampleModel()) } }  
+    </div>
+  </div>
+</div>
+
         
           <div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -690,8 +786,26 @@ import * as functions from 'firebase-functions'; export const hello = functions.
 現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
 Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
 SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
-Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
+ final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
 参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
+        Learning Swiftui 04
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
+ Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
+ Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
+List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
     </div>
   </div>
 </div>
@@ -728,24 +842,6 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
 ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。
-    </div>
-  </div>
-</div>
-
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
-        Learning Swiftui 04
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
- Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
- Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
-List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
     </div>
   </div>
 </div>
@@ -1031,6 +1127,28 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
         
       
         <h2 class="f1">
+          <a href="/tags/protocol" class="link blue hover-black">
+            Tag: protocol
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
+        Learning Swift Protocol
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/release" class="link blue hover-black">
             Tag: release
           </a>
@@ -1134,6 +1252,56 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
+        Learning Swift Protocol
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-07/" class="link black dim">
+        Learning Swiftui 07
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-06/" class="link black dim">
+        Learning Swiftui 06
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       @EnvironmentObjectについて .environmentObject(env) 修飾子を呼び出したプロパティでは @EnvironmentObject を適用したプロパティに自動的に値を取得するようになる。Viewの階層の中で、Initで引数を渡すことなく参照することができるようになる。 dynamic member lookup の機能によりObservableObjectを見つけてくれる。
+ struct ToggleSampleView: View { @EnvironmentObject var toggleSample: ToggleSampleModel var body: some View { List { Toggle(isOn: $toggleSample.isToggleOn) { Text(&quot;sample&quot;) } if (toggleSample.isToggleOn) { Circle().foregroundColor(.blue) Circle().foregroundColor(.blue) } } } } struct ToggleSampleView_preview: PreviewProvider { static var previews: some View { ToggleSampleView().environmentObject(ToggleSampleModel()) } }  
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/swift/learning-swiftui-05/" class="link black dim">
         Learning Swiftui 05
       </a>
@@ -1143,8 +1311,26 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
 現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
 Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
 SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
-Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
+ final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
 参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
+        Learning Swiftui 04
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
+ Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
+ Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
+List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
     </div>
   </div>
 </div>
@@ -1181,24 +1367,6 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
 ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。
-    </div>
-  </div>
-</div>
-
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
-        Learning Swiftui 04
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
- Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
- Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
-List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
     </div>
   </div>
 </div>
@@ -1251,6 +1419,41 @@ https://developer.apple.com/download/more/
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-07/" class="link black dim">
+        Learning Swiftui 07
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-06/" class="link black dim">
+        Learning Swiftui 06
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       @EnvironmentObjectについて .environmentObject(env) 修飾子を呼び出したプロパティでは @EnvironmentObject を適用したプロパティに自動的に値を取得するようになる。Viewの階層の中で、Initで引数を渡すことなく参照することができるようになる。 dynamic member lookup の機能によりObservableObjectを見つけてくれる。
+ struct ToggleSampleView: View { @EnvironmentObject var toggleSample: ToggleSampleModel var body: some View { List { Toggle(isOn: $toggleSample.isToggleOn) { Text(&quot;sample&quot;) } if (toggleSample.isToggleOn) { Circle().foregroundColor(.blue) Circle().foregroundColor(.blue) } } } } struct ToggleSampleView_preview: PreviewProvider { static var previews: some View { ToggleSampleView().environmentObject(ToggleSampleModel()) } }  
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/swift/learning-swiftui-05/" class="link black dim">
         Learning Swiftui 05
       </a>
@@ -1260,8 +1463,26 @@ https://developer.apple.com/download/more/
 現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
 Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
 SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
-Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
+ final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
 参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
+        Learning Swiftui 04
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
+ Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
+ Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
+List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
     </div>
   </div>
 </div>
@@ -1298,24 +1519,6 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
 ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。
-    </div>
-  </div>
-</div>
-
-        
-          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
-        Learning Swiftui 04
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
- Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
- Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
-List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
     </div>
   </div>
 </div>

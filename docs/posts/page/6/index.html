@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-10-29T13:39:45&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-11-03T17:27:44&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,15 +138,14 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/ios-push-notification-01/" class="link black dim">
-        iOS Push Notification 01
+      <a href="/posts/swift/learning-swiftui-01/" class="link black dim">
+        Learning Swiftui 01
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
-AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
-実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer.
+      SwiftUIについて勉強 SwiftUIの勉強する方法としてApple公式ページにチュートリアルが用意されている。このチュートリアルでは、SwiftUIの使い方や実装手順などが紹介されている。また、サンプルコードなども用意してありダウンロードして自分の環境でテストすることができる。
+チュートリアルのページはここ。
+また、チュートリアルが終わったり分からないことがあればDocumentのページで詳しい仕様を確認することもできる。
     </div>
   </div>
 </div>
@@ -156,15 +155,13 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/blockchain/learning-blockchain-02/" class="link black dim">
-        Learning Blockchain 02
+      <a href="/posts/firebase-crashlytics-symbolicate/" class="link black dim">
+        Firebase Crashlytics Symbolicate
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
- Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
-contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
-メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.
+      FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
+https://www.techree.net/posts/ios-app-debugging-crashreport/
     </div>
   </div>
 </div>
@@ -174,14 +171,21 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/blockchain/learning-blockchain-01/" class="link black dim">
-        Learning Blockchain 01
+      <a href="/posts/ios-app-debugging-crashreport/" class="link black dim">
+        iOS App Debugging Crashreport
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-       Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
-スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
-参考サイト  https://bitflyer.com/ja-jp/ethereum  
+      AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
+ クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
+dSYMの取得 App Store ConnectかArchivesから取得する。
+ App Store Connect  Activity -&gt; Build Number -&gt; Included Symbols  から取得可能。
+ Archives  Archiveのパッケージ内に存在するのでそれを利用する。
+Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
+/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
+$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
+$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  symbolicateにaliasを設定しておくと便利。
+alias symbolicate = &quot;/Applications/Xcode.
     </div>
   </div>
 </div>
@@ -285,7 +289,27 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
     
     
     <li class="page-item">
@@ -293,7 +317,7 @@ contract MyContract { // ... }  Solidityのコントラクトではメンバ変�
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

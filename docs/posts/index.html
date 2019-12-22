@@ -171,17 +171,12 @@ AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できて�
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-05/" class="link black dim">
-        Learning Swiftui 05
+      <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
+        Learning Swift Protocol
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
-Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
+      Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.
     </div>
   </div>
 </div>
@@ -279,7 +274,25 @@ Property Wrappersについて @ を仕様した宣言をすることで独自の
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
     
     
     <li class="page-item">
@@ -287,7 +300,7 @@ Property Wrappersについて @ を仕様した宣言をすることで独自の
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

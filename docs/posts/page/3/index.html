@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-13T19:05:56&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-07T02:11:22&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,26 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-05/" class="link black dim">
+        Learning Swiftui 05
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ゴール SwiftUIで使われいるBindingについて理解する
+現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
+Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
+SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
+ final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
+参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
         Learning Swiftui 04
       </a>
@@ -156,32 +176,17 @@ List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } For
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/respectfun-review-on-google-blog/" class="link black dim">
-        Respectfun Review on Google Blog
+      <a href="/posts/swift/learning-swiftui-03/" class="link black dim">
+        Learning Swiftui 03
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Code ReviewについてGoogleがブログを書いていたのでメモ。 特に、次の点については面白いと思った。
- 研究によると、中立的なコメントは79%が有用だと思われるのに対して、厳しい言葉が使われたコメントは57%しか有用だと思われないとのこと。
- https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/cannot-open-xcworkspace-with-catalina/" class="link black dim">
-        Cannot Open Xcworkspace With Catalina
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      CatalinaでXcode Projectが開かない リリースされてからある程度時間もたったので、CatalinaにアップデートしたところXcode Projectが開かなくなってしまった。Xcodeは起動できるが、特定のプロジェクトを開こうとするとすぐにXcodeが終了してしまう。
-まずは他のプロジェクトを動かす 前に作ったサンプルプロジェクトがあったので、起動してみたらプロジェクトが開けた。先ほどのプロジェクトは、xcworkspaceで今回のはxcodeprojという違いがあったので、元のプロジェクトのxcodeprojを開いてみたら開けた。
-CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、とりあえずpod installを試してみた。しかし、再度開いても結果は同じだった。
-そのため、今度はxcworkspaceを削除してからpod installを試してみたところ無事開けた。
+      データモデルをビューに流し込み表示 リスト化ようのModelとRowを作る 参考にするのは、こちら リストにデータを流し込むためのモデルを作る
+struct Data { let name: String let image: Image }  Rowビューをつくる
+struct Row: View { var data: Data var body: some View { data.image .resizable() .frame(width: 50, height: 50) Text(landmark.name) } }  Rowビューにデータモデルを流し込んで表示する
+struct Row_Previews: PreviewProvider { static var previews: some View { Row(landmark: datalist[0]) } }  プレビューで複数のRowを表示 プレビューを複数表示するにはGroupを使う GroupはContainer Viewというものに含まれる
+https://developer.apple.com/documentation/swiftui/view_layout_and_presentation
+struct Row_Previews: PreviewProvider { static var previews: some View { Group { Row(landmark: datalist[0]) .
     </div>
   </div>
 </div>
@@ -281,7 +286,25 @@ CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、と�
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
     
     
     <li class="page-item">
@@ -289,7 +312,7 @@ CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、と�
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

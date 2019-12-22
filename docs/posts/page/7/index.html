@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-06-17T09:16:29&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-10-29T14:27:12&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,19 +138,14 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/on-request-on-call/" class="link black dim">
-        Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い
+      <a href="/posts/app-itunes-release/" class="link black dim">
+        iOS App Release Introduction
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-       Firebase Cloud FunctionでAPI実装するために使われるトリガーにonCall()とonRequest()との２つがあった。
-これらは「内部で行なっていること」と「Callbackで受け取れる値」に違いがある。
-onCall()関数 onCall()は、Content-Type: application/jsonヘッダーをPOSTリクエストのみを受け付けるようになっている。また、Authentication Bearerヘッダーを付与しているとJWTを使ったユーザーの検証を自動で行なってくれるため、呼び出された時点で認証情報が利用できるようになる。
-JWTの使用についてはこちら。
-JWTについて簡単に調べたのでメモ書き
-export const hello_on_call = functions.https.onCall((data, context) =&gt; { if (!context.auth) { throw new functions.https.HttpsError('Invalid account.'); } return &quot;Hello, world&quot; });  https.onCall のプロトコルの仕様
-onRequest()関数 onRequest()は、POST以外のどのHTTPメソッドでもハンドリングできるようになっている。なので、呼び出されたタイミングでHTTPメソッドを判断して処理を分ける必要がある。 基本的に、内部でユーザーの検証などはないため自前で実装する必要がある。
-export const hello = functions. https.onRequest((request, response) =&gt; { cors(req, res, () =&gt; { const tokenId = req.get('Authorization').split('Bearer ')[1]; return admin.auth().verifyIdToken(tokenId) .then((decoded) =&gt; res.status(200).send(decoded)) .catch((err) =&gt; res.status(401).send(err)); }); });  
+      アプリリリースするための手順 アプリをリリースするためには、以下の作業が必要になる。
+ App Storeにアプリを登録する 申請用のバイナリをアップロードする アプリレビュー申請  App Storeにアプリを登録する リリースするためにApp Store Connectでアプリを作成する。そのために以下の項目を埋めていく。
+ アプリを作成する  App Information  App Storeに表示されるアプリ名 アプリのカテゴリ設定 プライバシーポリシーの設定  テンプレートなどもあるが、可能なら専門の人に作ってもらうのがベスト   Pricing And Availability  課金の設定 リリース前の事前登録の設定  アプリの詳細設定  スクリーンショットの追加  App preview specifications [Xcode] iOS シミュレータで、スクリーンショットを保存する時は、⌘ + S で OK！ Images can&rsquo;t contain alpha channels or transparencies  App Storeに表示するアプリ説明 検索キーワード プライバシーポリシー・サポートサイトの登録 バイナリーのアップロード App Store用アイコン、アプリバージョン、Ratingの設定 コピーライト  著作権表示、コレが正解！「©」や「All Rights Rserved」正しい表記と意味全解説  開発者情報の設定 レビューアカウント情報の設定 自動リリースか手動リリースかの設定   申請用のバイナリをアップロードする アプリを申請するために必要なバイナリのアップロード手順は次の通り。
     </div>
   </div>
 </div>
@@ -160,16 +155,15 @@ export const hello = functions. https.onRequest((request, response) =&gt; { cors
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/about-jwt-token/" class="link black dim">
-        JWTについて簡単に調べたのでメモ書き
+      <a href="/posts/ios-push-notification-01/" class="link black dim">
+        iOS Push Notification 01
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-       JSON Web Tokenの略でURL-SafeなTokenを発行し、電子署名をJWTに組み込むことで改ざんを検出可能にする。
-JWTは以下の内容で構成される
- Base64-Header: ヘッダー情報を含むJSONをBase64でエンコードしたもの Base64-Body: ユーザーID, 有効期限をJSONをBase64でエンコードしたもの}.{電子署名} Signature: 電子署名  JWT: {Base64-Header}.{Base64-Body}.{Signature}  サーバー側は自身の持つ暗号鍵を使って署名つきのTokenを発行することで、有効期限とユーザーIDの正当性を検証し改ざんがあれば検知できるようになっている。URL-Safeなので文字コードに依存せずウェブ上の通信の本人証明に使うことができる。
-JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得することができるJWKを使って、JWTのSignatureを検証することができる。
-参考  JSON Web Token の効用 JWT(JSON Web Token)を使った認証を試みる JWT について調べた内容をまとめました。 JWT(JSON Web Token)の仕組みと使い方まとめ OAuth Revocation と JWK を翻訳しました ID トークンの確認 JSON Web Key (JWK)  
+      iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
+AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
+実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
+func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer.
     </div>
   </div>
 </div>
@@ -179,14 +173,15 @@ JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得する�
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/cloud-functions-npm-error/" class="link black dim">
-        nodeバージョンの違いでFirebase Cloud Functionsのdeployが失敗した話
+      <a href="/posts/blockchain/learning-blockchain-02/" class="link black dim">
+        Learning Blockchain 02
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      nodeのバージョンが違ったことでdeployが失敗 今作っているプロダクトで、Firebase Cloud Functionsを使うことになったので試してみようと以下のプログラムをデプロイしてみた。
-import * as functions from 'firebase-functions'; export const hello = functions. https.onRequest((request, response) =&gt; { response.send(&quot;Hello, firebase cloud functions&quot;); });  すると、以下の内容の不具合が発生した。
-❯ npm run deploy &gt; functions@ deploy ~/functions &gt; firebase deploy --only functions === Deploying to 'sample-app'... i deploying functions Running command: npm --prefix $RESOURCE_DIR run lint &gt; functions@ lint ~/functions &gt; tslint -p tslint.json no-use-before-declare is deprecated. Since TypeScript 2.9. Please use the built-in compiler checks instead.
+      Solidityで作るブロックチェーン 開発環境 開発環境には以下のものを使う。
+ Ethereum  ブロックチェーン分散プラットフォームを構築するための技術 特徴としてスマートコントラクトを採用している 参考  Solidity  スマートコントラクトを扱うオブジェクト指向型の言語 https://book.ethereum-jp.net/solidity/  web3.js  Ethereum環境を構築することができるJavaScriptライブラリ https://web3js.readthedocs.io/en/v1.2.2/  CryptoZombie  ブロックチェーン技術を使って「自分のゾンビ生成」「感染」「拡大」をするゲーム このゲームの中で実際にプログラムを書きながら、各機能の実装方法を学びブロックチェーンの全体的な処理を学んでいく Ethereumの実装方法やスマートコントラクトについて学べる   コントラクトの作成 Solidityを使ってコントラクトを作成する。コントラクトを作成するための記述方法は以下の通り。
+contract MyContract { // ... }  Solidityのコントラクトではメンバ変数や関数を持つことができる。プライベート関数や引数は、先頭にアンダースコアをつけるのが習わし。また、Structを実装することもできる。
+メンバー変数 contract MyContract { uint idLength = 12; }  Structの実装 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } }  配列 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; }  関数 contract MyContract { uint idLength = 12; struct Member { string name; uint age; uint id; } Member[] public members; function _createMember(string _name, uint _age, uint _id) private { members.
     </div>
   </div>
 </div>
@@ -291,12 +286,34 @@ import * as functions from 'firebase-functions'; export const hello = functions.
     <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
     
     
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
+    
+    
     <li class="page-item">
     <a href="/posts/page/8/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

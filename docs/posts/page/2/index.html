@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-27T02:06:27&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-13T08:38:21&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,17 +138,16 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-03/" class="link black dim">
-        Learning Swiftui 03
+      <a href="/posts/swift/learning-swiftui-07/" class="link black dim">
+        Learning Swiftui 07
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      データモデルをビューに流し込み表示 リスト化ようのModelとRowを作る 参考にするのは、こちら リストにデータを流し込むためのモデルを作る
-struct Data { let name: String let image: Image }  Rowビューをつくる
-struct Row: View { var data: Data var body: some View { data.image .resizable() .frame(width: 50, height: 50) Text(landmark.name) } }  Rowビューにデータモデルを流し込んで表示する
-struct Row_Previews: PreviewProvider { static var previews: some View { Row(landmark: datalist[0]) } }  プレビューで複数のRowを表示 プレビューを複数表示するにはGroupを使う GroupはContainer Viewというものに含まれる
-https://developer.apple.com/documentation/swiftui/view_layout_and_presentation
-struct Row_Previews: PreviewProvider { static var previews: some View { Group { Row(landmark: datalist[0]) .
+      SwiftUIにClean Architectureを採用してみる 前提 すでにModelとViewは存在している。ViewにModelをEnvironmentObjectとしてInjectさせている。
+モデル: Detail
+struct Detail: Hashable, Codable, Identifiable { var id: Int var name: String var isLiked: Bool = false }  モデル: DetailList
+class DetailList: ObservableObject { @Published var isLikedOnly: Bool = false @Published var details: [Detail] = [ Detail(id: 1, name: &quot;Taro&quot;), Detail(id: 2, name: &quot;Hanako&quot;) ] }  ビュー: DetailView
+struct DetailView: View { @EnvironmentObject var detailList: DetailList var detail: Detail var detailIndex: Int { detailList.
     </div>
   </div>
 </div>
@@ -158,13 +157,13 @@ struct Row_Previews: PreviewProvider { static var previews: some View { Group { 
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/english/will-be-going-to/" class="link black dim">
-        will / be going to
+      <a href="/posts/flutter/introduction-flutter/" class="link black dim">
+        Introduction Flutter
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      未来系の使い分け 英語の未来形は２つ&rdquo;will&rdquo;と&rdquo;be going to&rdquo;があるが、ニュアンスが異なる。この２つの違いは「既に決まっていたかどうか」
-willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinner tonight. Mike: Sure. I will call out to you tonight.  強い意思を伝える時 I will wake up at 6 o'clock tomorrow.  be going toはすでに決まっていたこと Mike: I'm going to drink with john tonight.  https://eikaiwa.dmm.com/blog/39416/
+       Flutter開発環境の構築 Flutter をインストール 今回はMacOSバージョン。$HOME/flutterに配置。
+ https://flutter.dev/docs/get-started/install/macos  初期設定  PATH=$PATH:$HOME/flutter/bin flutter precache “idevice_id”は、開発元を検証できないため開けません。が出る事があるので以下のコマンドで対処  udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/idevice_id udo xattr -d com.apple.quarantine $HOME/flutter/bin/cache/artifacts/libimobiledevice/ideviceinfo 参考：https://yaba-blog.com/flutter-idevice_id/  flutter doctorでチェックし、必要なセットアップをする  Android  Android Studioを入れる Android Studio Pluginsにflutter/dart pluginを入れる  iOS VSCode  VSCodeを入れる VSCodeにflutter pluginを入れる  
     </div>
   </div>
 </div>
@@ -174,13 +173,13 @@ willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinne
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-02/" class="link black dim">
-        Learning Swiftui 02
+      <a href="/posts/swift/learning-swiftui-06/" class="link black dim">
+        Learning Swiftui 06
       </a>
     </h1>
     <div class="nested-links f5 lh-copy nested-copy-line-height">
-      SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
-ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。
+       @EnvironmentObjectについて .environmentObject(env) 修飾子を呼び出したプロパティでは @EnvironmentObject を適用したプロパティに自動的に値を取得するようになる。Viewの階層の中で、Initで引数を渡すことなく参照することができるようになる。 dynamic member lookup の機能によりObservableObjectを見つけてくれる。
+ struct ToggleSampleView: View { @EnvironmentObject var toggleSample: ToggleSampleModel var body: some View { List { Toggle(isOn: $toggleSample.isToggleOn) { Text(&quot;sample&quot;) } if (toggleSample.isToggleOn) { Circle().foregroundColor(.blue) Circle().foregroundColor(.blue) } } } } struct ToggleSampleView_preview: PreviewProvider { static var previews: some View { ToggleSampleView().environmentObject(ToggleSampleModel()) } }  
     </div>
   </div>
 </div>
@@ -278,7 +277,25 @@ willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinne
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
     
     
     <li class="page-item">
@@ -286,7 +303,7 @@ willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinne
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/8/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

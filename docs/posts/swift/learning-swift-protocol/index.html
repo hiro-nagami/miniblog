@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Techree  | Learning Swiftui 05</title>
+    <title>Techree  | Learning Swift Protocol</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -28,46 +28,31 @@
 
     
 
-    <meta property="og:title" content="Learning Swiftui 05" />
-<meta property="og:description" content="ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
- final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/" />
+    <meta property="og:title" content="Learning Swift Protocol" />
+<meta property="og:description" content="Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.techree.net/posts/swift/learning-swiftui-05/" />
+<meta property="og:url" content="https://www.techree.net/posts/swift/learning-swift-protocol/" />
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
-<meta property="article:published_time" content="2019-12-07T02:11:22&#43;09:00"/>
-<meta property="article:modified_time" content="2019-12-07T02:11:22&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="article:published_time" content="2019-12-17T08:08:13&#43;09:00"/>
+<meta property="article:modified_time" content="2019-12-17T08:08:13&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
-<meta itemprop="name" content="Learning Swiftui 05">
-<meta itemprop="description" content="ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
- final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/">
+<meta itemprop="name" content="Learning Swift Protocol">
+<meta itemprop="description" content="Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.">
 
 
-<meta itemprop="datePublished" content="2019-12-07T02:11:22&#43;09:00" />
-<meta itemprop="dateModified" content="2019-12-07T02:11:22&#43;09:00" />
-<meta itemprop="wordCount" content="34">
+<meta itemprop="datePublished" content="2019-12-17T08:08:13&#43;09:00" />
+<meta itemprop="dateModified" content="2019-12-17T08:08:13&#43;09:00" />
+<meta itemprop="wordCount" content="237">
 
 
 
-<meta itemprop="keywords" content="ios,swiftui,swift," />
+<meta itemprop="keywords" content="ios,protocol,swift," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
-<meta name="twitter:title" content="Learning Swiftui 05"/>
-<meta name="twitter:description" content="ゴール SwiftUIで使われいるBindingについて理解する
-現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
-Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
-SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
- final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
-参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/"/>
+<meta name="twitter:title" content="Learning Swift Protocol"/>
+<meta name="twitter:description" content="Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self."/>
 
   </head>
 
@@ -155,47 +140,106 @@ SwiftUIのObservableについて ObservableObject プロトコルに適合して
           
         POSTS
       </p>
-      <h1 class="f1 athelas mb1">Learning Swiftui 05</h1>
+      <h1 class="f1 athelas mb1">Learning Swift Protocol</h1>
       
-      <time class="f6 mv4 dib tracked" datetime="2019-12-07T02:11:22&#43;09:00">December 7, 2019</time>      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-17T08:08:13&#43;09:00">December 17, 2019</time>      
       
       
     </header>
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<h2 id="ゴール">ゴール</h2>
+<h2 id="protocolのテクニック">Protocolのテクニック</h2>
 
-<p>SwiftUIで使われいるBindingについて理解する</p>
-
-<h2 id="現状">現状</h2>
-
-<p>先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。</p>
-
-<h2 id="stateプロパティについて">Stateプロパティについて</h2>
-
-<p>Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。</p>
-
-<h2 id="swiftuiのobservableについて">SwiftUIのObservableについて</h2>
-
-<p><code>ObservableObject</code>  プロトコルに適合していると <code>@ObservedObject</code> を宣言したプロパティへ変更通知することができる。監視したいプロパティに <code>@Published</code> を宣言すると自動で変更を監視してくれる。</p>
-
-<pre><code>
-final class ToggleSampleModel: ObservableObject {
-    @Published var isToggleOn = false
+<pre><code class="language-swift">protocol Noticeable {
+    func getNotice()
+    func openNotice(url: NSURL)
+    func closeNotice()
 }
 
+extension Noticeable where Self: UITableViewController {
+    func getNotice() {
+        NoticeAPIClient.find()
+        .success { (notice: Notice) -&gt; Void in
+            let noticeView = NoticeView.view()
+            noticeView.notice = notice
+            self.tableView.tableHeaderView = noticeView
+        }
+    }
 
+    func openNotice(url: NSURL) {
+        let webVC = //WebViewでお知らせを表示
+        self.navigationController?.presentViewController(webVC, animated: true, completion: nil)
+    }
+
+    func closeNotice() {
+        guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return }
+
+        self.tableView.tableHeaderView = nil
+    }
+}
 </code></pre>
 
-<h2 id="property-wrappersについて">Property Wrappersについて</h2>
+<pre><code class="language-swift">
+extension UITableView: XibBuilerCompatible {}
 
-<p><code>@</code> を仕様した宣言をすることで独自のアクセスを提供する。<code>@State</code> <code>@ObservedObject</code> <code>@Published</code> などがあげられる。</p>
+public extension XibBuilerExtension where Base: UITableView {
+    public func register(cellClass: XibBuilderProtocol.Type) {
+        let nib = UINib(nibName: cellClass.xibName, bundle: nil)
+        self.base.register(nib, forCellReuseIdentifier: cellClass.xibName)
+    }
+
+    public func register(cellClasses: [XibBuilderProtocol.Type]) {
+        for clazz in cellClasses {
+            let nib = UINib(nibName: clazz.xibName, bundle: nil)
+            self.base.register(nib, forCellReuseIdentifier: clazz.xibName)
+        }
+    }
+
+    public func dequeueReusableCell&lt;T: XibBuilderProtocol&gt;(clazz: T.Type) -&gt; T {
+        return self.base.dequeueReusableCell(withIdentifier: T.xibName) as! T
+    }
+}
+
+public protocol XibBuilderProtocol {
+    static var xibName: String { get }
+}
+
+extension XibBuilderProtocol {
+    public static func getModule() -&gt; Self {
+        let nib = UINib(nibName: Self.xibName, bundle: nil)
+        guard let module = nib.instantiate(withOwner: self, options: nil).first as? Self else {
+            fatalError(&quot;Cannot find module has xibName \(Self.xibName)&quot;)
+        }
+
+        return module
+    }
+}
+
+public final class XibBuilerExtension&lt;Base&gt; {
+    public let base: Base
+    public init(_ base: Base) {
+        self.base = base
+    }
+}
+
+public protocol XibBuilerCompatible {
+    associatedtype CompatibleType
+    var sb: CompatibleType { get }
+}
+
+public extension XibBuilerCompatible {
+    public var sb: XibBuilerExtension&lt;Self&gt; {
+        return XibBuilerExtension(self)
+    }
+}
+</code></pre>
 
 <h2 id="参考">参考</h2>
 
-<p><a href="https://qiita.com/shiz/items/6eaf87fa79499623306a">https://qiita.com/shiz/items/6eaf87fa79499623306a</a>
-<a href="https://developer.apple.com/videos/play/wwdc2019/226/">https://developer.apple.com/videos/play/wwdc2019/226/</a></p>
+<ul>
+<li><a href="https://qiita.com/sagaraya/items/5e73501ff7a3f0c502c0">https://qiita.com/sagaraya/items/5e73501ff7a3f0c502c0</a></li>
+</ul>
 <ul class="pa0">
   
    <li class="list">
@@ -203,7 +247,7 @@ final class ToggleSampleModel: ObservableObject {
    </li>
   
    <li class="list">
-     <a href="/tags/swiftui" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">swiftui</a>
+     <a href="/tags/protocol" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">protocol</a>
    </li>
   
    <li class="list">
@@ -225,6 +269,18 @@ final class ToggleSampleModel: ObservableObject {
     <p class="f5 b mb3"></p>
     <ul class="pa0 list">
 	   
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-07/">Learning Swiftui 07</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-06/">Learning Swiftui 06</a>
+        </li>
+	    
+	     <li  class="mb2">
+          <a href="/posts/swift/learning-swiftui-05/">Learning Swiftui 05</a>
+        </li>
+	    
 	     <li  class="mb2">
           <a href="/posts/swift/learning-swiftui-04/">Learning Swiftui 04</a>
         </li>
