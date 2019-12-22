@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-12-07T02:11:22&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-22T20:43:39&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,39 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/machine-learning/colaboratory-classification/" class="link black dim">
+        Colaboratory Classification
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      アヤメの分類 SVCを使ってアヤメの分類をする。pythonのurllibを利用してアヤメのデータをインポートする。 アヤメのデータはこちら。 https://github.com/pandas-dev/pandas/blob/master/pandas/tests/data/iris.csv
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/machine-learning/colaboratory-introduction/" class="link black dim">
+        Colaboratory Introduction
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Google Colabを使った機械学習 Google Colabとは、Google が提供している機械学習をオンライン上で実行することができる開発環境。
+ https://colab.research.google.com/  Uploaderの表示や桁数の多い計算なども簡単にできる scikit-lean Python向けの機械学習フレームワークサイト。機械学習初心者の人は使用できるアルゴリズムの種類なども知らないので、scikit-learn algorithm cheatsheetsを参考にするのがおすすめ。scikit-learn algorithm cheatsheetsによると基本的に50以上のデータがるのが望ましい。
+And/Orを機械学習させる 今回はscikit-learnからsklearn.svmのLinearSVCとsklearn.metricsのaccuracy_scoreを利用する。
+AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できていない。 別なアプローチをする。パラメータを増やすか、アルゴリズムを変更するか。 アルゴリズムを変更するアプローチをとるために、cheatsheetsをみる。 KNeighborsClassifierを利用する。すると正しく結果が出る。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/swift/learning-swiftui-05/" class="link black dim">
         Learning Swiftui 05
       </a>
@@ -149,42 +182,6 @@ Stateプロパティについて Viewはstructのため値を変更できない�
 SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
 Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
 参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-03/" class="link black dim">
-        Learning Swiftui 03
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      データモデルをビューに流し込み表示 リスト化ようのModelとRowを作る 参考にするのは、こちら リストにデータを流し込むためのモデルを作る
-struct Data { let name: String let image: Image }  Rowビューをつくる
-struct Row: View { var data: Data var body: some View { data.image .resizable() .frame(width: 50, height: 50) Text(landmark.name) } }  Rowビューにデータモデルを流し込んで表示する
-struct Row_Previews: PreviewProvider { static var previews: some View { Row(landmark: datalist[0]) } }  プレビューで複数のRowを表示 プレビューを複数表示するにはGroupを使う GroupはContainer Viewというものに含まれる
-https://developer.apple.com/documentation/swiftui/view_layout_and_presentation
-struct Row_Previews: PreviewProvider { static var previews: some View { Group { Row(landmark: datalist[0]) .
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/english/will-be-going-to/" class="link black dim">
-        will / be going to
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      未来系の使い分け 英語の未来形は２つ&rdquo;will&rdquo;と&rdquo;be going to&rdquo;があるが、ニュアンスが異なる。この２つの違いは「既に決まっていたかどうか」
-willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinner tonight. Mike: Sure. I will call out to you tonight.  強い意思を伝える時 I will wake up at 6 o'clock tomorrow.  be going toはすでに決まっていたこと Mike: I'm going to drink with john tonight.  https://eikaiwa.dmm.com/blog/39416/
     </div>
   </div>
 </div>

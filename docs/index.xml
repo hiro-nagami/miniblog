@@ -6,10 +6,31 @@
     <description>Recent content on Techree</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Dec 2019 02:11:22 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 22 Dec 2019 20:43:39 +0900</lastBuildDate>
     
 	<atom:link href="https://www.techree.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Colaboratory Classification</title>
+      <link>https://www.techree.net/posts/machine-learning/colaboratory-classification/</link>
+      <pubDate>Sun, 22 Dec 2019 20:43:39 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/machine-learning/colaboratory-classification/</guid>
+      <description>アヤメの分類 SVCを使ってアヤメの分類をする。pythonのurllibを利用してアヤメのデータをインポートする。 アヤメのデータはこちら。 https://github.com/pandas-dev/pandas/blob/master/pandas/tests/data/iris.csv</description>
+    </item>
+    
+    <item>
+      <title>Colaboratory Introduction</title>
+      <link>https://www.techree.net/posts/machine-learning/colaboratory-introduction/</link>
+      <pubDate>Sun, 22 Dec 2019 19:46:29 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/machine-learning/colaboratory-introduction/</guid>
+      <description>Google Colabを使った機械学習 Google Colabとは、Google が提供している機械学習をオンライン上で実行することができる開発環境。
+ https://colab.research.google.com/  Uploaderの表示や桁数の多い計算なども簡単にできる scikit-lean Python向けの機械学習フレームワークサイト。機械学習初心者の人は使用できるアルゴリズムの種類なども知らないので、scikit-learn algorithm cheatsheetsを参考にするのがおすすめ。scikit-learn algorithm cheatsheetsによると基本的に50以上のデータがるのが望ましい。
+And/Orを機械学習させる 今回はscikit-learnからsklearn.svmのLinearSVCとsklearn.metricsのaccuracy_scoreを利用する。
+AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できていない。 別なアプローチをする。パラメータを増やすか、アルゴリズムを変更するか。 アルゴリズムを変更するアプローチをとるために、cheatsheetsをみる。 KNeighborsClassifierを利用する。すると正しく結果が出る。</description>
+    </item>
     
     <item>
       <title>Learning Swiftui 05</title>
