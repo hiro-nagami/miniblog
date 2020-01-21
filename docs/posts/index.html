@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-12-22T20:43:39&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2020-01-21T18:47:35&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,23 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/docker/not-found-oniguruma/" class="link black dim">
+        Not Found Oniguruma
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package 'oniguruma', required by 'virtual:world', not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/machine-learning/colaboratory-classification/" class="link black dim">
         Colaboratory Classification
       </a>
@@ -162,21 +179,6 @@
  https://colab.research.google.com/  Uploaderの表示や桁数の多い計算なども簡単にできる scikit-lean Python向けの機械学習フレームワークサイト。機械学習初心者の人は使用できるアルゴリズムの種類なども知らないので、scikit-learn algorithm cheatsheetsを参考にするのがおすすめ。scikit-learn algorithm cheatsheetsによると基本的に50以上のデータがるのが望ましい。
 And/Orを機械学習させる 今回はscikit-learnからsklearn.svmのLinearSVCとsklearn.metricsのaccuracy_scoreを利用する。
 AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できていない。 別なアプローチをする。パラメータを増やすか、アルゴリズムを変更するか。 アルゴリズムを変更するアプローチをとるために、cheatsheetsをみる。 KNeighborsClassifierを利用する。すると正しく結果が出る。
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
-        Learning Swift Protocol
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Protocolのテクニック protocol Noticeable { func getNotice() func openNotice(url: NSURL) func closeNotice() } extension Noticeable where Self: UITableViewController { func getNotice() { NoticeAPIClient.find() .success { (notice: Notice) -&gt; Void in let noticeView = NoticeView.view() noticeView.notice = notice self.tableView.tableHeaderView = noticeView } } func openNotice(url: NSURL) { let webVC = //WebViewでお知らせを表示 self.navigationController?.presentViewController(webVC, animated: true, completion: nil) } func closeNotice() { guard let noticeView = self.tableView.tableHeaderView as? NoticeView else { return } self.
     </div>
   </div>
 </div>
@@ -310,7 +312,7 @@ AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できて�
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://www.techree.net/" >
-    &copy; 2019 Techree
+    &copy; 2020 Techree
   </a>
     <div>
 

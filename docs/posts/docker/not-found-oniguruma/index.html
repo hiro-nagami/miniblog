@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Techree  | iOS Push Notification 01</title>
+    <title>Techree  | Not Found Oniguruma</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -28,40 +28,37 @@
 
     
 
-    <meta property="og:title" content="iOS Push Notification 01" />
-<meta property="og:description" content="iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
-AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
-実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer." />
+    <meta property="og:title" content="Not Found Oniguruma" />
+<meta property="og:description" content=" Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package &#39;oniguruma&#39;, required by &#39;virtual:world&#39;, not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.techree.net/posts/ios-push-notification-01/" />
+<meta property="og:url" content="https://www.techree.net/posts/docker/not-found-oniguruma/" />
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
-<meta property="article:published_time" content="2019-10-29T13:39:45&#43;09:00"/>
-<meta property="article:modified_time" content="2019-10-29T13:39:45&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="article:published_time" content="2020-01-21T18:47:35&#43;09:00"/>
+<meta property="article:modified_time" content="2020-01-21T18:47:35&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
-<meta itemprop="name" content="iOS Push Notification 01">
-<meta itemprop="description" content="iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
-AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
-実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer.">
-
-
-<meta itemprop="datePublished" content="2019-10-29T13:39:45&#43;09:00" />
-<meta itemprop="dateModified" content="2019-10-29T13:39:45&#43;09:00" />
-<meta itemprop="wordCount" content="105">
+<meta itemprop="name" content="Not Found Oniguruma">
+<meta itemprop="description" content=" Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package &#39;oniguruma&#39;, required by &#39;virtual:world&#39;, not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  ">
 
 
+<meta itemprop="datePublished" content="2020-01-21T18:47:35&#43;09:00" />
+<meta itemprop="dateModified" content="2020-01-21T18:47:35&#43;09:00" />
+<meta itemprop="wordCount" content="21">
 
-<meta itemprop="keywords" content="ios,notification," />
+
+
+<meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
-<meta name="twitter:title" content="iOS Push Notification 01"/>
-<meta name="twitter:description" content="iOSのプッシュ通知について iOS プッシュ通知の実装方法は大きく分けて３つある。 - AppDelegateメソッドを使う方法 - UserNotificationCenterDelegateメソッドを使う方法 (iOS10~) - NotificationServiceExtensionを使う方法
-AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
-実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer."/>
+<meta name="twitter:title" content="Not Found Oniguruma"/>
+<meta name="twitter:description" content=" Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package &#39;oniguruma&#39;, required by &#39;virtual:world&#39;, not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  "/>
 
   </head>
 
@@ -149,84 +146,34 @@ func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent noti
           
         POSTS
       </p>
-      <h1 class="f1 athelas mb1">iOS Push Notification 01</h1>
+      <h1 class="f1 athelas mb1">Not Found Oniguruma</h1>
       
-      <time class="f6 mv4 dib tracked" datetime="2019-10-29T13:39:45&#43;09:00">October 29, 2019</time>      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-21T18:47:35&#43;09:00">January 21, 2020</time>      
       
       
     </header>
 
     <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
 
-<h2 id="iosのプッシュ通知について">iOSのプッシュ通知について</h2>
+<h2 id="dockerでimageビルドしていたらエラー">Dockerでimageビルドしていたらエラー</h2>
 
-<p>iOS プッシュ通知の実装方法は大きく分けて３つある。
-- AppDelegateメソッドを使う方法
-- UserNotificationCenterDelegateメソッドを使う方法 (iOS10~)
-- NotificationServiceExtensionを使う方法</p>
+<p>Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。</p>
 
-<h2 id="appdelegateを使う方法">AppDelegateを使う方法</h2>
-
-<p>AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている
-<a href="https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application">https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application</a></p>
-
-<h3 id="実装方法">実装方法</h3>
-
-<pre><code class="language-swift">func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
-                    fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) {
-    // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。
-    completionHandler(UIBackgroundFetchResult.newData)
-}
+<pre><code>Package 'oniguruma', required by 'virtual:world', not found
 </code></pre>
 
-<h2 id="usernotificationcenterを使う方法">UserNotificationCenterを使う方法</h2>
+<ul>
+<li><a href="http://tekitoh-memdhoi.info/views/807">http://tekitoh-memdhoi.info/views/807</a></li>
+<li><a href="https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12">https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12</a></li>
+</ul>
 
-<p>UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。
-<a href="https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter">https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter</a></p>
+<h2 id="対策">対策</h2>
 
-<pre><code class="language-swift">func userNotificationCenter(_ center: UNUserNotificationCenter,
-                            willPresent notification: UNNotification,
-                            withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) {
-    // Remote Notification
-    if notification.request.trigger is UNPushNotificationTrigger {
-        debugPrint(&quot;プッシュ通知受信&quot;)
-        completionHandler([.sound, .alert])
-    } else {
-        // ...
-    }
-}
+<p>apkでonigurumaをインストールする</p>
 
-func userNotificationCenter(_ center: UNUserNotificationCenter,
-                            didReceive response: UNNotificationResponse,
-                            withCompletionHandler completionHandler: () -&gt; Void) {
-    debugPrint(&quot;opened&quot;)
-    completionHandler()
-}
-</code></pre>
-
-<h2 id="notificationserviceextensionを使う方法">NotificationServiceExtensionを使う方法</h2>
-
-<p>XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。
-<a href="https://developer.apple.com/documentation/usernotificationsui/customizing_the_appearance_of_notifications">https://developer.apple.com/documentation/usernotificationsui/customizing_the_appearance_of_notifications</a></p>
-
-<p>追加をすると自動的に<code>NotificationService.swift</code>が追加され、そこに受信ロジックを追加することになる。</p>
-
-<h3 id="実装方法-1">実装方法</h3>
-
-<pre><code class="language-swift">pulic class NotificationService: UNNotificationServiceExtension {
-    override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler:(UNNotificationContent) -&gt; Void) {
-    }
-}
+<pre><code>$ apk add --update --no-cache oniguruma-dev
 </code></pre>
 <ul class="pa0">
-  
-   <li class="list">
-     <a href="/tags/ios" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">ios</a>
-   </li>
-  
-   <li class="list">
-     <a href="/tags/notification" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">notification</a>
-   </li>
   
 </ul>
 <div class="mt6">

@@ -3,6 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.techree.net/posts/docker/not-found-oniguruma/</loc>
+    <lastmod>2020-01-21T18:47:35+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/posts/machine-learning/colaboratory-classification/</loc>
     <lastmod>2019-12-22T20:43:39+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -388,7 +395,7 @@
   
   <url>
     <loc>https://www.techree.net/posts/</loc>
-    <lastmod>2019-12-22T20:43:39+09:00</lastmod>
+    <lastmod>2020-01-21T18:47:35+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -451,7 +458,7 @@
   
   <url>
     <loc>https://www.techree.net/</loc>
-    <lastmod>2019-12-22T20:43:39+09:00</lastmod>
+    <lastmod>2020-01-21T18:47:35+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

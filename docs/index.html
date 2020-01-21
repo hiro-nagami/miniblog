@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-12-22T20:43:39&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2020-01-21T18:47:35&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Techree">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -164,14 +164,16 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/machine-learning/colaboratory-classification/" class="color-inherit dim link">
-            Colaboratory Classification
+          <a href="/posts/docker/not-found-oniguruma/" class="color-inherit dim link">
+            Not Found Oniguruma
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          アヤメの分類 SVCを使ってアヤメの分類をする。pythonのurllibを利用してアヤメのデータをインポートする。 アヤメのデータはこちら。 https://github.com/pandas-dev/pandas/blob/master/pandas/tests/data/iris.csv
+           Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package 'oniguruma', required by 'virtual:world', not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  
         </div>
-          <a href="/posts/machine-learning/colaboratory-classification/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+          <a href="/posts/docker/not-found-oniguruma/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
         
       </div>
     </div>
@@ -188,17 +190,14 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/machine-learning/colaboratory-introduction/" class="color-inherit dim link">
-            Colaboratory Introduction
+          <a href="/posts/machine-learning/colaboratory-classification/" class="color-inherit dim link">
+            Colaboratory Classification
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Google Colabを使った機械学習 Google Colabとは、Google が提供している機械学習をオンライン上で実行することができる開発環境。
- https://colab.research.google.com/  Uploaderの表示や桁数の多い計算なども簡単にできる scikit-lean Python向けの機械学習フレームワークサイト。機械学習初心者の人は使用できるアルゴリズムの種類なども知らないので、scikit-learn algorithm cheatsheetsを参考にするのがおすすめ。scikit-learn algorithm cheatsheetsによると基本的に50以上のデータがるのが望ましい。
-And/Orを機械学習させる 今回はscikit-learnからsklearn.svmのLinearSVCとsklearn.metricsのaccuracy_scoreを利用する。
-AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できていない。 別なアプローチをする。パラメータを増やすか、アルゴリズムを変更するか。 アルゴリズムを変更するアプローチをとるために、cheatsheetsをみる。 KNeighborsClassifierを利用する。すると正しく結果が出る。
+          アヤメの分類 SVCを使ってアヤメの分類をする。pythonのurllibを利用してアヤメのデータをインポートする。 アヤメのデータはこちら。 https://github.com/pandas-dev/pandas/blob/master/pandas/tests/data/iris.csv
         </div>
-          <a href="/posts/machine-learning/colaboratory-introduction/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+          <a href="/posts/machine-learning/colaboratory-classification/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
         
       </div>
     </div>
@@ -213,6 +212,12 @@ AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できて�
       <section class="w-100">
         <h1 class="f3"></h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/machine-learning/colaboratory-introduction/" class="link black dim">
+              Colaboratory Introduction
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
@@ -232,12 +237,6 @@ AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できて�
             </a>
           </h2>
         
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/swift/learning-swiftui-06/" class="link black dim">
-              Learning Swiftui 06
-            </a>
-          </h2>
-        
 
         
         
@@ -253,7 +252,7 @@ AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できて�
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://www.techree.net/" >
-    &copy; 2019 Techree
+    &copy; 2020 Techree
   </a>
     <div>
 

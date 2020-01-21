@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-09T16:44:09&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-11-11T16:35:24&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,23 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/respectfun-review-on-google-blog/" class="link black dim">
+        Respectfun Review on Google Blog
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Code ReviewについてGoogleがブログを書いていたのでメモ。 特に、次の点については面白いと思った。
+ 研究によると、中立的なコメントは79%が有用だと思われるのに対して、厳しい言葉が使われたコメントは57%しか有用だと思われないとのこと。
+ https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/cannot-open-xcworkspace-with-catalina/" class="link black dim">
         Cannot Open Xcworkspace With Catalina
       </a>
@@ -166,24 +183,6 @@ CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、と�
  Carthageでビルドし直す。対応したバージョンがリリースされていればそれを使うし、なければローカルで再ビルドされる 元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落として動かす  とりあえず、元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落としてきて対処。
 古いバージョンを使い続けるのは、技術的な負債になるのでなるべく早くアップデートに対応したい。
 https://developer.apple.com/download/more/
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/android-emulator-bad-network/" class="link black dim">
-        Android Emulator Bad Network
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Androidエミュレータでネットワークがつながらない どうもDNSにアクセスができなくなってしまうらしい。
-Android SDKディレクトリにあるemulatorコマンドを使うことでリセットできる。
-${SDK PATH}/emulator/emulator -list-avds
-${SDK PATH}/emulator/emulator -avd Pixel2_API_27 -dns-server 8.8.8.8
     </div>
   </div>
 </div>
@@ -323,7 +322,7 @@ ${SDK PATH}/emulator/emulator -avd Pixel2_API_27 -dns-server 8.8.8.8
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://www.techree.net/" >
-    &copy; 2019 Techree
+    &copy; 2020 Techree
   </a>
     <div>
 

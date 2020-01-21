@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-06-15T19:33:52&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-06-16T00:22:40&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,25 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/about-jwt-token/" class="link black dim">
+        JWTについて簡単に調べたのでメモ書き
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       JSON Web Tokenの略でURL-SafeなTokenを発行し、電子署名をJWTに組み込むことで改ざんを検出可能にする。
+JWTは以下の内容で構成される
+ Base64-Header: ヘッダー情報を含むJSONをBase64でエンコードしたもの Base64-Body: ユーザーID, 有効期限をJSONをBase64でエンコードしたもの}.{電子署名} Signature: 電子署名  JWT: {Base64-Header}.{Base64-Body}.{Signature}  サーバー側は自身の持つ暗号鍵を使って署名つきのTokenを発行することで、有効期限とユーザーIDの正当性を検証し改ざんがあれば検知できるようになっている。URL-Safeなので文字コードに依存せずウェブ上の通信の本人証明に使うことができる。
+JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得することができるJWKを使って、JWTのSignatureを検証することができる。
+参考  JSON Web Token の効用 JWT(JSON Web Token)を使った認証を試みる JWT について調べた内容をまとめました。 JWT(JSON Web Token)の仕組みと使い方まとめ OAuth Revocation と JWK を翻訳しました ID トークンの確認 JSON Web Key (JWK)  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/cloud-functions-npm-error/" class="link black dim">
         nodeバージョンの違いでFirebase Cloud Functionsのdeployが失敗した話
       </a>
@@ -163,27 +182,6 @@ import * as functions from 'firebase-functions'; export const hello = functions.
       <h2 id="executorseriviceとは">ExecutorSeriviceとは</h2>
 
 <p>Java上でマルチスレッド実現しやすくするためのインターフェースです。Runnableインターフェースを実装したインスタンスをスレッドのQueueに追加(<code>submit()</code>)することができます。ExecutorServiceは<code>java.util.concurrent</code>に含まれます。</p>
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/about-auto-layout/" class="link black dim">
-        SketchのAutoLayout機能
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      <p>SketchでAutoLayoutを使えるようにするプラグイン<a href="https://www.animaapp.com/">Anima ToolKit</a>を使ってみました。</p>
-
-<h2 id="autolayoutとは何か">AutoLayoutとは何か？</h2>
-
-<p>制約を設定する事でビューを自動的に計算してリサイズしたり、位置を調整したりする機能。優先度を設定することによって、どのパーツを優先的にリサイズしたり、非表示にしたりするか決める事ができます。</p>
-
-<p>AutoLayoutはStoryboardでビューに設定するのが分かりやすいが、コード上でも設定する事が可能です。</p>
     </div>
   </div>
 </div>
@@ -321,7 +319,7 @@ import * as functions from 'firebase-functions'; export const hello = functions.
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://www.techree.net/" >
-    &copy; 2019 Techree
+    &copy; 2020 Techree
   </a>
     <div>
 

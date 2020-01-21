@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-03T17:27:44&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-11-09T15:30:11&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,24 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/android-emulator-bad-network/" class="link black dim">
+        Android Emulator Bad Network
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Androidエミュレータでネットワークがつながらない どうもDNSにアクセスができなくなってしまうらしい。
+Android SDKディレクトリにあるemulatorコマンドを使うことでリセットできる。
+${SDK PATH}/emulator/emulator -list-avds
+${SDK PATH}/emulator/emulator -avd Pixel2_API_27 -dns-server 8.8.8.8
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/swift/learning-swiftui-01/" class="link black dim">
         Learning Swiftui 01
       </a>
@@ -162,30 +180,6 @@
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
 https://www.techree.net/posts/ios-app-debugging-crashreport/
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/ios-app-debugging-crashreport/" class="link black dim">
-        iOS App Debugging Crashreport
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      AppleなどからもらったクラッシュファイルをSymbolicateする方法は以下の通り。
- クラッシュファイルを手に入れる dSYMを手に入れる symbolicateする  txtファイルの場合 symbol.txt を　symbol.crash　のように拡張子を変更する。
-dSYMの取得 App Store ConnectかArchivesから取得する。
- App Store Connect  Activity -&gt; Build Number -&gt; Included Symbols  から取得可能。
- Archives  Archiveのパッケージ内に存在するのでそれを利用する。
-Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open package  symbolicateする 以下にあるsymbolicatecrashというコマンドを使う。
-/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash  適当なフォルダを作り、そこにクラッシュファイルとdSYMを一緒にいれる。
-$ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
-$ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  symbolicateにaliasを設定しておくと便利。
-alias symbolicate = &quot;/Applications/Xcode.
     </div>
   </div>
 </div>
@@ -327,7 +321,7 @@ alias symbolicate = &quot;/Applications/Xcode.
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://www.techree.net/" >
-    &copy; 2019 Techree
+    &copy; 2020 Techree
   </a>
     <div>
 
