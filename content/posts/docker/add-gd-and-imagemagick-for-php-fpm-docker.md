@@ -44,3 +44,5 @@ RUN apk add --update --no-cache --virtual .imagemagick-deps \
 - [PHP & Docker & AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法）](https://system-j.net/laravel/114/)
 - [php-alpineコンテナにxdebugをインストールする時にハマったメモ](https://qiita.com/ucan-lab/items/fbf021bf69896538e515)
 - [nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する](https://qiita.com/kotarella1110/items/634f6fafeb33ae0f51dc)
+- [docker-compose で作る nginx + PHP-FPM7 + HTTP/2 に対応したモダンな WordPress 開発環境](https://tech.recruit-mp.co.jp/infrastructure/post-13086/)
+- [Wordpress(php-fpm)のボトルネックを探る](http://totutotu.hatenablog.com/entry/2015/10/27/Wordpress%28php-fpm%29%E3%81%AE%E3%83%9C%E3%83%88%E3%83%AB%E3%83%8D%E3%83%83%E3%82%AF%E3%82%92%E6%8E%A2%E3%82%8B)
