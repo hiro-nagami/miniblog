@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-09T15:30:11&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-11-09T16:44:09&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,43 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/cannot-open-xcworkspace-with-catalina/" class="link black dim">
+        Cannot Open Xcworkspace With Catalina
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      CatalinaでXcode Projectが開かない リリースされてからある程度時間もたったので、CatalinaにアップデートしたところXcode Projectが開かなくなってしまった。Xcodeは起動できるが、特定のプロジェクトを開こうとするとすぐにXcodeが終了してしまう。
+まずは他のプロジェクトを動かす 前に作ったサンプルプロジェクトがあったので、起動してみたらプロジェクトが開けた。先ほどのプロジェクトは、xcworkspaceで今回のはxcodeprojという違いがあったので、元のプロジェクトのxcodeprojを開いてみたら開けた。
+CocoaPodsで再ビルド xcworkspaceはCocoaPodsで生成されるため、とりあえずpod installを試してみた。しかし、再度開いても結果は同じだった。
+そのため、今度はxcworkspaceを削除してからpod installを試してみたところ無事開けた。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/download-oldversion-xcode/" class="link black dim">
+        Download Oldversion Xcode
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Xcodeアップデートしたらコンパイラがアップデートしていて動かない Xcodeをアップデートしたら、Swiftのバージョン(5.1.2)に上がっていたためCarthageでビルドしたフレームワークが動かなくなってしまった。
+対処法は２つ
+ Carthageでビルドし直す。対応したバージョンがリリースされていればそれを使うし、なければローカルで再ビルドされる 元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落として動かす  とりあえず、元のSwiftバージョン(5.1.0)で使いたいので旧バージョンを落としてきて対処。
+古いバージョンを使い続けるのは、技術的な負債になるのでなるべく早くアップデートに対応したい。
+https://developer.apple.com/download/more/
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/android-emulator-bad-network/" class="link black dim">
         Android Emulator Bad Network
       </a>
@@ -147,39 +184,6 @@
 Android SDKディレクトリにあるemulatorコマンドを使うことでリセットできる。
 ${SDK PATH}/emulator/emulator -list-avds
 ${SDK PATH}/emulator/emulator -avd Pixel2_API_27 -dns-server 8.8.8.8
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-01/" class="link black dim">
-        Learning Swiftui 01
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      SwiftUIについて勉強 SwiftUIの勉強する方法としてApple公式ページにチュートリアルが用意されている。このチュートリアルでは、SwiftUIの使い方や実装手順などが紹介されている。また、サンプルコードなども用意してありダウンロードして自分の環境でテストすることができる。
-チュートリアルのページはここ。
-また、チュートリアルが終わったり分からないことがあればDocumentのページで詳しい仕様を確認することもできる。
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/firebase-crashlytics-symbolicate/" class="link black dim">
-        Firebase Crashlytics Symbolicate
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      FirebaseでiOSアプリのクラッシュログを見る クラッシュログを見れるようにするには、dSYMファイルをアップロードする必要がある。dSYMファイルを取得する方法は、以下のページを見るとわかる。
-https://www.techree.net/posts/ios-app-debugging-crashreport/
     </div>
   </div>
 </div>
@@ -303,7 +307,16 @@ https://www.techree.net/posts/ios-app-debugging-crashreport/
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/11/">11</a></li>
     
     
     <li class="page-item">
@@ -311,7 +324,7 @@ https://www.techree.net/posts/ios-app-debugging-crashreport/
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/11/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

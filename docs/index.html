@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2020-01-21T18:47:35&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2020-01-26T01:24:40&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Techree">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -164,16 +164,15 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/docker/not-found-oniguruma/" class="color-inherit dim link">
-            Not Found Oniguruma
+          <a href="/posts/docker/deploy-on-ecs-with-github-actions/" class="color-inherit dim link">
+            Deploy on AWS-ECS with Github Actions
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-           Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
-Package 'oniguruma', required by 'virtual:world', not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
-$ apk add --update --no-cache oniguruma-dev  
+          GitHub Actionsを使ってDockerコンテナをECSにデプロイ GitHub ActionsではAWS用のプラグインが充実しているのでそれを利用する。secretsは、repositoryのsettingsから設定できる。wait-for-service-stability: trueにしているのは、デプロイ完了を待たないようにするため。(サービスを再起動していないので、タスクが上手く更新されないのでタイムアウトする)
+on: push: branches: - deploy-* name: Deploy to Amazon ECS jobs: deploy: name: Deploy runs-on: ubuntu-latest steps: - name: Checkout uses: actions/checkout@v1 - name: Configure AWS credentials uses: aws-actions/configure-aws-credentials@v1 with: aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} aws-region: ap-northeast-1 - name: Login to Amazon ECR id: login-ecr uses: aws-actions/amazon-ecr-login@v1 - name: Build, tag, and push image to Amazon ECR id: build-image env: ECR_REGISTRY: ${{ steps.
         </div>
-          <a href="/posts/docker/not-found-oniguruma/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+          <a href="/posts/docker/deploy-on-ecs-with-github-actions/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
         
       </div>
     </div>
@@ -190,14 +189,17 @@ $ apk add --update --no-cache oniguruma-dev
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/machine-learning/colaboratory-classification/" class="color-inherit dim link">
-            Colaboratory Classification
+          <a href="/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" class="color-inherit dim link">
+            Add GD and ImageMagick for PHP-FPM on Docker
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          アヤメの分類 SVCを使ってアヤメの分類をする。pythonのurllibを利用してアヤメのデータをインポートする。 アヤメのデータはこちら。 https://github.com/pandas-dev/pandas/blob/master/pandas/tests/data/iris.csv
+           Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g++ \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する  
         </div>
-          <a href="/posts/machine-learning/colaboratory-classification/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+          <a href="/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
         
       </div>
     </div>
@@ -214,6 +216,18 @@ $ apk add --update --no-cache oniguruma-dev
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/docker/not-found-oniguruma/" class="link black dim">
+              Not Found Oniguruma
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/machine-learning/colaboratory-classification/" class="link black dim">
+              Colaboratory Classification
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/machine-learning/colaboratory-introduction/" class="link black dim">
               Colaboratory Introduction
             </a>
@@ -222,18 +236,6 @@ $ apk add --update --no-cache oniguruma-dev
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/swift/learning-swift-protocol/" class="link black dim">
               Learning Swift Protocol
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/swift/learning-swiftui-07/" class="link black dim">
-              Learning Swiftui 07
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/flutter/introduction-flutter/" class="link black dim">
-              Introduction Flutter
             </a>
           </h2>
         

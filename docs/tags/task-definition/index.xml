@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Task Definition on Techree</title>
+    <link>https://www.techree.net/tags/task-definition/</link>
+    <description>Recent content in Task Definition on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Jan 2020 01:24:40 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/task-definition/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deploy on AWS-ECS with Github Actions</title>
+      <link>https://www.techree.net/posts/docker/deploy-on-ecs-with-github-actions/</link>
+      <pubDate>Sun, 26 Jan 2020 01:24:40 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/docker/deploy-on-ecs-with-github-actions/</guid>
+      <description>GitHub Actionsを使ってDockerコンテナをECSにデプロイ GitHub ActionsではAWS用のプラグインが充実しているのでそれを利用する。secretsは、repositoryのsettingsから設定できる。wait-for-service-stability: trueにしているのは、デプロイ完了を待たないようにするため。(サービスを再起動していないので、タスクが上手く更新されないのでタイムアウトする)
+on: push: branches: - deploy-* name: Deploy to Amazon ECS jobs: deploy: name: Deploy runs-on: ubuntu-latest steps: - name: Checkout uses: actions/checkout@v1 - name: Configure AWS credentials uses: aws-actions/configure-aws-credentials@v1 with: aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} aws-region: ap-northeast-1 - name: Login to Amazon ECR id: login-ecr uses: aws-actions/amazon-ecr-login@v1 - name: Build, tag, and push image to Amazon ECR id: build-image env: ECR_REGISTRY: ${{ steps.</description>
+    </item>
+    
+  </channel>
+</rss>

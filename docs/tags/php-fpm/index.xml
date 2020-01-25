@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Php Fpm on Techree</title>
+    <link>https://www.techree.net/tags/php-fpm/</link>
+    <description>Recent content in Php Fpm on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Jan 2020 00:26:34 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/php-fpm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Add GD and ImageMagick for PHP-FPM on Docker</title>
+      <link>https://www.techree.net/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/</link>
+      <pubDate>Sun, 26 Jan 2020 00:26:34 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/</guid>
+      <description> Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;amp;&amp;amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g++ \ autoconf \ make &amp;amp;&amp;amp; \ pecl install imagick &amp;amp;&amp;amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp;amp; Docker &amp;amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する  </description>
+    </item>
+    
+  </channel>
+</rss>

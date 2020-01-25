@@ -43,3 +43,4 @@ RUN apk add --update --no-cache --virtual .imagemagick-deps \
 - [Dockerなphpの環境でimagickをinstallする](https://polidog.jp/2018/05/08/php-docker-imagick/)
 - [PHP & Docker & AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法）](https://system-j.net/laravel/114/)
 - [php-alpineコンテナにxdebugをインストールする時にハマったメモ](https://qiita.com/ucan-lab/items/fbf021bf69896538e515)
+- [nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する](https://qiita.com/kotarella1110/items/634f6fafeb33ae0f51dc)

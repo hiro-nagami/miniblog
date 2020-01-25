@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-09T15:30:11&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2020-01-26T00:26:34&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Tags">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -140,6 +140,48 @@
     <section class="ph4">
       
         <h2 class="f1">
+          <a href="/tags/alpine" class="link blue hover-black">
+            Tag: alpine
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" class="link black dim">
+        Add GD and ImageMagick for PHP-FPM on Docker
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g++ \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する  
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/not-found-oniguruma/" class="link black dim">
+        Not Found Oniguruma
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package 'oniguruma', required by 'virtual:world', not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/android" class="link blue hover-black">
             Tag: android
           </a>
@@ -229,6 +271,29 @@ ${SDK PATH}/emulator/emulator -avd Pixel2_API_27 -dns-server 8.8.8.8
 <p>制約を設定する事でビューを自動的に計算してリサイズしたり、位置を調整したりする機能。優先度を設定することによって、どのパーツを優先的にリサイズしたり、非表示にしたりするか決める事ができます。</p>
 
 <p>AutoLayoutはStoryboardでビューに設定するのが分かりやすいが、コード上でも設定する事が可能です。</p>
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/aws-ecs" class="link blue hover-black">
+            Tag: aws-ecs
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/deploy-on-ecs-with-github-actions/" class="link black dim">
+        Deploy on AWS-ECS with Github Actions
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      GitHub Actionsを使ってDockerコンテナをECSにデプロイ GitHub ActionsではAWS用のプラグインが充実しているのでそれを利用する。secretsは、repositoryのsettingsから設定できる。wait-for-service-stability: trueにしているのは、デプロイ完了を待たないようにするため。(サービスを再起動していないので、タスクが上手く更新されないのでタイムアウトする)
+on: push: branches: - deploy-* name: Deploy to Amazon ECS jobs: deploy: name: Deploy runs-on: ubuntu-latest steps: - name: Checkout uses: actions/checkout@v1 - name: Configure AWS credentials uses: aws-actions/configure-aws-credentials@v1 with: aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} aws-region: ap-northeast-1 - name: Login to Amazon ECR id: login-ecr uses: aws-actions/amazon-ecr-login@v1 - name: Build, tag, and push image to Amazon ECR id: build-image env: ECR_REGISTRY: ${{ steps.
     </div>
   </div>
 </div>
@@ -496,6 +561,64 @@ https://www.techree.net/posts/ios-app-debugging-crashreport/
         
       
         <h2 class="f1">
+          <a href="/tags/docker" class="link blue hover-black">
+            Tag: docker
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/deploy-on-ecs-with-github-actions/" class="link black dim">
+        Deploy on AWS-ECS with Github Actions
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      GitHub Actionsを使ってDockerコンテナをECSにデプロイ GitHub ActionsではAWS用のプラグインが充実しているのでそれを利用する。secretsは、repositoryのsettingsから設定できる。wait-for-service-stability: trueにしているのは、デプロイ完了を待たないようにするため。(サービスを再起動していないので、タスクが上手く更新されないのでタイムアウトする)
+on: push: branches: - deploy-* name: Deploy to Amazon ECS jobs: deploy: name: Deploy runs-on: ubuntu-latest steps: - name: Checkout uses: actions/checkout@v1 - name: Configure AWS credentials uses: aws-actions/configure-aws-credentials@v1 with: aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} aws-region: ap-northeast-1 - name: Login to Amazon ECR id: login-ecr uses: aws-actions/amazon-ecr-login@v1 - name: Build, tag, and push image to Amazon ECR id: build-image env: ECR_REGISTRY: ${{ steps.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" class="link black dim">
+        Add GD and ImageMagick for PHP-FPM on Docker
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g++ \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する  
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/not-found-oniguruma/" class="link black dim">
+        Not Found Oniguruma
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package 'oniguruma', required by 'virtual:world', not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/emulator" class="link blue hover-black">
             Tag: emulator
           </a>
@@ -671,6 +794,31 @@ import * as functions from 'firebase-functions'; export const hello = functions.
         
       
         <h2 class="f1">
+          <a href="/tags/gd" class="link blue hover-black">
+            Tag: gd
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" class="link black dim">
+        Add GD and ImageMagick for PHP-FPM on Docker
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g++ \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する  
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
           <a href="/tags/google" class="link blue hover-black">
             Tag: google
           </a>
@@ -688,6 +836,31 @@ import * as functions from 'firebase-functions'; export const hello = functions.
       Code ReviewについてGoogleがブログを書いていたのでメモ。 特に、次の点については面白いと思った。
  研究によると、中立的なコメントは79%が有用だと思われるのに対して、厳しい言葉が使われたコメントは57%しか有用だと思われないとのこと。
  https://testing.googleblog.com/2019/11/code-health-respectful-reviews-useful.html
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/imagemagick" class="link blue hover-black">
+            Tag: imagemagick
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" class="link black dim">
+        Add GD and ImageMagick for PHP-FPM on Docker
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g++ \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する  
     </div>
   </div>
 </div>
@@ -1120,6 +1293,55 @@ import * as functions from 'firebase-functions'; export const hello = functions.
 AppDelegateを使う方法 AppDelegateには、プッシュ通知を受け取る以下のメソッドが用意されている https://developer.apple.com/documentation/uikit/uiapplicationdelegate/1623013-application
 実装方法 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -&gt; Void) { // アプリがバックグラウンド状態の時に通知を受け取った場合の処理を行う。 completionHandler(UIBackgroundFetchResult.newData) }  UserNotificationCenterを使う方法 UserNotificationCenterDelegateすることで、以下のメソッドでプッシュ通知を受け取ることができる。 https://developer.apple.com/documentation/usernotifications/unusernotificationcenterdelegate/1649518-usernotificationcenter
 func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -&gt; Void) { // Remote Notification if notification.request.trigger is UNPushNotificationTrigger { debugPrint(&quot;プッシュ通知受信&quot;) completionHandler([.sound, .alert]) } else { // ... } } func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -&gt; Void) { debugPrint(&quot;opened&quot;) completionHandler() }  NotificationServiceExtensionを使う方法 XcodeプロジェクトからNotificationServiceExtensionを追加することでリッチ通知を実装することができる。 https://developer.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/oniguruma" class="link blue hover-black">
+            Tag: oniguruma
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/not-found-oniguruma/" class="link black dim">
+        Not Found Oniguruma
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package 'oniguruma', required by 'virtual:world', not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/php-fpm" class="link blue hover-black">
+            Tag: php-fpm
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" class="link black dim">
+        Add GD and ImageMagick for PHP-FPM on Docker
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g++ \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する  
     </div>
   </div>
 </div>
@@ -1567,6 +1789,29 @@ Window -&gt; Organizer -&gt; Select Archive -&gt; Show in finder -&gt; Open pack
 $ cd tmp $ ls symbol.crash app.dSYM framework.dSYM  DEVELOPER_DIRをexportする
 $ export DEVELOPER_DIR=&quot;/Applications/Xcode.app/Contents/Developer&quot;  symbolicateにaliasを設定しておくと便利。
 alias symbolicate = &quot;/Applications/Xcode.
+    </div>
+  </div>
+</div>
+
+        
+      
+        <h2 class="f1">
+          <a href="/tags/task-definition" class="link blue hover-black">
+            Tag: task-definition
+          </a>
+        </h2>
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/deploy-on-ecs-with-github-actions/" class="link black dim">
+        Deploy on AWS-ECS with Github Actions
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      GitHub Actionsを使ってDockerコンテナをECSにデプロイ GitHub ActionsではAWS用のプラグインが充実しているのでそれを利用する。secretsは、repositoryのsettingsから設定できる。wait-for-service-stability: trueにしているのは、デプロイ完了を待たないようにするため。(サービスを再起動していないので、タスクが上手く更新されないのでタイムアウトする)
+on: push: branches: - deploy-* name: Deploy to Amazon ECS jobs: deploy: name: Deploy runs-on: ubuntu-latest steps: - name: Checkout uses: actions/checkout@v1 - name: Configure AWS credentials uses: aws-actions/configure-aws-credentials@v1 with: aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} aws-region: ap-northeast-1 - name: Login to Amazon ECR id: login-ecr uses: aws-actions/amazon-ecr-login@v1 - name: Build, tag, and push image to Amazon ECR id: build-image env: ECR_REGISTRY: ${{ steps.
     </div>
   </div>
 </div>

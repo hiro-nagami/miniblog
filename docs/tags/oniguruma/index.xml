@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oniguruma on Techree</title>
+    <link>https://www.techree.net/tags/oniguruma/</link>
+    <description>Recent content in Oniguruma on Techree</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Jan 2020 18:47:35 +0900</lastBuildDate>
+    
+	<atom:link href="https://www.techree.net/tags/oniguruma/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Not Found Oniguruma</title>
+      <link>https://www.techree.net/posts/docker/not-found-oniguruma/</link>
+      <pubDate>Tue, 21 Jan 2020 18:47:35 +0900</pubDate>
+      
+      <guid>https://www.techree.net/posts/docker/not-found-oniguruma/</guid>
+      <description> Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
+Package &#39;oniguruma&#39;, required by &#39;virtual:world&#39;, not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
+$ apk add --update --no-cache oniguruma-dev  </description>
+    </item>
+    
+  </channel>
+</rss>

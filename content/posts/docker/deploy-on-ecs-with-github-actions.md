@@ -2,7 +2,7 @@
 title: "Deploy on AWS-ECS with Github Actions"
 date: 2020-01-26T01:24:40+09:00
 draft: false
-tags: [ "docker", "aws", "ecs", "task-definition" ]
+tags: [ "docker", "aws-ecs", "task-definition" ]
 ---
 
 ## GitHub Actionsを使ってDockerコンテナをECSにデプロイ
@@ -95,11 +95,12 @@ task-definition.jsonをDockerfileと同じレイヤーに設置する。imageは
             "cpu": 100,
             "memory": 200,
             "essential": true,
-            "readonlyRootFilesystem": false,
-            "privileged": false
         }
     ],
     "executionRoleArn": "ecsTaskExecutionRole",
     "family": "service-name"
 }
 ```
+
+- [Amazon EC2 Container Service(ECS)の概念整理](https://qiita.com/NewGyu/items/9597ed2eda763bd504d7)
+- [https://dev.classmethod.jp/cloud/aws/ecs-local/](https://dev.classmethod.jp/cloud/aws/ecs-local/)

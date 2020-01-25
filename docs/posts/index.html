@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2020-01-21T18:47:35&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2020-01-26T01:24:40&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,40 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/docker/deploy-on-ecs-with-github-actions/" class="link black dim">
+        Deploy on AWS-ECS with Github Actions
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      GitHub Actionsを使ってDockerコンテナをECSにデプロイ GitHub ActionsではAWS用のプラグインが充実しているのでそれを利用する。secretsは、repositoryのsettingsから設定できる。wait-for-service-stability: trueにしているのは、デプロイ完了を待たないようにするため。(サービスを再起動していないので、タスクが上手く更新されないのでタイムアウトする)
+on: push: branches: - deploy-* name: Deploy to Amazon ECS jobs: deploy: name: Deploy runs-on: ubuntu-latest steps: - name: Checkout uses: actions/checkout@v1 - name: Configure AWS credentials uses: aws-actions/configure-aws-credentials@v1 with: aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} aws-region: ap-northeast-1 - name: Login to Amazon ECR id: login-ecr uses: aws-actions/amazon-ecr-login@v1 - name: Build, tag, and push image to Amazon ECR id: build-image env: ECR_REGISTRY: ${{ steps.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" class="link black dim">
+        Add GD and ImageMagick for PHP-FPM on Docker
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+       Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g++ \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する  
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/docker/not-found-oniguruma/" class="link black dim">
         Not Found Oniguruma
       </a>
@@ -146,39 +180,6 @@
        Dockerでimageビルドしていたらエラー Dockerビルドしていたら、onigurumaが見つからなくてエラーが出ていた。原因としては、PHP 7.4.0から onigurumaが内包されないようになったかららしい。
 Package 'oniguruma', required by 'virtual:world', not found   http://tekitoh-memdhoi.info/views/807 https://qiita.com/ucan-lab/items/14201de8fcf3c5251c12  対策 apkでonigurumaをインストールする
 $ apk add --update --no-cache oniguruma-dev  
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/machine-learning/colaboratory-classification/" class="link black dim">
-        Colaboratory Classification
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      アヤメの分類 SVCを使ってアヤメの分類をする。pythonのurllibを利用してアヤメのデータをインポートする。 アヤメのデータはこちら。 https://github.com/pandas-dev/pandas/blob/master/pandas/tests/data/iris.csv
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/machine-learning/colaboratory-introduction/" class="link black dim">
-        Colaboratory Introduction
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      Google Colabを使った機械学習 Google Colabとは、Google が提供している機械学習をオンライン上で実行することができる開発環境。
- https://colab.research.google.com/  Uploaderの表示や桁数の多い計算なども簡単にできる scikit-lean Python向けの機械学習フレームワークサイト。機械学習初心者の人は使用できるアルゴリズムの種類なども知らないので、scikit-learn algorithm cheatsheetsを参考にするのがおすすめ。scikit-learn algorithm cheatsheetsによると基本的に50以上のデータがるのが望ましい。
-And/Orを機械学習させる 今回はscikit-learnからsklearn.svmのLinearSVCとsklearn.metricsのaccuracy_scoreを利用する。
-AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できていない。 別なアプローチをする。パラメータを増やすか、アルゴリズムを変更するか。 アルゴリズムを変更するアプローチをとるために、cheatsheetsをみる。 KNeighborsClassifierを利用する。すると正しく結果が出る。
     </div>
   </div>
 </div>
@@ -294,7 +295,16 @@ AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できて�
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/11/">11</a></li>
     
     
     <li class="page-item">
@@ -302,7 +312,7 @@ AND 演算 XOR 演算 ANDは正しく学習できたが、XORは学習できて�
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/11/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>
