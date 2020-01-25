@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Techree </title>
+    <title>Techree  | Add GD and ImageMagick for PHP-FPM on Docker</title>
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
@@ -27,36 +27,52 @@
     
 
     
-      <link href="https://www.techree.net/posts/index.xml" rel="alternate" type="application/rss+xml" title="Techree" />
-      <link href="https://www.techree.net/posts/index.xml" rel="feed" type="application/rss+xml" title="Techree" />
-    
 
-    <meta property="og:title" content="Posts" />
-<meta property="og:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.techree.net/posts/" />
+    <meta property="og:title" content="Add GD and ImageMagick for PHP-FPM on Docker" />
+<meta property="og:description" content=" Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g&#43;&#43;/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g&#43;&#43; \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する docker-compose で作る nginx &#43; PHP-FPM7 &#43; HTTP/2 に対応したモダンな WordPress 開発環境 Wordpress(php-fpm)のボトルネックを探る  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.techree.net/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/" />
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
+<meta property="article:published_time" content="2020-01-26T00:26:34&#43;09:00"/>
+<meta property="article:modified_time" content="2020-01-26T00:26:34&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
-<meta property="og:updated_time" content="2019-10-26T17:20:05&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta itemprop="name" content="Add GD and ImageMagick for PHP-FPM on Docker">
+<meta itemprop="description" content=" Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g&#43;&#43;/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g&#43;&#43; \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する docker-compose で作る nginx &#43; PHP-FPM7 &#43; HTTP/2 に対応したモダンな WordPress 開発環境 Wordpress(php-fpm)のボトルネックを探る  ">
 
-<meta itemprop="name" content="Posts">
-<meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
 
+<meta itemprop="datePublished" content="2020-01-26T00:26:34&#43;09:00" />
+<meta itemprop="dateModified" content="2020-01-26T00:26:34&#43;09:00" />
+<meta itemprop="wordCount" content="105">
+
+
+
+<meta itemprop="keywords" content="docker,gd,imagemagick,php-fpm,alpine," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://www.techree.net/images/ogp-image.jpg"/>
 
-<meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="iOSエンジニアが日頃の技術的なことをメモするブログです"/>
+<meta name="twitter:title" content="Add GD and ImageMagick for PHP-FPM on Docker"/>
+<meta name="twitter:description" content=" Dockerで alpine: php-fpm にGDとImageMagickを導入 WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。
+GD dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 --virtual は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。
+RUN apk add --update --no-cache --virtual .ext-deps \ libjpeg-turbo-dev \ libwebp-dev \ libpng-dev \ freetype-dev \ libmcrypt-dev apk del .ext-deps docker-php-ext-configure gd \ --with-jpeg=/usr/include \ --with-webp=/usr/include \ --with-freetype=/usr/include &amp;&amp; \ docker-php-ext-install gd  ImageMagick dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g&#43;&#43;/autoconf/make が必要になるので、それもインストールする。apk add build-baseコマンドでも解消可能。
+RUN apk add --update --no-cache --virtual .imagemagick-deps \ gcc \ g&#43;&#43; \ autoconf \ make &amp;&amp; \ pecl install imagick &amp;&amp; \ docker-php-ext-enable imagick   Dockerなphpの環境でimagickをinstallする PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法） php-alpineコンテナにxdebugをインストールする時にハマったメモ nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する docker-compose で作る nginx &#43; PHP-FPM7 &#43; HTTP/2 に対応したモダンな WordPress 開発環境 Wordpress(php-fpm)のボトルネックを探る  "/>
 
   </head>
 
   <body class="ma0 avenir bg-near-white">
 
     
+   
+  
 
   <header>
-    <div class="pb3-m pb6-l bg-black">
+    <div class="bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="https://www.techree.net/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -118,218 +134,121 @@
   </div>
 </nav>
 
-      <div class="tc-l pv3 ph3 ph4-ns">
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          Posts
-        </h1>
-        
-      </div>
     </div>
   </header>
 
 
+
     <main class="pb7" role="main">
       
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
-    <section class="flex-ns flex-wrap justify-around mt5">
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">Add GD and ImageMagick for PHP-FPM on Docker</h1>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/blockchain/learning-blockchain-01/" class="link black dim">
-        Learning Blockchain 01
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       Ethereumについて 事前知識 Ethereum ブロックチェーン技術のなかでも特に有名な技術で、仮想通貨としてEtheを扱っている。このブロックチェーンでは、マイナーによるマイニングによって通貨が発行（PoW: Proof of Work）される。マイニングされることでブロックチェーン内の通貨量が増えるため、増加量をコントロールすべくマイニングの難易度を調整（PoS: Proof of Stake）が行われている。Ethereumの特徴として、ビットコインなどで実装できないスマートコントラクトという仕組みを導入している。
-スマートコントラクト ブロックチェーン上で契約内容を記録し、期日になると自動的に契約履行してくれる仕組み。ビットコインだとこの仕組みなく、履行情報のみを記録している。そのため、Ethereumでは金銭取引や商品取引といったことを行うことができる。Ethereumではこの機能を利用することで、分散プラットフォームを構築することができる。
-参考サイト  https://bitflyer.com/ja-jp/ethereum  
-    </div>
-  </div>
-</div>
-</div>
+      <time class="f6 mv4 dib tracked" datetime="2020-01-26T00:26:34&#43;09:00">January 26, 2020</time>      
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/on-request-on-call/" class="link black dim">
-        Firebase Cloud FunctionのonCall()とonRequest()のトリガーの違い
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       Firebase Cloud FunctionでAPI実装するために使われるトリガーにonCall()とonRequest()との２つがあった。
-これらは「内部で行なっていること」と「Callbackで受け取れる値」に違いがある。
-onCall()関数 onCall()は、Content-Type: application/jsonヘッダーをPOSTリクエストのみを受け付けるようになっている。また、Authentication Bearerヘッダーを付与しているとJWTを使ったユーザーの検証を自動で行なってくれるため、呼び出された時点で認証情報が利用できるようになる。
-JWTの使用についてはこちら。
-JWTについて簡単に調べたのでメモ書き
-export const hello_on_call = functions.https.onCall((data, context) =&gt; { if (!context.auth) { throw new functions.https.HttpsError('Invalid account.'); } return &quot;Hello, world&quot; });  https.onCall のプロトコルの仕様
-onRequest()関数 onRequest()は、POST以外のどのHTTPメソッドでもハンドリングできるようになっている。なので、呼び出されたタイミングでHTTPメソッドを判断して処理を分ける必要がある。 基本的に、内部でユーザーの検証などはないため自前で実装する必要がある。
-export const hello = functions. https.onRequest((request, response) =&gt; { cors(req, res, () =&gt; { const tokenId = req.get('Authorization').split('Bearer ')[1]; return admin.auth().verifyIdToken(tokenId) .then((decoded) =&gt; res.status(200).send(decoded)) .catch((err) =&gt; res.status(401).send(err)); }); });  
-    </div>
-  </div>
-</div>
-</div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/about-jwt-token/" class="link black dim">
-        JWTについて簡単に調べたのでメモ書き
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-       JSON Web Tokenの略でURL-SafeなTokenを発行し、電子署名をJWTに組み込むことで改ざんを検出可能にする。
-JWTは以下の内容で構成される
- Base64-Header: ヘッダー情報を含むJSONをBase64でエンコードしたもの Base64-Body: ユーザーID, 有効期限をJSONをBase64でエンコードしたもの}.{電子署名} Signature: 電子署名  JWT: {Base64-Header}.{Base64-Body}.{Signature}  サーバー側は自身の持つ暗号鍵を使って署名つきのTokenを発行することで、有効期限とユーザーIDの正当性を検証し改ざんがあれば検知できるようになっている。URL-Safeなので文字コードに依存せずウェブ上の通信の本人証明に使うことができる。
-JWK (JSON Web Key) JWTに含まれるクレームの値を使って取得することができるJWKを使って、JWTのSignatureを検証することができる。
-参考  JSON Web Token の効用 JWT(JSON Web Token)を使った認証を試みる JWT について調べた内容をまとめました。 JWT(JSON Web Token)の仕組みと使い方まとめ OAuth Revocation と JWK を翻訳しました ID トークンの確認 JSON Web Key (JWK)  
-    </div>
-  </div>
-</div>
-</div>
-      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h2 id="dockerで-alpine-php-fpm-にgdとimagemagickを導入">Dockerで alpine: php-fpm にGDとImageMagickを導入</h2>
+
+<p>WordPressを設定している時に画像のS3アップロードでGD or ImageMagickが必要になったので導入方法を調べてみた。</p>
+
+<h2 id="gd">GD</h2>
+
+<p>dockerでalphineイメージを使ってGDを導入する場合は、docker-ext-configure と docker-php-ext-install を使うとphpでも有効になる。またGDを使うには、いくつかimage系のライブラリが必要だった。 <code>--virtual</code> は仮の名前をつけてインストールすることができ、指定した名前を使うことで一括削除することもできる。</p>
+
+<pre><code>RUN apk add --update --no-cache --virtual .ext-deps \
+        libjpeg-turbo-dev \
+        libwebp-dev \
+        libpng-dev \
+        freetype-dev \
+        libmcrypt-dev
+apk del .ext-deps
+
+docker-php-ext-configure gd \
+    --with-jpeg=/usr/include \
+    --with-webp=/usr/include \
+    --with-freetype=/usr/include &amp;&amp; \
+docker-php-ext-install gd
+</code></pre>
+
+<h2 id="imagemagick">ImageMagick</h2>
+
+<p>dockerでalphineイメージを使ってImageMagickを導入する場合は、ImageMagickをPHPに適用する必要がある。適用するには docker-php-ext-enable と imagick を利用する。imagemagickをインストールするのに gcc/g++/autoconf/make が必要になるので、それもインストールする。<code>apk add build-base</code>コマンドでも解消可能。</p>
+
+<pre><code>RUN apk add --update --no-cache --virtual .imagemagick-deps \
+    gcc \
+    g++ \
+    autoconf \
+    make &amp;&amp; \
+    pecl install imagick &amp;&amp; \
+    docker-php-ext-enable imagick
+</code></pre>
+
+<ul>
+<li><a href="https://polidog.jp/2018/05/08/php-docker-imagick/">Dockerなphpの環境でimagickをinstallする</a></li>
+<li><a href="https://system-j.net/laravel/114/">PHP &amp; Docker &amp; AlpineLinux な環境でImageMagickを使用する方法（＋Laravelで画像処理をする方法）</a></li>
+<li><a href="https://qiita.com/ucan-lab/items/fbf021bf69896538e515">php-alpineコンテナにxdebugをインストールする時にハマったメモ</a></li>
+<li><a href="https://qiita.com/kotarella1110/items/634f6fafeb33ae0f51dc">nginx と PHP-FPM の仕組みをちゃんと理解しながら PHP の実行環境を構築する</a></li>
+<li><a href="https://tech.recruit-mp.co.jp/infrastructure/post-13086/">docker-compose で作る nginx + PHP-FPM7 + HTTP/2 に対応したモダンな WordPress 開発環境</a></li>
+<li><a href="http://totutotu.hatenablog.com/entry/2015/10/27/Wordpress%28php-fpm%29%E3%81%AE%E3%83%9C%E3%83%88%E3%83%AB%E3%83%8D%E3%83%83%E3%82%AF%E3%82%92%E6%8E%A2%E3%82%8B">Wordpress(php-fpm)のボトルネックを探る</a></li>
+</ul>
+<ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/docker" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">docker</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/gd" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">gd</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/imagemagick" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">imagemagick</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/php-fpm" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">php-fpm</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/alpine" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">alpine</a>
+   </li>
+  
+</ul>
+<div class="mt6">
+        
+      </div>
     </section>
 
-<ul class="pagination">
-    
-    <li class="page-item">
-        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-    <a href="/posts/page/8/" class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
-    </li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/">1</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/2/">2</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/3/">3</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/8/">8</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item active"><a class="page-link" href="/posts/page/9/">9</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
-    
-    
-    
-    
-    
-    
-        
-        
-    
-    
-    <li class="page-item"><a class="page-link" href="/posts/page/11/">11</a></li>
-    
-    
-    <li class="page-item">
-    <a href="/posts/page/10/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
-    </li>
-    
-    <li class="page-item">
-        <a href="/posts/page/11/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
-    </li>
-    
-</ul>
-</article>
+    <aside class="w-30-l mt6-l">
+
+
+
+
+  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+    <p class="f5 b mb3"></p>
+    <ul class="pa0 list">
+	   
+	     <li  class="mb2">
+          <a href="/posts/docker/not-found-oniguruma/">Not Found Oniguruma</a>
+        </li>
+	    
+    </ul>
+</div>
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

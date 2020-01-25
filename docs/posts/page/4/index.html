@@ -38,7 +38,7 @@
 
 <meta property="og:image" content="https://www.techree.net/images/ogp-image.jpg" />
 
-<meta property="og:updated_time" content="2019-11-27T02:06:27&#43;09:00"/><meta property="og:site_name" content="Techree" />
+<meta property="og:updated_time" content="2019-12-07T02:11:22&#43;09:00"/><meta property="og:site_name" content="Techree" />
 
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="iOSエンジニアが日頃の技術的なことをメモするブログです">
@@ -138,6 +138,44 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-05/" class="link black dim">
+        Learning Swiftui 05
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      ゴール SwiftUIで使われいるBindingについて理解する
+現状 先日@Stateについては少し理解したが、SwiftUIを使っていると時々Bindingプロパティを要求されることがあるが理解できていない。
+Stateプロパティについて Viewはstructのため値を変更できないが、@StateをつけることによってSwiftUI側でメモリ管理を移譲することができる。それを利用して値の更新ができるようになる。この変更時に、内部にあるビューを再構築してくれる。この値は外部から変更することができない。
+SwiftUIのObservableについて ObservableObject プロトコルに適合していると @ObservedObject を宣言したプロパティへ変更通知することができる。監視したいプロパティに @Published を宣言すると自動で変更を監視してくれる。
+ final class ToggleSampleModel: ObservableObject { @Published var isToggleOn = false }  Property Wrappersについて @ を仕様した宣言をすることで独自のアクセスを提供する。@State @ObservedObject @Published などがあげられる。
+参考 https://qiita.com/shiz/items/6eaf87fa79499623306a https://developer.apple.com/videos/play/wwdc2019/226/
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/swift/learning-swiftui-04/" class="link black dim">
+        Learning Swiftui 04
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Imageに色をOvarlayする方法 .foregroundColor()を使って指定できる。
+ Image(systemName: &quot;star.fill&quot;) .foregroundColor(.yellow)  Imageのサイズを指定する サイズの指定にはが使える.imageScale()
+ Image(systemName: &quot;star.fill&quot;) .imageScale(.medium)  Filterする方法 ForEachについて Listの中身を部分的に動的に変更する場合は、ForEachなどをつかう。また、リストを切り替えるためにToggleを使うことができる。
+List { Toggle(isOn: $showFavoritesOnly) { Text(&quot;Favorites only&quot;) } ForEach(landmarkData) { landmark in if !self.showFavoritesOnly || landmark.isFavorite { NavigationLink(destination: LandmarkDetail(landmark: landmark)) { LandmarkRow(landmark: landmark) } } } }  @State プロパティは何か ReactやVueで扱うStateのようなもの？SwiftUIでは、ステートとUIを同期的に処理するために使う。
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/swift/learning-swiftui-03/" class="link black dim">
         Learning Swiftui 03
       </a>
@@ -149,38 +187,6 @@ struct Row: View { var data: Data var body: some View { data.image .resizable() 
 struct Row_Previews: PreviewProvider { static var previews: some View { Row(landmark: datalist[0]) } }  プレビューで複数のRowを表示 プレビューを複数表示するにはGroupを使う GroupはContainer Viewというものに含まれる
 https://developer.apple.com/documentation/swiftui/view_layout_and_presentation
 struct Row_Previews: PreviewProvider { static var previews: some View { Group { Row(landmark: datalist[0]) .
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/english/will-be-going-to/" class="link black dim">
-        will / be going to
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      未来系の使い分け 英語の未来形は２つ&rdquo;will&rdquo;と&rdquo;be going to&rdquo;があるが、ニュアンスが異なる。この２つの違いは「既に決まっていたかどうか」
-willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinner tonight. Mike: Sure. I will call out to you tonight.  強い意思を伝える時 I will wake up at 6 o'clock tomorrow.  be going toはすでに決まっていたこと Mike: I'm going to drink with john tonight.  https://eikaiwa.dmm.com/blog/39416/
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/swift/learning-swiftui-02/" class="link black dim">
-        Learning Swiftui 02
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      SwiftUI便利コマンド Command + コンポーネントclickで、コンポーネントに対するショートカットが一覧で表示される。
-ショートカットの中からInspectorの表示を選択すると、コンポーネント上にInspectorが表示される。
     </div>
   </div>
 </div>
@@ -300,7 +306,16 @@ willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinne
         
     
     
-    <li class="page-item"><a class="page-link" href="/posts/page/10/">10</a></li>
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/11/">11</a></li>
     
     
     <li class="page-item">
@@ -308,7 +323,7 @@ willの場合はその場で決まったこと John: Hi, Mike. Let's go to dinne
     </li>
     
     <li class="page-item">
-        <a href="/posts/page/10/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="/posts/page/11/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
     </li>
     
 </ul>

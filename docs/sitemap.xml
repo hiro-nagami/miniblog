@@ -3,6 +3,20 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.techree.net/posts/docker/deploy-on-ecs-with-github-actions/</loc>
+    <lastmod>2020-01-26T01:24:40+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/posts/docker/add-gd-and-imagemagick-for-php-fpm-docker/</loc>
+    <lastmod>2020-01-26T00:26:34+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/posts/docker/not-found-oniguruma/</loc>
     <lastmod>2020-01-21T18:47:35+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -206,6 +220,13 @@
   </url>
   
   <url>
+    <loc>https://www.techree.net/tags/alpine/</loc>
+    <lastmod>2020-01-26T00:26:34+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/tags/android/</loc>
     <lastmod>2019-11-09T15:30:11+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -222,6 +243,13 @@
   <url>
     <loc>https://www.techree.net/tags/atomic-design/</loc>
     <lastmod>2019-03-13T16:49:14+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/tags/aws-ecs/</loc>
+    <lastmod>2020-01-26T01:24:40+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -296,6 +324,13 @@
   </url>
   
   <url>
+    <loc>https://www.techree.net/tags/docker/</loc>
+    <lastmod>2020-01-26T01:24:40+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/tags/emulator/</loc>
     <lastmod>2019-11-09T15:30:11+09:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -331,8 +366,22 @@
   </url>
   
   <url>
+    <loc>https://www.techree.net/tags/gd/</loc>
+    <lastmod>2020-01-26T00:26:34+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.techree.net/tags/google/</loc>
     <lastmod>2019-11-11T16:35:24+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/tags/imagemagick/</loc>
+    <lastmod>2020-01-26T00:26:34+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -394,8 +443,22 @@
   </url>
   
   <url>
-    <loc>https://www.techree.net/posts/</loc>
+    <loc>https://www.techree.net/tags/oniguruma/</loc>
     <lastmod>2020-01-21T18:47:35+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/tags/php-fpm/</loc>
+    <lastmod>2020-01-26T00:26:34+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/posts/</loc>
+    <lastmod>2020-01-26T01:24:40+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -451,14 +514,21 @@
   
   <url>
     <loc>https://www.techree.net/tags/</loc>
-    <lastmod>2019-11-09T15:30:11+09:00</lastmod>
+    <lastmod>2020-01-26T00:26:34+09:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.techree.net/tags/task-definition/</loc>
+    <lastmod>2020-01-26T01:24:40+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.techree.net/</loc>
-    <lastmod>2020-01-21T18:47:35+09:00</lastmod>
+    <lastmod>2020-01-26T01:24:40+09:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

@@ -2,6 +2,7 @@
 title: "Not Found Oniguruma"
 date: 2020-01-21T18:47:35+09:00
 draft: false
+tags: [ "docker", "oniguruma", "alpine" ]
 ---
 
 ## Dockerでimageビルドしていたらエラー
